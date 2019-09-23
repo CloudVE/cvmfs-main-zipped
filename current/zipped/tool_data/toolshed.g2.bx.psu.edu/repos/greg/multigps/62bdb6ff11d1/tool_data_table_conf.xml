@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tables>
+<!-- Locations of all fasta files under genome directory -->
+    <table comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/greg/multigps/62bdb6ff11d1/all_fasta.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>multigps</repository_name>
+            <repository_owner>greg</repository_owner>
+            <installed_changeset_revision>62bdb6ff11d1</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+</tables>

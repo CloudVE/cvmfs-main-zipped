@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tables>
+<!-- Location of SAMTools indexes and other files -->
+    <table comment_char="#" name="fasta_indexes">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/devteam/vcfvcfintersect/1bc1b2b8b341/fasta_indexes.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>vcfvcfintersect</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>1bc1b2b8b341</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+</tables>

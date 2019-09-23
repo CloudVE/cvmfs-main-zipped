@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tables>
+<!-- Locations of all fasta files under genome directory -->
+    <table comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/star_fusion/0b44456754e2/all_fasta.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>star_fusion</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>0b44456754e2</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+</tables>

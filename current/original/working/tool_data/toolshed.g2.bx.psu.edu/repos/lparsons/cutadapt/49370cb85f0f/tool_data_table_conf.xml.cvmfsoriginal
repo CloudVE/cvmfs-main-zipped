@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<tables>
+    <!--  Adapter sequences -->
+    <table allow_duplicate_entries="False" comment_char="#" name="adapters">
+        <columns>value, name</columns>
+        <file path="/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/49370cb85f0f/adapters.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>cutadapt</repository_name>
+            <repository_owner>lparsons</repository_owner>
+            <installed_changeset_revision>49370cb85f0f</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+</tables>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tables>
+<!-- Locations of all fasta files required to build Diamond databases -->
+    <table comment_char="#" name="diamond_database">
+        <columns>value, name, db_path</columns>
+        <file path="/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/bgruening/data_manager_diamond_database_builder/ce62d0912b10/diamond_database.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>data_manager_diamond_database_builder</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>ce62d0912b10</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+</tables>

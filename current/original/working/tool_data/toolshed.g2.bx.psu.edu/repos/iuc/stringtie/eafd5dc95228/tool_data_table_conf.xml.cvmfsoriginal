@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tables>
+<!-- Locations of all gtf files with annotations of genome builds -->
+    <table allow_duplicate_entries="False" comment_char="#" name="gene_sets">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/stringtie/eafd5dc95228/gene_sets.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>stringtie</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>eafd5dc95228</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+</tables>

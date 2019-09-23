@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<tables>
+<table allow_duplicate_entries="False" comment_char="#" name="mothur_aligndb">
+        <columns>name, value</columns>
+        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/mothur_make_contigs/bfe5103b1e8f/mothur_aligndb.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>mothur_make_contigs</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>bfe5103b1e8f</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+<table allow_duplicate_entries="False" comment_char="#" name="mothur_lookup">
+        <columns>name, value</columns>
+        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/mothur_make_contigs/bfe5103b1e8f/mothur_lookup.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>mothur_make_contigs</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>bfe5103b1e8f</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+<table allow_duplicate_entries="False" comment_char="#" name="mothur_map">
+        <columns>name, value</columns>
+        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/mothur_make_contigs/bfe5103b1e8f/mothur_map.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>mothur_make_contigs</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>bfe5103b1e8f</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+<table allow_duplicate_entries="False" comment_char="#" name="mothur_taxonomy">
+        <columns>name, value</columns>
+        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/mothur_make_contigs/bfe5103b1e8f/mothur_taxonomy.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>mothur_make_contigs</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>bfe5103b1e8f</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+</tables>
