@@ -9,4 +9,4 @@ before_install:
 
 jobs:
  include:
-   - script: sudo sh ./mount.sh > mount.log && sudo sh ./modify.sh > modify.log && sudo sh ./push.sh > push.log
+   - script: sudo sh ./mount.sh > ./current/mount.log && sudo sh ./modify.sh > ./current/modify.log && sudo sh ./push.sh
