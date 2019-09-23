@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<tables>
+<table allow_duplicate_entries="False" comment_char="#" name="gemini_databases">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/gemini_region/3ceab02d0d40/gemini_databases.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>gemini_region</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>3ceab02d0d40</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+</tables>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<tables>
+<table comment_char="#" name="sailfish_indexes">
+        <columns>value, name, path</columns>
+        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/bgruening/sailfish/a8f343909c17/sailfish_indexes.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sailfish</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>a8f343909c17</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+</tables>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tables>
+<!-- Locations of indexes in the Bowtie mapper format -->
+    <table comment_char="#" name="diamond_database">
+        <columns>value, name, db_path</columns>
+        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/bgruening/diamond/fd14bf35c9fd/diamond_database.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>diamond</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>fd14bf35c9fd</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+</tables>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tables>
+<!-- Locations of 2bit sequence files for use in Lastz -->
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_correct_gc_bias/24c209036764/lastz_seqs.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_correct_gc_bias</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>24c209036764</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+</tables>
