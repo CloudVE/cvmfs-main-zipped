@@ -1,0 +1,195 @@
+<tool id="plant_tribes_gene_family_phylogeny_builder" name="GeneFamilyPhylogenyBuilder" version="@WRAPPER_VERSION@.3.1" profile="18.09">
+    <description>builds phylogenetic trees of aligned orthologous gene family clusters</description>
+    <macros>
+        <import>macros.xml</import>
+    </macros>
+    <requirements>
+        <requirement type="package" version="1.0.3">plant_tribes_gene_family_phylogeny_builder</requirement>
+    </requirements>
+    <code file="get_clustering_methods.py"/>
+    <command detect_errors="exit_code"><![CDATA[
+#set input_dir = 'input_dir'
+#set tree_inference = $tree_inference_cond.tree_inference
+#if str($tree_inference) == 'raxml':
+    #set scaffold = $tree_inference_cond.scaffold
+    #set method = $tree_inference_cond.method
+    #set rooting_order_file_cond = $tree_inference_cond.rooting_order_file_cond
+    #set rooting_order_file = $rooting_order_file_cond.rooting_order_file
+    #if str($rooting_order_file) == 'yes':
+        #set rooting_order = $rooting_order_file_cond.rooting_order
+    #end if
+    #set bootstrap_replicates = $tree_inference_cond.bootstrap_replicates
+#end if
+mkdir $input_dir &&
+#for $i in $input:
+    #set filename = $i.file_name
+    #set name = $i.name
+    ln -s $filename $input_dir/$name &&
+#end for
+GeneFamilyPhylogenyBuilder
+--orthogroup_aln '$input_dir'
+--tree_inference $tree_inference
+#if str($tree_inference) == 'raxml':
+    --scaffold '$scaffold.fields.path'
+    --config_dir '$scaffold.fields.path'
+    --method $method
+    #if str($rooting_order_file) == 'yes':
+        --rooting_order '$rooting_order'
+        ## No else block needed here because the default rooting_order
+        ## configuration will be used if the --rooting_order flag is missing.
+    #end if
+    --bootstrap_replicates $bootstrap_replicates
+#end if
+--min_orthogroup_size $min_orthogroup_size
+--max_orthogroup_size $max_orthogroup_size
+--num_threads \${GALAXY_SLOTS:-4}
+&>gene_family_phylogeny_builder_log.txt;
+if [[ $? -ne 0 ]]; then
+    find geneFamilyPhylogenies_dir -type d -maxdepth 1 -exec cp gene_family_phylogeny_builder_log.txt {} \;
+    exit 1;
+fi
+    ]]></command>
+    <inputs>
+        <param name="input" format="fasta" type="data_collection" collection_type="list" label="Proteins orthogroup alignments" />
+        <conditional name="tree_inference_cond">
+            <param name="tree_inference" type="select" label="Phylogenetic inference method">
+                <option value="raxml" selected="true">RAxML</option>
+                <option value="fasttree">FastTree</option>
+            </param>
+            <when value="raxml">
+                <expand macro="param_scaffold" />
+                <expand macro="param_method" />
+                <conditional name="rooting_order_file_cond">
+                    <param name="rooting_order_file" type="select" label="Rooting order configuration">
+                        <option value="no" selected="true">No</option>
+                        <option value="yes">Yes</option>
+                    </param>
+                    <when value="no" />
+                    <when value="yes">
+                        <param name="rooting_order" format="txt" type="data" label="Rooting order configuration" />
+                    </when>
+                </conditional>
+                <param name="bootstrap_replicates" type="integer" value="100" min="0" label="Bootstrap replicates" />
+            </when>
+            <when value="fasttree" />
+        </conditional>
+        <param name="max_orthogroup_size" type="integer" value="100" min="4" label="Maximum orthogroup size" />
+        <param name="min_orthogroup_size" type="integer" value="4" min="4" label="Minimum orthogroup size" />
+    </inputs>
+    <outputs>
+        <collection name="tree" type="list" label="${tool.name} (phylogenetic trees) on ${on_string}">
+            <discover_datasets pattern="__name__" directory="geneFamilyPhylogenies_dir/orthogroups_tree" format="newick" />
+        </collection>
+        <collection name="phylip" type="list" label="${tool.name} (orthogroup phylip multiple sequence alignments) on ${on_string}">
+            <filter>tree_inference_cond['tree_inference'] == 'raxml'</filter>
+            <discover_datasets pattern="__name__" directory="geneFamilyPhylogenies_dir/phylip_aln" format="phylip" />
+        </collection>
+    </outputs>
+    <tests>
+        <test>
+            <param name="input">
+                <collection type="list">
+                    <element name="3722.faa.aln" value="3722.faa.aln"/>
+                </collection>
+            </param>
+            <param name="tree_inference" value="fasttree"/>
+            <output_collection name="tree" type="list">
+                <element name="3722.faa.aln.tree" file="3722.faa.aln.tree" ftype="newick"/>
+            </output_collection>
+        </test>
+    </tests>
+    <help>
+This tool is one of the PlantTribes collection of automated modular analysis pipelines for comparative and evolutionary
+analyses of genome-scale gene families and transcriptomes.  This tool performs gene family phylogenetic inference of
+multiple sequence alignments produced by the GeneFamilyAligner tool.
+
+-----
+
+**Required options**
+
+ * **Orthogroup alignments** - orthogroup alignment fasta files produced by the GeneFamilyAligner tool selected from your history.  Depending on how the GeneFamilyAligner tool was executed, these could either be pre-processed alignments, trimmed alignments or both trimmed and filtered alignments.
+ * **Phylogenetic inference method** - method for estimating orthogroup maximum likelihood (ML) phylogenetic trees.  PlantTribes estimates ML phylogenetic trees using either RAxML or FastTree algorithms.
+
+  - **Gene family scaffold** - one of the PlantTribes gene family scaffolds installed into Galaxy by the PlantTribes Scaffold Download Data Manager tool.  This is used only if RAxML is selected as the phylogenetic inference method.
+  - **Protein clustering method** - gene family scaffold protein clustering method as described in the AssemblyPostProcessor tool.    This is used only if RAxML is selected as the phylogenetic inference method.
+
+**Other options**
+
+ * **Rooting order configuration** - select 'Yes' to enable selection of a rooting order configuration file for RAxML.  Scaffold configuration templates (.rootingOrder.config) of how to customize the RAxML ML tree rooting order can be found in the scaffold data installed into Galaxy via the PlantTribes Scaffolds Download Data Manager tool, and is also available at the PlantTribes GitHub `repository`_.  Phylogenetic tree rooting order settings shown in these templates are used as defaults if 'No' is selected.
+ * **Bootstrap replicates** - number of bootstrap replicates for RAxML to conduct a rapid bootstrap analysis and search for the best-scoring ML tree (default = 100).
+ * **Maximum orthogroup size** - maximum number of sequences allowed in orthogroup alignments (default = 100).
+ * **Minimum orthogroup size** - minimum number of sequences allowed in orthogroup alignments (default = 4).
+
+.. _repository: https://github.com/dePamphilis/PlantTribes/tree/master/config
+
+    </help>
+    <citations>
+        <expand macro="citation1" />
+        <citation type="bibtex">
+            @article{Wall2008,
+            journal = {Nucleic Acids Research},
+            author = {2. Wall PK, Leebens-Mack J, Muller KF, Field D, Altman NS},
+            title = {PlantTribes: a gene and gene family resource for comparative genomics in plants},
+            year = {2008},
+            volume = {36},
+            number = {suppl 1},
+            pages = {D970-D976},}
+        </citation>
+        <citation type="bibtex">
+            @article{Sasidharan2012,
+            journal = {Nucleic Acids Research},
+            author = {3. Sasidharan R, Nepusz T, Swarbreck D, Huala E, Paccanaro A},
+            title = {GFam: a platform for automatic annotation of gene families},
+            year = {2012},
+            pages = {gks631},}
+        </citation>
+        <citation type="bibtex">
+            @article{Li2003,
+            journal = {Genome Research}
+            author = {4. Li L, Stoeckert CJ, Roos DS},
+            title = {OrthoMCL: identification of ortholog groups for eukaryotic genomes},
+            year = {2003},
+            volume = {13},
+            number = {9},
+            pages = {2178-2189},}
+        </citation>
+        <citation type="bibtex">
+            @article{Emms2015,
+            journal = {Genome Biology}
+            author = {5. Emms DM, Kelly S},
+            title = {OrthoFinder: solving fundamental biases in whole genome comparisons dramatically improves orthogroup inference accuracy},
+            year = {2015},
+            volume = {16},
+            number = {1},
+            pages = {157},}
+        </citation>
+        <citation type="bibtex">
+            @article{Stamatakis2014,
+            journal = {Bioinformatics},
+            author = {6. Stamatakis A},
+            title = {RAxML Version 8: A tool for Phylogenetic Analysis and Post-Analysis of Large Phylogenies},
+            year = {2014},
+            url = {http://sco.h-its.org/exelixis/web/software/raxml/index.html},}
+        </citation>
+        <citation type="bibtex">
+            @article{Price2010,
+            journal = {PLoS one},
+            author = {7. Price MN, Dehal PS, Arkin AP},
+            title = {FastTree 2-approximately maximim-likelihood trees for large alignments},
+            year = {2010},
+            volume = {5},
+            number = {3},
+            pages = {e9490},}
+        </citation>
+        <citation type="bibtex">
+            @article{Nascimento2016,
+            journal = {Bioinformatics},
+            author = {8. Nascimento M, Sousa A, Ramirez M, Francisco AP, Carriço JA, Vaz C},
+            title = {PHYLOViZ 2.0: providing scalable data integration and visualization for multiple phylogenetic inference methods},
+            year = {2016},
+            volume = {33},
+            number = {1},
+            pages = {128-129},}
+        </citation>
+    </citations>
+</tool>

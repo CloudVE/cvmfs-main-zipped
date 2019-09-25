@@ -1,4 +1,0 @@
-<?xml version="1.0"?>
-<repositories description="Emboss 5 requires the Galaxy applicable data formats used by Emboss tools.">
-    <repository changeset_revision="a89163f31369" name="emboss_datatypes" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
-</repositories>

@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<tool_dependency>
-  <package name="krona" version="2.6">
-    <repository changeset_revision="33c81f965131" name="package_krona_2_6" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
-  </package>
-</tool_dependency>

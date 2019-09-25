@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="numpy" version="1.9">
+       <repository changeset_revision="794f5cf3bb5d" name="package_python_2_7_numpy_1_9" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="freetype" version="2.5.2">
+        <repository changeset_revision="26586565bc22" name="package_freetype_2_5_2_matplotlib_fix" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="libpng" version="1.6.7">
+        <repository changeset_revision="05df724aefbb" name="package_libpng_1_6_7" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+        <package name="zlib" version="1.2.8">
+        <repository changeset_revision="63a4a902cda2" name="package_zlib_1_2_8" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="python" version="2.7.10">
+        <repository changeset_revision="80931fb5f433" name="package_python_2_7_10" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="matplotlib" version="1.4">
+        <install version="1.0">
+            <actions>
+                <action type="setup_python_environment">
+                   <repository changeset_revision="80931fb5f433" name="package_python_2_7_10" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
+                       <package name="python" version="2.7.10" />
+                   </repository>
+                   <repository changeset_revision="63a4a902cda2" name="package_zlib_1_2_8" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
+                        <package name="zlib" version="1.2.8" />
+                    </repository>
+                    <repository changeset_revision="794f5cf3bb5d" name="package_python_2_7_numpy_1_9" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
+                        <package name="numpy" version="1.9" />
+                    </repository>
+                    <repository changeset_revision="26586565bc22" name="package_freetype_2_5_2_matplotlib_fix" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
+                        <package name="freetype" version="2.5.2" />
+                    </repository>
+                    <repository changeset_revision="05df724aefbb" name="package_libpng_1_6_7" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
+                        <package name="libpng" version="1.6.7" />
+                    </repository>
+                    <!-- allow downloading and installing an Python package from https://pypi.org/ -->
+                    <package md5sum="476881ef4012262dfc8adc645ee786c4">https://pypi.python.org/packages/source/s/six/six-1.9.0.tar.gz</package>
+                    <package md5sum="4ef68e1c485b09e9f034e10473e5add2">https://pypi.python.org/packages/source/p/python-dateutil/python-dateutil-2.4.2.tar.gz</package>
+                    <package md5sum="0fe479be09fc2cf005f753d3acc35939">https://pypi.python.org/packages/source/p/pyparsing/pyparsing-2.0.3.tar.gz</package>
+                    <package md5sum="86af2e3e3c61849ac7576a6f5ca44267">https://pypi.python.org/packages/source/m/matplotlib/matplotlib-1.4.3.tar.gz</package>
+                </action>
+                <action type="set_environment">
+                    <environment_variable action="prepend_to" name="PYTHONPATH">$INSTALL_DIR</environment_variable>
+                    <environment_variable action="set_to" name="PYTHONPATH_MATPLOTLIB">$INSTALL_DIR</environment_variable>
+                    <environment_variable action="set_to" name="MATPLOTLIB_ROOT_DIR">$INSTALL_DIR</environment_variable>
+                </action>
+            </actions>
+        </install>
+        <readme>Compiling matplotlib requires a C compiler (typically gcc) and libpng.</readme>
+    </package>
+</tool_dependency>

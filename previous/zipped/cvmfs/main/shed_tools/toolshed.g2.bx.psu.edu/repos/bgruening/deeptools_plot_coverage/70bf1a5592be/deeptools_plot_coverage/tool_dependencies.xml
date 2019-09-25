@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<tool_dependency>
-    <package name="python" version="2.7.10">
-        <repository changeset_revision="0339c4a9b87b" name="package_python_2_7_10" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
-    </package>
-    <package name="deepTools" version="2.2.3">
-        <repository changeset_revision="2f4601e4fc32" name="package_python_2_7_deeptools_2_2_3" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
-    </package>
-</tool_dependency>

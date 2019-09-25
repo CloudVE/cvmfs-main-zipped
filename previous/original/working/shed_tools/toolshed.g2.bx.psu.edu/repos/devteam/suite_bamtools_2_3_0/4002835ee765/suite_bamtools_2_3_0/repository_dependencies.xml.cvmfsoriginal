@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<repositories>
+    <repository changeset_revision="76b2f1eee508" name="bamtools" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="71dd32fb0b0a" name="bamtools_split" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="9315b97e25a4" name="bamtools_filter" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+</repositories>

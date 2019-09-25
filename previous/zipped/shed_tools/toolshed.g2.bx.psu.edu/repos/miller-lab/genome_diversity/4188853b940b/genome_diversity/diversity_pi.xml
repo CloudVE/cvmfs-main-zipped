@@ -1,0 +1,30 @@
+<tool id="gd_diversity_pi" name="Diversity" version="1.0.0">
+  <description>&amp;pi;</description>
+
+  <command interpreter="python">
+    #import json
+    #import base64
+    #import zlib
+    #set $ind_names = $input.dataset.metadata.individual_names
+    #set $ind_colms = $input.dataset.metadata.individual_columns
+    #set $ind_dict = dict(zip($ind_names, $ind_colms))
+    #set $ind_json = json.dumps($ind_dict, separators=(',',':'))
+    #set $ind_comp = zlib.compress($ind_json, 9)
+    #set $ind_arg = base64.b64encode($ind_comp)
+    diversity_pi.py '$input' '$coverage_input' '$indiv_input' '$min_coverage' '$output' '$ind_arg'
+  </command>
+
+  <inputs>
+    <param name="input" type="data" format="gd_snp" label="SNP dataset" />
+    <param name="coverage_input" type="data" format="interval" label="Coverage dataset" />
+    <param name="indiv_input" type="data" format="gd_indivs" label="Population Individuals" />
+    <param name="min_coverage" type="integer" min="1" value="1" label="Minimum coverage" />
+  </inputs>
+
+  <outputs>
+    <data name="output" format="txt" metadata_source="input" />
+  </outputs>
+
+  <help>
+  </help>
+</tool>

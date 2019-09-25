@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="ea-utils" version="1.1.2-806">
+        <repository changeset_revision="cea0aa441b97" name="package_ea_utils_1_1_2_806" owner="lparsons" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+</tool_dependency>

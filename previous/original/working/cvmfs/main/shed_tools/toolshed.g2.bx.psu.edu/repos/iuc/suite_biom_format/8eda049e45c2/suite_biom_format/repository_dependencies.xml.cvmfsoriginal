@@ -1,4 +1,0 @@
-<?xml version="1.0"?>
-<repositories description="BIOM-format tools">  <repository changeset_revision="367b1ed91207" name="biom_add_metadata" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
-  <repository changeset_revision="501c21cce614" name="biom_convert" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
-</repositories>

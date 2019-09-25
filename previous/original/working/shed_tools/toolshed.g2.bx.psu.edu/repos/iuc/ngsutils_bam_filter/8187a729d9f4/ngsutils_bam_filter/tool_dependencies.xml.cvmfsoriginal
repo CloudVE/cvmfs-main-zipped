@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="pysam" version="0.7.7">
+        <repository changeset_revision="0a5141bdf9d0" name="package_pysam_0_7_7" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+</tool_dependency>

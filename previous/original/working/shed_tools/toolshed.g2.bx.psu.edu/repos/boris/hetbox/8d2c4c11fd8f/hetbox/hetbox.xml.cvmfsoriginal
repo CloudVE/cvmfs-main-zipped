@@ -1,0 +1,75 @@
+<tool id="hetbox" version="1.0" name="MAF boxplot">
+  <description>Minor Allele Frequency Boxplot</description>
+  <requirements>
+    <requirement type="package" version="2.15.0">R</requirement>
+    <requirement type="package" version="2.2.6">rpy2</requirement>
+    <requirement type="package" version="1.7.1">numpy</requirement>
+  </requirements>
+  <command interpreter="python">hetbox.py $input $outplot $outreport
+  </command>
+  <inputs>
+    <param name="input" type="data" format="tabular" label="Input allele counts table"/>
+    <param name="report" type="boolean" truevalue="yes" falsevalue="no" checked="True" label="Also generate a report on data spread" />
+  </inputs>
+  <outputs>
+    <data name="outplot" format="png" label="${tool.name} on ${on_string}: boxplot"/>
+    <data name="outreport" format="tabular" label="${tool.name} on ${on_string}: report">
+      <filter>report is True</filter>
+    </data>
+  </outputs>
+  <stdio>
+    <exit_code range="1:" err_level="fatal"/>
+    <exit_code range=":-1" err_level="fatal"/>
+  </stdio>
+
+  <help>
+
+.. class:: infomark
+
+**What it does**
+
+The MAF Boxplot tool takes a table listing heteroplasmic sites per sample and their corresponding minor allele frequency (MAF).
+It generates a boxplot of the minor allele frequencies per sample by default. The number of heteroplasmic sites is displayed under each box.
+Optionally, it can generate  a report that includes the total number of heteroplasmic sites, the median and the median absolute deviation (MAD) of the minor allele frequencies per sample.
+
+-----
+
+.. class:: warningmark
+
+**Note**
+
+Please, follow the format described below for the input file:
+
+-----
+
+.. class:: infomark
+
+**Formats**
+
+**Variant Annotator tool output format**
+
+Columns::
+
+    1.  sample id
+    2.  chromosome
+    3.  position
+    4   counts for A's
+    5.  counts for C's
+    6.  counts for G's
+    7.  counts for T's
+    8.  Coverage
+    9.  Number of alleles passing frequency threshold
+    10. Major allele
+    11. Minor allele
+    12. Minor allele frequency in position
+
+-----
+
+**Citation**
+
+If you use this tool, please cite Dickins B, Rebolledo-Jaramillo B, et al. *In preparation.*
+(boris-at-bx.psu.edu)
+
+
+  </help>
+</tool>

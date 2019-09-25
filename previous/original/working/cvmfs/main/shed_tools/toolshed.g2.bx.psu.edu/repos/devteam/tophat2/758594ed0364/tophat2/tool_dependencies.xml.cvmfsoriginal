@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<tool_dependency>
-  <package name="bowtie2" version="2.2.5">
-      <repository changeset_revision="30bd7eaeddbf" name="package_bowtie_2_2_5" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
-    </package>
-    <package name="tophat" version="2.1.0">
-      <repository changeset_revision="ed92d4c8e7f6" name="package_tophat_2_1_0" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
-    </package>
-</tool_dependency>

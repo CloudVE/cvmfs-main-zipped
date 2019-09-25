@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="requests" version="2.7">
+        <repository changeset_revision="7e330b122c8c" name="package_python_2_7_requests_2_7" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+</tool_dependency>

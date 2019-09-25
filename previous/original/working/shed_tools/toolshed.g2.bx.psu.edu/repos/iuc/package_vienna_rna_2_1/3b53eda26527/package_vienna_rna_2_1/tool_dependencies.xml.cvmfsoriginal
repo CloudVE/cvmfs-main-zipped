@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="perl" version="5.18.1">
+        <repository changeset_revision="114b6af405fa" name="package_perl_5_18" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="vienna_rna" version="2.1">
+        <install version="1.0">
+            <actions_group>
+                <actions architecture="x86_64" os="linux">
+                    <action type="download_by_url">https://depot.galaxyproject.org/package/linux/x86_64/ViennaRNA/ViennaRNA-2.1.8-Linux-x86_64.tar.gz</action>
+                    <action type="move_directory_files">
+                        <source_directory>.</source_directory>
+                        <destination_directory>$INSTALL_DIR</destination_directory>
+                    </action>
+                </actions>
+                <actions>
+                    <action type="download_by_url">http://www.tbi.univie.ac.at/RNA/packages/source/ViennaRNA-2.1.8.tar.gz</action>
+                    <action type="set_environment_for_install">
+                        <repository changeset_revision="114b6af405fa" name="package_perl_5_18" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
+                            <package name="perl" version="5.18.1" />
+                        </repository>
+                    </action>
+                    <action type="autoconf">--without-doc</action>
+                </actions>
+                <action type="set_environment">
+                    <environment_variable action="prepend_to" name="LIBRARY_PATH">$INSTALL_DIR/lib</environment_variable>
+                    <environment_variable action="prepend_to" name="LD_LIBRARY_PATH">$INSTALL_DIR/lib</environment_variable>
+                    <environment_variable action="prepend_to" name="PATH">$INSTALL_DIR/bin</environment_variable>
+                    <environment_variable action="prepend_to" name="C_INCLUDE_PATH">$INSTALL_DIR/include</environment_variable>
+                    <environment_variable action="set_to" name="ROOT_VIENNA_RNA_DIR">$INSTALL_DIR</environment_variable>
+                </action>
+            </actions_group>
+        </install>
+        <readme>Compiling ViennaRNA-2 requires a C compiler (typically gcc)</readme>
+    </package>
+</tool_dependency>

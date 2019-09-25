@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<tool_dependency>
-  <package name="cd-hit-auxtools" version="0.5-2012-03-07-fix-dan-gh-0.0.1">
-      <repository changeset_revision="d0db9d974498" name="package_cd_hit_auxtools_0_5_2012_03_07_fix_dan" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
-    </package>
-</tool_dependency>

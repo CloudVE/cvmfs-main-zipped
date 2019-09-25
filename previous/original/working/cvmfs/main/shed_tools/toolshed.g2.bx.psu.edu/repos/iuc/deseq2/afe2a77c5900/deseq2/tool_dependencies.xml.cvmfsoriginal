@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<tool_dependency>
-    <package name="deseq2" version="1.8.2">
-       <repository changeset_revision="623321e04b2d" name="package_deseq2_1_8_2" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
-    </package>
-</tool_dependency>

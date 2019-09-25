@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<repositories description="This is a metapackage that includes the cufflinks tool suite v 2.2.1 (cufflinks, cuffcompare, cuffmerge, cuffdiff, cuffnorm, cuffquant, and gffread) wrappers and dependencies.">
+    <repository changeset_revision="8e534225baa9" name="cuffcompare" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="db57b46b05bf" name="cuffdiff" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="64698e16f4a6" name="cufflinks" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="b6e3849293b1" name="cuffmerge" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="a26af05ac218" name="cuffnorm" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="5d8b9dcaf17d" name="cuffquant" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="5f6e6582c01d" name="gffread" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+</repositories>

@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<tool_dependency>
-    <package name="imagemagick" version="6.9.3">
-        <repository changeset_revision="942ae5bafee3" name="package_imagemagick_6_9_3" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
-    </package>
-    <package name="meme" version="4.11.0">
-        <repository changeset_revision="738dc831aeac" name="package_meme_4_11_0" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
-    </package>
-</tool_dependency>
