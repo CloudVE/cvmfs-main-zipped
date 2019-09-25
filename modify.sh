@@ -4,8 +4,7 @@ rm -rf ./working/
 mkdir ./working/
 cp -r /cvmfs/main/config ./working/
 cp -r /cvmfs/main/tool_data ./working/
-cp -r /cvmfs/main/shed_tools ./working/
-find ./working/ -name '{.hg,test-data}' -type d -delete
+find /cvmfs/main/shed_tools -name '*.xml' -exec cp --parents \{\} ./working/ \;
 find ./working/ -type f -exec sed -i.cvmfsoriginal -e 's%cvmfs/main.galaxyproject.org%cvmfs/zipped%g' {} \;
 rm -rf ./previous/
 mv ./current/ ./previous/
