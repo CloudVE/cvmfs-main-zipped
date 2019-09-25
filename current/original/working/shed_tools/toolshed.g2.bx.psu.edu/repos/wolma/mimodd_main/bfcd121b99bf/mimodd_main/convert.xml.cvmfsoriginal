@@ -1,0 +1,439 @@
+<tool id="mimodd_convert" name="MiModD Convert" version="@MIMODD_WRAPPER_VERSION@">
+    <description>converts sequence data into different formats</description>
+    <macros>
+        <import>macros.xml</import>
+        <macro name="to_format">
+            <param name="oformat" type="select" label="to">
+            	<option value="sam">sam</option>
+	            <option value="bam">bam</option>
+	            <yield />
+	        </param>
+        </macro>
+        <macro name="se_selector" token_format="fastq">
+            <conditional name="input">
+                <param name="repr" type="select"
+                label="Single-end input data provided as">
+                    <option value="individual">Individual datasets</option>
+                    <option value="collection">Collection of datasets</option>
+                </param>
+                <when value="individual">
+                    <repeat name="input_data" title="fastq input datasets"
+                    default="1" min="1">
+	                    <param name="file1" type="data" format="@FORMAT@"
+	                    label="single-end read data"/>
+                    </repeat>
+                </when>
+                <when value="collection">
+                    <param name="input_data" type="data_collection"
+                    collection_type="list" format="fastq, fastq.gz"
+                    label="collection of single-end read input datasets" /> 
+                </when>
+            </conditional>
+            <param name="header" type="data" format="sam" label="Use Header File"
+            help="A SAM file with header information, as generated, for example, by the NGS Run Annotation Tool, that will be used to attach metainformation to the results file."/>
+
+        </macro>
+        <macro name="pe_selector" token_format="fastq">
+            <conditional name="input">
+                <param name="repr" type="select"
+                label="Paired-end input data provided as">
+                    <option value="individual">Individual datasets</option>
+                    <option value="collection">Paired collection</option>
+                    <option value="list_of_pairs">List of pairs</option>
+                </param>
+                <when value="individual">
+                    <repeat name="input_data" title="fastq input datasets"
+                    default="1" min="1">
+	                    <param name="file1" type="data" format="@FORMAT@"
+	                    label="first set of reads of paired-end data"/>
+	                    <param name="file2" type="data" format="@FORMAT@"
+	                    label="second set of reads of paired-end data"/>
+                    </repeat>
+                </when>
+                <when value="collection">
+                    <param name="input_data" type="data_collection"
+                    collection_type="paired" format="fastq, fastq.gz"
+                    label="paired input dataset collection" /> 
+                </when>
+                <when value="list_of_pairs">
+                    <param name="input_data" type="data_collection"
+                    collection_type="list:paired" format="fastq, fastq.gz"
+                    label="nested collection of paired input datasets" />
+                </when>
+            </conditional>
+            <param name="header" type="data" format="sam" label="Use Header File"
+            help="A SAM file with header information, as generated, for example, by the NGS Run Annotation Tool, that will be used to attach metainformation to the results file."/>
+
+        </macro>
+        <macro name="sam_bam_selector" token_format="sam">
+            <param name="input_data" type="data" format="@FORMAT@"
+            label="input dataset"/>
+            <param name="header" type="hidden" value="None"/>
+        </macro>
+        <macro name="fastq_output_choices">
+            <param name="split_on_rgs" type="hidden" value=""/>
+            <param name="reads_to_report" type="select" display="radio"
+            label="Types of reads to generate output for"
+            help="By default, the tool will generate two dataset collections, one for single reads found in the input file, and one for paired reads. If you know, in advance, that the input contains only single or only paired reads, you can prevent the generation of an empty dataset collection by selecting the appropriate option here.">
+                <option value="default">Single and paired reads</option>
+                <option value="single">Single reads only</option>
+                <option value="paired">Paired reads only</option>
+            </param>
+            <param name="multisegment_report" type="boolean" checked="false"
+            label="Generate additional output for multi-segment reads"
+            help="Multi-segment reads, as opposed to single- and two-segment/paired reads, are not present in typical NGS data, but allowed in SAM/BAM files. If you expect multi-segment reads in the input file, enable this option." />
+        </macro>
+        <macro name="bam_output_choices">
+            <param name="split_on_rgs" type="boolean" truevalue="--split-on-rgs" falsevalue="" checked="false"
+            label="Split output based on read group IDs"
+            help="If the input file contains reads from different read groups, write them to separate output files; implied automatically for conversions to fastq and gzipped fastq format"/>
+        </macro>
+    </macros>
+    <expand macro="requirements" />
+    <expand macro="stdio" />
+    <expand macro="version_command" />
+    <command><![CDATA[
+    ## Currently Galaxy does not autoconvert collections of fastq.gz files.
+    ## This tool wrapper fixes that by allowing fastq and fastq.gz as input
+    ## collection formats.
+    ## gz_input is then used as flag to indicate a fastq.gz input file
+    #set gz_input = False
+    #if $str($mode.output.split_on_rgs) or $str($mode.output.oformat) == "fastq" or $str($mode.output.oformat) == "gz":
+      mkdir converted_data &&
+    #end if
+  
+	mimodd convert 
+      #if $str($mode.iformat) in ("sam", "bam"):
+          '${mode.output.input_data}'
+      #else if $str($mode.iformat) == "fastq_pe":
+        #if $str($mode.output.input.repr) == "collection":
+          '$mode.output.input.input_data.forward' '$mode.output.input.input_data.reverse'
+          ## A paired collection - if the forward dataset is gzipped we assume
+          ## the reverse dataset is too.
+          #if $mode.output.input.input_data.forward.is_of_type('fastq.gz'):
+            #set gz_input = True
+          #end if
+        #else
+          #for $i in $mode.output.input.input_data
+            #if $str($mode.output.input.repr) == "individual":
+              '${i.file1}' '${i.file2}'
+            #else
+              '$i.forward' '$i.reverse'
+              ## A list:paired collection - let the last forward dataset
+              ## indicate whether input is gzipped
+              #if $i.forward.is_of_type('fastq.gz'):
+                #set gz_input = True
+              #end if
+            #end if
+          #end for
+        #end if
+      #else
+        #for $i in $mode.output.input.input_data
+          #if $str($mode.output.input.repr) == "collection":
+            '$i'
+            ## A simple collection of files - the last one determines
+            ## whether we assume gzipped input
+            #if $i.is_of_type('fastq.gz'):
+              #set gz_input = True
+            #end if
+          #else
+            '${i.file1}'
+          #end if
+        #end for
+      #end if
+	  #if $str($mode.output.header) != "None":
+		--header '$(mode.output.header)'
+	  #end if
+      #if $str($outputname) == "None":
+	    --ofile converted_data/read_group
+	  #else
+	    --ofile '$outputname'
+	  #end if
+	  #if $gz_input:
+	    ## a gzipped input dataset was found so lets set --iformat accordingly
+	    #if $str($mode.iformat) == "fastq_pe":
+	      --iformat gz_pe
+	    #else
+	      --iformat gz
+	    #end if
+	  #else
+	    --iformat $(mode.iformat)
+	  #end if
+	  --oformat $(mode.output.oformat)
+	  ${mode.output.split_on_rgs}
+
+    #if $str($mode.output.oformat) == "fastq" or $str($mode.output.oformat) == "gz":
+      &&
+      cd converted_data &&
+      for f in *2segments_r1.fastq.gz; do [ -f "\$f" ] || continue; mv "\$f" "`basename \$f _r1.fastq.gz`_forward.fastq.gz"; done &&
+      for f in *2segments_r2.fastq.gz; do [ -f "\$f" ] || continue; mv "\$f" "`basename \$f _r2.fastq.gz`_reverse.fastq.gz"; done &&
+      for f in *2segments_r1.fastq; do [ -f "\$f" ] || continue; mv "\$f" "`basename \$f _r1.fastq`_forward.fastq"; done &&
+      for f in *2segments_r2.fastq; do [ -f "\$f" ] || continue; mv "\$f" "`basename \$f _r2.fastq`_reverse.fastq"; done
+    #end if
+
+    ]]></command>
+  
+    <inputs>
+        <conditional name="mode">
+	        <param name="iformat" type="select" label="Convert from"
+	        help="Your choice will update the interface to display further choices appropriate for your type of input data.">
+        	    <option value="fastq">fastq: single-end (one file)</option>
+	            <option value="fastq_pe">fastq: paired-end (two files)</option>
+	            <option value="sam">sam</option>
+	            <option value="bam">bam</option>
+            </param>	
+            <when value="fastq">
+	            <conditional name="output">
+	                <expand macro="to_format" />
+	                <when value="sam">
+                        <expand macro="se_selector" format="fastq" />
+                        <param name="split_on_rgs" type="hidden" value=""/>
+                    </when>
+	                <when value="bam">
+                        <expand macro="se_selector" format="fastq" />
+                        <param name="split_on_rgs" type="hidden" value=""/>
+                    </when>
+                </conditional>
+	        </when>
+	        <when value="fastq_pe">
+	            <conditional name="output">
+	                <expand macro="to_format" />
+	                <when value="sam">
+                        <expand macro="pe_selector" format="fastq" />
+                        <param name="split_on_rgs" type="hidden" value=""/>
+                    </when>
+	                <when value="bam">
+                        <expand macro="pe_selector" format="fastq" />
+                        <param name="split_on_rgs" type="hidden" value=""/>
+                    </when>
+                </conditional>
+	        </when>
+	        <when value="sam">
+	            <conditional name="output">
+	                <expand macro="to_format">
+	                    <option value="fastq">fastq</option>
+	                    <option value="gz">gzipped fastq</option>
+	                </expand>
+	                <when value="fastq">
+	                    <expand macro="sam_bam_selector" format="sam" />
+	                    <expand macro="fastq_output_choices" />
+	                </when>
+	                <when value="gz">
+	                    <expand macro="sam_bam_selector" format="sam" />
+	                    <expand macro="fastq_output_choices" />
+	                </when>
+	                <when value="bam">
+	                    <expand macro="sam_bam_selector" format="sam" />
+	                    <expand macro="bam_output_choices" />
+	                </when>
+	                <when value="sam">
+	                    <expand macro="sam_bam_selector" format="sam" />
+	                    <expand macro="bam_output_choices" />
+	                </when>
+	            </conditional>
+	        </when>
+	        <when value="bam">
+	            <conditional name="output">
+	                <expand macro="to_format">
+	                    <option value="fastq">fastq</option>
+	                    <option value="gz">gzipped fastq</option>
+	                </expand>
+	                <when value="fastq">
+	                    <expand macro="sam_bam_selector" format="bam" />
+	                    <expand macro="fastq_output_choices" />
+	                </when>
+	                <when value="gz">
+	                    <expand macro="sam_bam_selector" format="bam" />
+	                    <expand macro="fastq_output_choices" />
+	                </when>
+	                <when value="bam">
+	                    <expand macro="sam_bam_selector" format="bam" />
+	                    <expand macro="bam_output_choices" />
+	                </when>
+	                <when value="sam">
+	                    <expand macro="sam_bam_selector" format="bam" />
+	                    <expand macro="bam_output_choices" />
+	                </when>
+	            </conditional>
+	        </when>
+        </conditional>
+    </inputs>
+  
+    <outputs>
+        <data name="outputname" format="bam"
+        label="Reads converted to ${mode.output.oformat} by ${tool.name} on ${on_string}">
+	        <change_format>
+	            <when input="mode.output.oformat" value="sam" format="sam" />
+	        </change_format>
+	        <filter>
+	            (mode['output']['oformat'] in ("bam", "sam") and not mode['output']['split_on_rgs'])
+	        </filter>
+        </data>
+        <collection name="bam_split_on_read_groups" type="list"
+        label="Reads converted to ${mode.output.oformat} by ${tool.name} on ${on_string}">
+            <discover_datasets pattern="__designation_and_ext__"
+            directory="converted_data" />
+	        <filter>
+	            (mode['output']['oformat'] in ('bam', 'sam') and mode['output']['split_on_rgs'])
+	        </filter>
+        </collection>
+        <collection name="fastq_SE_output_split_on_read_groups" type="list"
+        label="Single reads converted to fastq by ${tool.name} on ${on_string}">
+            <discover_datasets
+            pattern="(?P&lt;designation&gt;.+)_1segments_r1\.(?P&lt;ext&gt;fastq(\.gz)*)"
+            directory="converted_data" />
+	        <filter>
+	            (mode['output']['oformat'] in ('fastq', 'gz') and mode['output']['reads_to_report'] in ('default', 'single'))
+	        </filter>
+        </collection>
+        <collection name="fastq_PE_reads_split_on_read_groups" type="list:paired"
+        label="Read pairs converted to fastq by ${tool.name} on ${on_string}">
+            <discover_datasets
+            pattern="(?P&lt;identifier_0&gt;read_group_.+)_2segments_(?P&lt;identifier_1&gt;(forward|reverse))\.(?P&lt;ext&gt;fastq(\.gz)*)"
+            directory="converted_data" />
+	        <filter>
+	            (mode['output']['oformat'] in ('fastq', 'gz') and mode['output']['reads_to_report'] in ('default', 'paired'))
+	        </filter>
+        </collection>
+        <collection name="fastq_multi-segment_reads_split_on_read_groups" type="list:list"
+        label="Multi-segment reads converted to fastq by ${tool.name} on ${on_string}">
+            <discover_datasets
+            pattern="(?P&lt;identifier_0&gt;read_group_.+)_(?P&lt;identifier_1&gt;[3-9]|[1-9][0-9]+)segments_r[0-9]+\.(?P&lt;ext&gt;fastq(\.gz)*)"
+            directory="converted_data" />
+	        <filter>
+	            (mode['output']['oformat'] in ('fastq', 'gz') and mode['output']['multisegment_report'])
+	        </filter>
+        </collection>
+    </outputs>
+
+    <tests>
+        <test expect_num_outputs="1">
+            <conditional name="mode">
+                <param name="iformat" value="fastq" />
+                <conditional name="output">
+                    <param name="oformat" value="bam" />
+                    <conditional name="input">
+                        <param name="repr" value="individual" />
+                        <repeat name="input_data">
+                            <param name="file1"
+                            value="split_pair_reads_1.fastqsanger" />
+                        </repeat>
+                    </conditional>
+                    <param name="header" value="header_only.sam" />
+                </conditional>
+            </conditional>
+            <output name="outputname" file="reads_1_w_header.bam"
+            ftype="bam" />
+        </test>
+        <test expect_num_outputs="1">
+            <conditional name="mode">
+                <param name="iformat" value="fastq_pe" />
+                <conditional name="output">
+                    <param name="oformat" value="bam" />
+                    <conditional name="input">
+                        <param name="repr" value="individual" />
+                        <repeat name="input_data">
+                            <param name="file1"
+                            value="split_pair_reads_1.fastqsanger" />
+                            <param name="file2"
+                            value="split_pair_reads_2.fastqsanger" />
+                        </repeat>
+                    </conditional>
+                    <param name="header" value="header_only.sam" />
+                </conditional>
+            </conditional>
+            <output name="outputname" file="reads_1and2_w_header.bam"
+            ftype="bam" />
+        </test>
+        <test expect_num_outputs="1">
+            <conditional name="mode">
+                <param name="iformat" value="fastq_pe" />
+                <conditional name="output">
+                    <param name="oformat" value="bam" />
+                    <conditional name="input">
+                        <param name="repr" value="collection" />
+                        <param name="input_data">
+                            <collection type="paired">
+                                <element name="forward"
+                                value="split_pair_reads_1.fastqsanger" />
+                                <element name="reverse"
+                                value="split_pair_reads_2.fastqsanger" />
+                            </collection>
+                        </param>
+                    </conditional>
+                    <param name="header" value="header_only.sam" />
+                </conditional>
+            </conditional>
+            <output name="outputname" file="reads_1and2_w_header.bam" ftype="bam" />
+        </test>
+        <test expect_num_outputs="1">
+            <conditional name="mode">
+                <param name="iformat" value="bam" />
+                <conditional name="output">
+                    <param name="oformat" value="sam" />
+                    <param name="input_data" value="a.bam" />
+                </conditional>
+            </conditional>
+            <output name="outputname" file="a.sam" ftype="sam" />
+        </test>
+        <test>
+            <conditional name="mode">
+                <param name="iformat" value="sam" />
+                <conditional name="output">
+                    <param name="oformat" value="bam" />
+                    <param name="input_data" value="a.sam" />
+                    <param name="split_on_rgs" value="true" />
+                </conditional>
+            </conditional>
+            <output_collection name="bam_split_on_read_groups" type="list" count="2">
+                <element name="read_group_000" file="a_part1.bam" ftype="bam" />
+            </output_collection>
+        </test>
+    </tests>
+    
+    <help><![CDATA[
+.. class:: infomark
+
+   **What it does**
+
+The tool converts between different file formats used for storing
+next-generation sequencing data.
+
+As input file types it can handle fastq, SAM or BAM format, which it can
+convert to SAM or BAM format.
+
+**Notes:**
+
+1) The tool can convert fastq files representing data from paired-end
+sequencing runs to appropriate SAM/BAM format provided that the mate
+information is split over two fastq files in corresponding order.
+
+   **TIP:** If your paired-end data is arranged differently, you may look into
+   the *fastq splitter* and *fastq de-interlacer* tools for Galaxy from the
+   `Fastq Manipulation category`_ of the Galaxy Tool Shed to see if they can
+   convert your files to the expected format.
+   
+2) Merging partial fastq (or gzipped fastq) files into a single SAM/BAM file is
+supported both for single-end and paired-end data. Simply add additional input
+datasets and select the appropriate files (pairs of files in case of paired-end
+data).
+
+   Concatenation of SAM/BAM file during conversion is currently not supported.
+
+3) For input in fastq format a SAM header file providing run metadata
+**has to be specified**. The information in this file will be used as the
+header data of the new SAM/BAM file. You can use the *NGS Run Annotation* tool
+to generate a new header file for your data.
+
+   For input in SAM/BAM format the tool will simply copy the existing header
+   data to the new file. To modify the header of an existing SAM/BAM file, use
+   the *Reheader BAM file* tool instead.
+
+.. _Fastq Manipulation category: https://toolshed.g2.bx.psu.edu/repository/browse_repositories_in_category?id=310ff67d4caf6531
+.. _recipe for using gzipped fastq files in Galaxy: http://mimodd.readthedocs.org/en/latest/recipes.html#use-gzipped-fastq-files-in-galaxy
+.. _MiModD user guide: http://mimodd.readthedocs.org/en/latest
+
+@HELP_FOOTER@
+    ]]></help>
+    <expand macro="citations" />
+</tool>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<repositories description="deepTools: User-friendly tools for the normalization, quality control and visualization of deep-sequencing data">  <repository changeset_revision="b4886e1369c4" name="deeptools_bam_pe_fragmentsize" owner="bgruening" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="18f46b571982" name="deeptools_bigwig_compare" owner="bgruening" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="e94df7973bb0" name="deeptools_plot_fingerprint" owner="bgruening" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="e57bfadcab30" name="deeptools_plot_heatmap" owner="bgruening" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="87d2c75884d9" name="deeptools_multi_bam_summary" owner="bgruening" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="65e0795278b4" name="deeptools_bam_coverage" owner="bgruening" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="8518a8e9ac82" name="deeptools_multi_bigwig_summary" owner="bgruening" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="6a056fb2b9c1" name="deeptools_compute_gc_bias" owner="bgruening" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="70bf1a5592be" name="deeptools_plot_coverage" owner="bgruening" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="b3589208f673" name="deeptools_plot_correlation" owner="bgruening" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="8f0137a68f02" name="deeptools_correct_gc_bias" owner="bgruening" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="610bbc25ed8b" name="deeptools_plot_pca" owner="bgruening" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="d5d57b40b29a" name="deeptools_bam_compare" owner="bgruening" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="17d456f4051b" name="deeptools_compute_matrix" owner="bgruening" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="f454a9fe7af9" name="deeptools_plot_profile" owner="bgruening" toolshed="https://toolshed.g2.bx.psu.edu" />
+</repositories>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<tool_dependency>
+  <!--
+  <package name="beautifulsoup" version="3.2.1">
+    <repository prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu/" owner="miller-lab" name="package_beautifulsoup_3_2_1" changeset_revision="83c21b81ee9d" />
+  </package>
+  -->
+  <package name="eigensoft" version="5.0.1">
+    <repository prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu/" owner="miller-lab" name="package_eigensoft_5_0_1" changeset_revision="02f04f3579b5" />
+  </package>
+  <package name="fisher" version="0.1.4">
+    <repository prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu/" owner="miller-lab" name="package_fisher_0_1_4" changeset_revision="c84c287b81a4" />
+  </package>
+  <package name="gd_c_tools" version="0.1">
+    <repository prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu/" owner="miller-lab" name="package_gd_c_tools_0_1" changeset_revision="989859342136" />
+  </package>
+  <package name="matplotlib" version="1.2.1">
+    <repository prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu/" owner="iuc" name="package_matplotlib_1_2" changeset_revision="9d164359606b" />
+  </package>
+  <package name="mechanize" version="0.2.5">
+    <repository prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu/" owner="miller-lab" name="package_mechanize_0_2_5" changeset_revision="59801857421b" />
+  </package>
+  <!--
+  <package name="munkres" version="1.0.5.4">
+    <repository prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu/" owner="miller-lab" name="package_munkres_1_0_5_4" changeset_revision="613b89b28767" />
+  </package>
+  -->
+  <package name="networkx" version="1.8.1">
+    <repository prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu/" owner="miller-lab" name="package_networkx_1_8_1" changeset_revision="43c20433f2d6" />
+  </package>
+  <package name="phast" version="1.3">
+    <repository prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu/" owner="miller-lab" name="package_phast_1_3" changeset_revision="f633177177b9" />
+  </package>
+  <package name="quicktree" version="1.1">
+    <repository prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu/" owner="miller-lab" name="package_quicktree_1_1" changeset_revision="dae77031fa2f" />
+  </package>
+  <package name="raxml" version="7.7.6">
+    <repository prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu/" owner="miller-lab" name="package_raxml_7_7_6" changeset_revision="77f73a8c45be" />
+  </package>
+</tool_dependency>

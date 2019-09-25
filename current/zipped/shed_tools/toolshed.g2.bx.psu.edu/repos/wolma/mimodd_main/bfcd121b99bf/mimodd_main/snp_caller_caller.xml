@@ -1,0 +1,191 @@
+<tool id="mimodd_varcall" name="MiModD Variant Calling"
+version="@MIMODD_WRAPPER_VERSION@">
+    <description>
+    generates a BCF file of position-specific variant likelihoods and coverage information based on a reference sequence and reads aligned against it
+    </description>
+    <macros>
+        <import>macros.xml</import>
+        <macro name="test_mentions_samples">
+            <assert_stdout>
+                <has_text_matching expression="000.+N2" />
+                <has_text_matching expression="266-1.+ot266" />
+            </assert_stdout>
+        </macro>
+    </macros>
+    <expand macro="requirements" />
+    <expand macro="stdio" />
+    <expand macro="version_command" />
+    <command><![CDATA[
+	mimodd varcall
+	  #if str($reference.source) == "cached":
+        '$reference.genome.fields.path'
+      #else:
+        '$reference.genome'
+      #end if
+	  #for $input_file in $list_input
+        '$input_file'
+      #end for
+        --index-files 
+      #for $input_file in $list_input
+        '${input_file.metadata.bam_index}'
+      #end for
+	    --ofile '$ofile'
+	    $group_by_id
+	    $adv_settings.md5_check
+        --max-depth $adv_settings.max_depth
+        --verbose
+        --quiet
+    ]]></command>
+
+    <inputs>
+        <conditional name="reference">
+            <param name="source" type="select"
+            label="Will you select a reference genome from your history or use a built-in genome?">
+                <option value="cached">Use a built-in genome</option>
+                <option value="history">Use a genome from my history</option>
+            </param>
+            <when value="cached">
+                <param name="genome" type="select"
+                label="reference genome"
+                help="The fasta reference genome that variants should be called against.">
+                    <options from_data_table="all_fasta" />
+                </param>
+            </when>
+            <when value="history">
+                <param name="genome" type="data" format="fasta"
+                label="reference genome"
+                help="The fasta reference genome that variants should be called against."/>
+            </when>
+        </conditional>
+        <param name="list_input" type="data" multiple="true" format="bam"
+        label="Aligned reads input dataset(s)"
+        help="Select at least one dataset to call variants on. If you select several datasets or a dataset collection, this tool will perform joint variant calling on all of them and produce a single, possibly multisample, output dataset." />
+        <param name="group_by_id" type="boolean" truevalue="-i" falsevalue="" checked="false" 
+        label="group reads based on read group id only" 
+        help="If selected, this option ensures that only the read group id (but not the sample name) is considered in grouping reads in the input file(s). If turned off, read groups with identical sample names are automatically pooled and analyzed together even if they come from different NGS runs." />
+    	<section name="adv_settings" title="More options" expanded="False">
+            <param name="md5_check" type="boolean" truevalue="" falsevalue="-x" checked="true" 
+            label="md5 sum verification of contigs/chromosomes" 
+            help="leave turned on to avoid accidental variant calling against a wrong reference genome version (see the tool help below)." />
+            <param name="max_depth" type="integer" value="250" min="0"
+            label="average sample depth cap limit (default: 250)" 
+            help="only relevant for very large sample numbers and/or very high sample coverage; increase to use more of the data, decrease to save memory"/>
+        </section>
+    </inputs>
+
+    <outputs>
+        <data name="ofile" format="bcf" 
+        label="Variant Calls from MiModd Variant Calling on ${on_string}">
+            <actions>
+                <conditional name="reference.source">
+                    <when value="cached">
+                        <action type="metadata" name="dbkey">
+                            <option type="from_data_table" name="all_fasta" column="1" offset="0">
+                                <filter type="param_value" ref="reference.genome" column="0" />
+                            </option>
+                        </action>
+                    </when>
+                </conditional>
+            </actions>
+        </data>
+    </outputs>
+
+    <tests>
+        <test>
+            <conditional name="reference">
+                <param name="source" value="history" />
+                <param name="genome" value="a.fa" />
+            </conditional>
+            <param name="list_input" value="a.bam" />
+            <expand macro="test_mentions_samples" />
+        </test>
+        <test>
+            <conditional name="reference">
+                <param name="source" value="history" />
+                <param name="genome" value="a.fa" />
+            </conditional>
+            <param name="list_input" value="a_part1.bam,a_part2.bam" />
+            <expand macro="test_mentions_samples" />
+        </test>
+        <test>
+            <conditional name="reference">
+                <param name="source" value="history" />
+                <param name="genome" value="a.fa" />
+            </conditional>
+            <param name="list_input" value="a.bam" />
+            <param name="group_by_id" value="true" />
+            <section name="adv_settings">
+                <param name="md5_check" value="false" />
+                <param name="max_depth" value="1000" />
+            </section>
+            <assert_command>
+                <has_text text="-i" />
+                <has_text text="-x" />
+                <has_text text="--max-depth 1000" />
+            </assert_command>
+        </test>
+    </tests>
+    <help><![CDATA[
+.. class:: infomark
+
+   **What it does**
+
+The tool transforms the read-centered information in the aligned reads input
+datasets into position-centered information including variant call statistics
+(using samtools mpileup and bcftools internally).
+
+**It produces a BCF file that serves as the basis for all further variant
+analyses with MiModD**.
+
+-----
+
+**Notes on Advanced Settings:**
+
+**MD5 checksums**
+
+By default, the tool will check whether the input BAM dataset(s) provide(s) MD5
+checksums for the reference genome contig/chromosome sequences used during read
+alignment (e.g., the *MiModD Read Alignment* tool stores these in the BAM file
+header). If it finds MD5 sums for all sequences, it will compare them to the
+checksums of the reference genome sequences used in the current tool run and
+abort with an error message if there is a discrepancy between them. If it finds
+contigs/chromosomes with matching checksum, but different names in the aligned
+reads dataset(s) and the reference genome dataset, it will use the name from
+the reference genome in its output.
+
+This behavior has two benefits:
+
+1) It protects from accidental variant calling against a wrong reference genome
+(*i.e.*, a different one than that used during the alignment step), which would
+result in wrong calls. This is the primary reason why we recommend to leave the
+check activated.
+
+2) It provides an opportunity to change sequence names between aligned reads
+files and variant call files by providing a reference genome file with altered
+sequence names (but identical sequence data).
+
+Since there may be rare cases where you *really* want to align against a
+reference genome with different checksums (e.g., you may have edited the
+reference sequence based on the alignment results), the check can be turned
+off, but only do this if you know *exactly* why.
+
+
+**Average sample depth cap limit**
+
+For each of a total of ``M`` BAM input datasets, the tool will only pile up a
+maximum number of reads ``N`` per position to avoid excessive memory usage with
+very large numbers of samples sequenced at high coverage.
+N will be calculated as the maximum of ``8000/M`` and ``DEPTH*S``, where ``S``
+is the maximum number of samples found in a single input dataset and ``DEPTH``
+is the *average sample depth cap limit* specified in the tool form.
+
+This parameter, thus sets the average depth of the pile-up per sample that is
+guaranteed to be used even when there is a very large number of samples. As can
+be seen from the formula above, however, it will rarely become relevant for any
+regular-size analysis.
+
+
+@HELP_FOOTER@
+    ]]></help>
+    <expand macro="citations" />
+</tool>

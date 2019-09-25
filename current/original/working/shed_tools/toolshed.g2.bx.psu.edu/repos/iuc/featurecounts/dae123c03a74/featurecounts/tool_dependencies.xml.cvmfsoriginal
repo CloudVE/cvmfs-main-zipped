@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="subread" version="1.4.6p5">
+        <repository changeset_revision="3645871df985" name="package_subread_1_4_6_p5" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+</tool_dependency>

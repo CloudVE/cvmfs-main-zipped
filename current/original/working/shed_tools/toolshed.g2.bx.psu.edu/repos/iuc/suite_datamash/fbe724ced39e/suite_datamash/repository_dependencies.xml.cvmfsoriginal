@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<repositories description="datamash performs basic numeric, textual and statistical operations on input textual data files">  <repository changeset_revision="60e287a6d17d" name="datamash_transpose" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="c4611129661b" name="datamash_ops" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
+  <repository changeset_revision="24b9a80cac40" name="datamash_reverse" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
+</repositories>

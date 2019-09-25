@@ -1,0 +1,123 @@
+<tool id="mimodd_header" name="MiModD Run Annotation" version="@MIMODD_WRAPPER_VERSION@">
+    <description>
+    writes run metadata in SAM format for attaching it to sequenced reads data
+    </description>
+    <macros>
+        <import>macros.xml</import>
+    </macros>
+    <expand macro="requirements" />
+    <expand macro="stdio" />
+    <expand macro="version_command" />
+    <command><![CDATA[
+  	mimodd header
+	    --rg-id '$rg_id'
+	    --rg-sm '$rg_sm'
+	  #if $str($rg_cn):
+		--rg-cn '$rg_cn'
+	  #end if
+	  #if $str($rg_ds):
+		--rg-ds '$rg_ds'
+	  #end if	
+	  #if $str($rg_date):
+		--rg-dt '$rg_date'
+	  #end if
+	  #if $str($rg_lb):
+		--rg-lb '$rg_lb'
+	  #end if
+	  #if $str($rg_pl):
+		--rg-pl '$rg_pl'
+	  #end if
+	  #if $str($rg_pi):
+		--rg-pi '$rg_pi'
+	  #end if
+	  #if $str($rg_pu):
+		--rg-pu '$rg_pu'
+	  #end if
+	    --ofile '$ofile'
+
+    ]]></command>
+
+    <inputs>
+        <param name="rg_id" type="text" size="80"
+        label="read-group ID (required)">
+            <validator type="empty_field" />
+            <expand macro="lex_sam_header" />
+        </param>
+        <param name="rg_sm" type="text" size="80"
+        label="sample name (required)">
+            <validator type="empty_field" />
+            <expand macro="lex_sam_header" />
+        </param>
+        <param name="rg_ds" type="text" size="80" label="description">
+            <expand macro="lex_sam_header" />
+        </param>
+        <param name="rg_date" type="text"
+        label="date (YYYY-MM-DD) the run was produced">
+            <expand macro="YYYY-MM-DD_format_validator" />
+        </param>
+        <param name="rg_cn" type="text" size="80"
+        label="name of sequencing center">
+            <expand macro="lex_sam_header" />
+        </param>
+        <param name="rg_lb" type="text" size="80" label="read-group library">
+            <expand macro="lex_sam_header" />
+        </param>
+        <param name="rg_pl" type="text"
+        label="platform/technology used to produce the reads">
+            <expand macro="known_sequencing_platform options" />
+            <expand macro="lex_sam_header" />
+        </param>
+        <param name="rg_pi" type="text" label="predicted median insert size">
+            <validator type="expression" message="an integer number is required">not value or value.isdigit()</validator>
+        </param>
+        <param name="rg_pu" type="text" size="80"
+        label="platform unit; unique identifier">
+            <expand macro="lex_sam_header" />
+        </param>
+    </inputs>
+
+    <outputs>
+        <data name="ofile" format="sam" 
+        label="${rg_sm} (${rg_id}) header information from MiModd ${tool.name} on ${on_string}"/>
+    </outputs>
+    
+    <tests>
+        <test>
+            <param name="rg_id" value="000" />
+            <param name="rg_sm" value="N2" />
+            <param name="rg_ds" value="C. elegans wt" />
+            <param name="rg_date" value="2017-06-27" />
+            <param name="rg_cn" value="ABC" />
+            <param name="rg_lb" value="XYZ" />
+            <param name="rg_pl" value="ILLUMINA" />
+            <param name="rg_pi" value="400" />
+            <param name="rg_pu" value="SEQ123" />
+            <output name="ofile" ftype="sam" file="header_only.sam" />
+        </test>
+    </tests>
+
+    <help><![CDATA[
+.. class:: infomark
+
+   **What it does**
+
+This tool takes user-provided information about a next-generation sequencing
+run and constructs a valid SAM format header from it.
+
+The resulting dataset can be used by the *MiModD Convert*, *MiModD Reheader*
+and the *MiModD Read Alignment* tool to add run metadata to sequenced reads
+input datasets (or to overwrite pre-existing information).
+
+**Note:**
+
+**MiModD requires run metadata for every input file at the Alignment step !**
+
+**Tip:**
+
+While you can do Alignments from fastq file format by providing a custom header file directly to the *SNAP Read Alignment* tool, we **recommend** you to first convert all input files to and archive all datasets in SAM/BAM format with appropriate header information prior to any downstream analysis. Although a bit more time-consuming, this practice protects against information loss and ensures that the input datasets will remain useful for others in the future.
+
+@HELP_FOOTER@
+    ]]></help>
+    <expand macro="citations" />
+</tool>
+	

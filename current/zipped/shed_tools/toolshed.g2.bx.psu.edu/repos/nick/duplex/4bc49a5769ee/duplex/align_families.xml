@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<tool id="align_families" name="Du Novo: Align families" version="0.5">
+  <description>of duplex sequencing reads</description>
+  <requirements>
+    <requirement type="package" version="7.221">mafft</requirement>
+    <requirement type="package" version="0.5">duplex</requirement>
+    <requirement type="set_environment">DUPLEX_DIR</requirement>
+    <!-- TODO: require Python 2.7 -->
+  </requirements>
+  <command detect_errors="exit_code">python \$DUPLEX_DIR/align_families.py -p \${GALAXY_SLOTS:-1} $input &gt; $output
+  </command>
+  <inputs>
+    <param name="input" type="data" format="tabular" label="Input reads" help="with barcodes, grouped by family"/>
+  </inputs>
+  <outputs>
+    <data name="output" format="tabular"/>
+  </outputs>
+  <tests>
+    <test>
+      <param name="input" value="smoke.families.tsv"/>
+      <output name="output" file="smoke.families.aligned.tsv"/>
+    </test>
+    <test>
+      <param name="input" value="families.in.tsv"/>
+      <output name="output" file="families.sort.tsv"/>
+    </test>
+  </tests>
+  <help>
+
+**What it does**
+
+This is for processing duplex sequencing data. It does a multiple sequence alignment on each (single-stranded) family of reads.
+
+-----
+
+**Input**
+
+This expects the output format of the "Make families" tool.
+
+-----
+
+**Output**
+
+The output is a tabular file where each line corresponds to a (single) read.
+
+The columns are::
+
+  1: barcode (both tags)
+  2: tag order in barcode ("ab" or "ba")
+  3: read mate ("1" or "2")
+  4: read name
+  5: read sequence, aligned ("-" for gaps)
+  6: read quality scores, aligned (" " for gaps)
+
+-----
+
+**Alignments**
+
+The alignments are done using MAFFT, specifically the command
+::
+
+  $ mafft --nuc --quiet family.fa &gt; family.aligned.fa
+
+    </help>
+</tool>

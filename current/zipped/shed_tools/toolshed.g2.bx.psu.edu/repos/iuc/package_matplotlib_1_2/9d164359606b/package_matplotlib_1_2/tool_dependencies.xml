@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="numpy" version="1.7.1">
+       <repository changeset_revision="c75482be1d3a" name="package_numpy_1_7" owner="iuc" prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="freetype" version="2.4.11">
+        <repository changeset_revision="8761091302c4" name="package_freetype_2_4" owner="iuc" prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="matplotlib" version="1.2.1">
+        <install version="1.0">
+            <actions>
+                <!-- first action is always downloading -->
+                <action type="download_by_url">http://downloads.sourceforge.net/project/matplotlib/matplotlib/matplotlib-1.2.1/matplotlib-1.2.1.tar.gz</action>
+
+                <!-- populate the environment variables from the dependend repos -->
+                <action type="set_environment_for_install">
+                    <repository changeset_revision="c75482be1d3a" name="package_numpy_1_7" owner="iuc" toolshed="http://toolshed.g2.bx.psu.edu">
+                        <package name="numpy" version="1.7.1" />
+                    </repository>
+                    <repository changeset_revision="8761091302c4" name="package_freetype_2_4" owner="iuc" toolshed="http://toolshed.g2.bx.psu.edu">
+                        <package name="freetype" version="2.4.11" />
+                    </repository>
+                </action>
+
+                <!-- install matplotlib -->
+                <action type="make_directory">$INSTALL_DIR/lib/python</action>
+                <action type="shell_command">
+                    export PYTHONPATH=$PYTHONPATH:$INSTALL_DIR/lib/python:$PYTHONPATH_NUMPY &amp;&amp; 
+                    export CPLUS_INCLUDE_PATH=$FREETYPE_INCLUDE_DIR:$FREETYPE_INCLUDE_DIR/freetype2/ &amp;&amp; 
+                    export LIBRARY_PATH=$FREETYPE_LIB_DIR &amp;&amp; 
+                    python setup.py install --install-lib $INSTALL_DIR/lib/python --install-scripts $INSTALL_DIR/bin
+                </action>
+                <action type="set_environment">
+                    <environment_variable action="append_to" name="PYTHONPATH">$INSTALL_DIR/lib/python</environment_variable>
+                    <environment_variable action="append_to" name="PYTHONPATH">$ENV[PYTHONPATH_NUMPY]</environment_variable>
+                    <environment_variable action="prepend_to" name="PATH">$ENV[PATH_NUMPY]</environment_variable>
+                    <environment_variable action="set_to" name="PYTHONPATH_MATPLOTLIB">$INSTALL_DIR/lib/python</environment_variable>
+                </action>
+            </actions>
+        </install>
+        <readme>Compiling matplotlib requires a C compiler (typically gcc) and libpng.</readme>
+    </package>
+</tool_dependency>

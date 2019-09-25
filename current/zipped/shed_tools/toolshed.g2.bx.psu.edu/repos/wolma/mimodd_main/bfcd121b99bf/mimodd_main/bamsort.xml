@@ -1,0 +1,97 @@
+<tool id="mimodd_sort" name="MiModD Sort" version="@MIMODD_WRAPPER_VERSION@">
+    <description>takes a SAM/BAM dataset and generates a coordinate/name-sorted copy</description>
+    <macros>
+        <import>macros.xml</import>
+    </macros>
+    <expand macro="requirements" />
+    <expand macro="stdio" />
+    <expand macro="version_command" />
+    <command>
+	mimodd sort '$input.ifile' 
+	    -o '$ofile' --iformat $input.iformat --oformat $oformat $by_name
+    </command>
+  
+    <inputs>
+        <conditional name="input">
+            <param name="iformat" type="select" label="Input data format">
+                <option value="bam">bam</option>
+                <option value="sam">sam</option>
+            </param>
+            <when value="bam">
+                <param name="ifile" type="data" format="bam" 
+                label="BAM input dataset to sort" />
+            </when>
+            <when value="sam">
+                <param name="ifile" type="data" format="sam" 
+                label="SAM input dataset to sort" />
+            </when>
+        </conditional>
+        <param name="oformat" type="select" label="Output format for the sorted data">
+            <option value="bam">bam</option>
+            <option value="sam">sam</option>
+        </param>
+        <param name="by_name" type="boolean" truevalue="-n" falsevalue="" checked="false"
+        label="Sort by read names instead of coordinates"
+        help="A less common option, but necessary, e.g., if you want to re-align coordinate sorted paired-end reads with the MiModD Read Alignment Tool or other NGS mapping tools." />
+    </inputs>
+  
+    <outputs>
+        <data name="ofile" format="bam" 
+        label="Sorted output from MiModd ${tool.name} on ${on_string}">
+            <change_format>
+	            <when input="oformat" value="sam" format="sam" />
+            </change_format>
+        </data>
+    </outputs>
+    
+    <tests>
+        <test>
+            <conditional name="input">
+                <param name="iformat" value="sam" />
+                <param name="ifile" value="header_only.sam" />
+            </conditional>
+            <param name="oformat" value="bam" />
+            <assert_command>
+                <not_has_text text="-n" />
+            </assert_command>
+            <output name="ofile" ftype="bam" file="so_coordinate.bam" />
+        </test>
+        <test>
+            <conditional name="input">
+                <param name="iformat" value="bam" />
+                <param name="ifile" value="header_only.bam" />
+            </conditional>
+            <param name="oformat" value="sam" />
+            <param name="by_name" value="true" />
+            <assert_command>
+                <has_text text=" -n" />
+            </assert_command>
+            <output name="ofile" ftype="sam" file="so_queryname.sam" />
+        </test>
+    </tests>
+
+    <help><![CDATA[
+.. class:: infomark
+
+   **What it does**
+
+The tool sorts an aligned reads input dataset, typically by the reference
+genome coordinates that the reads have been mapped to.
+
+Coordinate-sorted input files are expected by most downstream MiModD tools, but
+note that the *MiModD Read Alignment* produces coordinate-sorted output by
+default and it is only necessary to sort files that come from other sources or
+from *MiModD Read Alignment* jobs with a custom sort order.
+
+The option *Sort by read names instead of coordinates* is useful if you want to
+re-align coordinate-sorted paired-end data. In *paired-end mode*, the
+*MiModD Read Alignment* tool expects the reads in the input file to be arranged
+in read pairs, *i.e.*, the forward read information of a pair must be followed
+immediately by its reverse mate information, which is typically not the case in
+coordinate-sorted data. Resorting such data by read names fixes this problem.
+
+@HELP_FOOTER@
+    ]]></help>
+    <expand macro="citations" />
+</tool>
+

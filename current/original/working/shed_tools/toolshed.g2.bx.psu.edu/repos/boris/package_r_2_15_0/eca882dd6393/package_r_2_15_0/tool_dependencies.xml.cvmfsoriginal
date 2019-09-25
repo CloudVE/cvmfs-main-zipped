@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="readline" version="6.2">
+        <repository changeset_revision="ff20613e6fee" name="package_readline_6_2" owner="boris" prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="libpng" version="1.6.7">
+        <repository changeset_revision="7de5acbf6c85" name="package_libpng_1_6_7" owner="boris" prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="cairo" version="1.12.14">
+        <repository changeset_revision="4e91b26c4fef" name="package_cairo_1_12_14" owner="boris" prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="pixman" version="0.32.4">
+        <repository changeset_revision="7c1b724614eb" name="package_pixman_0_32_4" owner="boris" prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="freetype" version="2.5.2">
+        <repository changeset_revision="f349e776ca59" name="package_freetype_2_5_2" owner="boris" prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="R" version="2.15.0">
+        <install version="1.0">
+            <actions>
+                <action type="download_by_url">http://cran.rstudio.com/src/base/R-2/R-2.15.0.tar.gz</action>
+                <action type="set_environment_for_install">
+                    <repository changeset_revision="ff20613e6fee" name="package_readline_6_2" owner="boris" prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu">
+                        <package name="readline" version="6.2" />
+                    </repository>
+                    <repository changeset_revision="7de5acbf6c85" name="package_libpng_1_6_7" owner="boris" prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu">
+                        <package name="libpng" version="1.6.7" />
+                    </repository>
+                    <repository changeset_revision="4e91b26c4fef" name="package_cairo_1_12_14" owner="boris" prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu">
+                        <package name="cairo" version="1.12.14" />
+                    </repository>
+                    <repository changeset_revision="7c1b724614eb" name="package_pixman_0_32_4" owner="boris" prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu">
+                        <package name="pixman" version="0.32.4" />
+                    </repository>
+                    <repository changeset_revision="f349e776ca59" name="package_freetype_2_5_2" owner="boris" prior_installation_required="True" toolshed="http://toolshed.g2.bx.psu.edu">
+                        <package name="freetype" version="2.5.2" />
+                    </repository>
+                </action>
+                <action type="shell_command">
+                    export LDFLAGS="-L$PNG_LIBS -L$READLINE_LIBS" &amp;&amp;
+                    export LDFLAGS="$LDFLAGS -Wl,-rpath,$READLINE_LIBS" &amp;&amp;
+                    export LDFLAGS="$LDFLAGS -Wl,-rpath,$PIXMAN_LIB_PATH" &amp;&amp;
+                    export LDFLAGS="$LDFLAGS -Wl,-rpath,$PNG_LIB_PATH" &amp;&amp;
+                    export LDFLAGS="$LDFLAGS -Wl,-rpath,$FREETYPE_LIB_PATH" &amp;&amp;
+                    export CFLAGS="-I$PNG_INCLUDES -I$READLINE_INCLUDES" &amp;&amp;
+                    export CXXFLAGS="-I$PNG_INCLUDES -I$READLINE_INCLUDES" &amp;&amp;
+                    export CPPFLAGS="-I$PNG_INCLUDES -I$READLINE_INCLUDES" &amp;&amp;
+                    ./configure --with-blas \
+                                --with-lapack \
+                                --with-readline \
+                                --with-cairo \
+                                --with-libpng \
+                                --without-x \
+                                --enable-R-shlib \
+                                --disable-R-framework \
+                                --libdir=$INSTALL_DIR/lib \
+                                --prefix=$INSTALL_DIR 
+                </action>
+                <action type="make_install" />
+                <action type="set_environment">
+                    <environment_variable action="set_to" name="R_HOME">$INSTALL_DIR/lib/R</environment_variable>
+                    <environment_variable action="set_to" name="R_LIBS">$INSTALL_DIR/lib/R/library</environment_variable>
+                    <environment_variable action="prepend_to" name="PATH">$INSTALL_DIR/lib/R/bin</environment_variable>
+                </action>
+            </actions>
+        </install>
+        <readme>R is a free software environment for statistical computing and graphics
+            WARNING: See custom compilation options above
+        </readme>
+    </package>
+</tool_dependency>
