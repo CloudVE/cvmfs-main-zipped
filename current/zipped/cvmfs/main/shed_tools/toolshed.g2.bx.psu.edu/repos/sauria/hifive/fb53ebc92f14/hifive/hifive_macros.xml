@@ -1,0 +1,849 @@
+<?xml version="1.0"?>
+<macros>
+    <xml name="requirements">
+        <requirements>
+            <requirement type='package' version="1.5.3">hifive</requirement>
+            <requirement type='package' version="2.0.0">mpi4py</requirement>
+            <yield/>
+        </requirements>
+    </xml>
+    <token name="@WRAPPER_VERSION@">0.1</token>
+    <xml name="stdio">
+        <stdio>
+            <!-- Anything other than zero is an error -->
+            <exit_code range="1:"/>
+            <exit_code range=":-1"/>
+            <!-- In case the return code has not been set propery check stderr too -->
+            <regex match="Error:"/>
+            <regex match="Exception:"/>
+        </stdio>
+    </xml>
+    <token name="@HIC_FEND@">
+-B $command.bed
+    </token>
+    <xml name="hic_fend_xml">
+        <!-- Options controlling fend file creation -->
+        <param format="bed" name="bed" type="data" label="RE Cutsite BED File" optional="False"/>
+    </xml>
+    <token name="@HIC_SEQUENCE@">
+-i $command.insert
+#if str( $command.datafile.format ) == "bam":
+    #for $bam_file in $command.datafile.paired_bam:
+        --bam ${bam_file.readend1} ${bam_file.readend2}
+    #end for
+#elif str( $command.datafile.format ) == "mat":
+    --mat ${command.datafile.mat}
+#else:
+    #for raw_file in $command.datafile.raw_files:
+        --raw ${raw_file.raw}
+    #end for
+#end if
+    </token>
+    <xml name="hic_sequence_xml">
+        <!-- Options controlling hic sequence data input -->
+        <conditional name="datafile">
+            <param name="format" type="select" label="Data Format">
+                <option value="bam">bam</option>
+                <option value="mat">mat</option>
+                <option value="raw">raw</option>
+            </param>
+            <when value="bam">
+                <repeat name="paired_bam" title="Sequencing lane" min="1">
+                    <param format="bam" name="readend1" label="First read end" type="data"/>
+                    <param format="bam" name="readend2" label="Second read end" type="data"/>
+                </repeat>
+            </when>
+            <when value="mat">
+                <param format="tabular" name="mat" type="data" label="Mat file" optional="False"/>
+            </when>
+            <when value="raw">
+                <repeat name="raw_files" title="Raw file" min="1">
+                    <param format="tabular" name="raw" type="data" label="Raw file" optional="False"/>
+                </repeat>
+            </when>
+        </conditional>
+        <param type="integer" name="insert" value="500" label="Maximum insert size" optional="False">
+            <validator type="in_range" min="1"/>
+        </param>
+    </xml>
+    <token name="@HIC_PROJECT@">
+-f $command.minint
+-j $command.minbin
+-n $command.numbin
+    </token>
+    <xml name="hic_project_xml">
+        <!-- Options controlling hic project creation -->
+        <param type="integer" name="minint" value="20" label="Minimum interactions per fend" optional="False">
+            <validator type="in_range" min="1"/>
+        </param>
+        <param type="integer" name="minbin" value="1000" label="Minimum distance bin cutoff" optional="False">
+            <validator type="in_range" min="1"/>
+        </param>
+        <param type="integer" name="numbin" value="100" label="Number of distance bins" optional="False" help="A value of zero indicates that finding the distance dependence function should be skipped.">
+            <validator type="in_range" min="0"/>
+        </param>
+    </xml>
+    <token name="@HIC_RANGE@">
+-m $command.filtermin
+-x $command.filtermax
+    </token>
+    <xml name="hic_range_xml">
+        <!-- Options controlling hic interaction size range limits -->
+        <param type="integer" name="filtermin" value="1000000" label="Minimum interaction distance" optional="False" help="The minimum interaction distance included for filtering fends and learning correction values.">
+            <validator type="in_range" min="0"/>
+        </param>
+        <param type="integer" name="filtermax" value="0" label="Maximum interaction distance" optional="False" help="The maximum interaction distance included for filtering fends and learning correction values.">
+            <validator type="in_range" min="0"/>
+        </param>
+    </xml>
+    <token name="@HIC_CHROMOSOMES@">
+#if str( $command.chroms ) != "":
+    -c $command.chroms
+#end if
+    </token>
+    <xml name="hic_chromosomes_xml">
+        <!-- Options controlling hic subset selection of chromosomes -->
+        <param type="text" size="60" name="chroms" value="" label="Included chromosomes" optional="False" help="If a subset of chromosomes are to be used, enter a comma-separated list of chromosome names."/>
+    </xml>
+    <token name="@HIC_NORMALIZE@">
+$command.analysis.algorithm
+#if str( $command.analysis.algorithm ) == "probability" or str( $command.analysis.algorithm ) == "binning-probability":
+    -b $command.analysis.probiter
+    -l $command.analysis.step
+    -g $command.analysis.change
+    $command.analysis.precalc
+#end if
+#if str( $command.analysis.algorithm ) == "express" or str( $command.analysis.algorithm ) == "binning-express" :
+    $command.analysis.removedist
+    -w $command.analysis.expreads
+    $command.analysis.binary
+    -g $command.analysis.change
+    #if str( $command.analysis.subalgorithm.kr ) == "yes":
+        -z
+    #else
+        -e $command.analysis.subalgorithm.expiter
+    #end if
+#end if
+#if str( $command.analysis.algorithm ) == "binning" or str( $command.analysis.algorithm ) == "binning-express" or str( $command.analysis.algorithm ) == "binning-probability":
+    -r $command.analysis.biniter
+    -t $command.analysis.threshold
+    -y $command.analysis.binreads
+    -v $command.analysis.model
+    -s $command.analysis.modelbins
+    -u $command.analysis.modeltypes
+    --pseudocounts $command.analysis.pseudo
+#end if
+    </token>
+    <xml name="hic_normalize_xml">
+        <!-- Options controlling hic algorithm selection and normalization parameters -->
+        <conditional name='analysis'>
+            <param name="algorithm" type="select" label="Learning Algorithm">
+                <option value="probability">Probability</option>
+                <option value="express">Express</option>
+                <option value="binning">Binning</option>
+                <option value="binning-probability">Binning-Probability</option>
+                <option value="binning-express">Binning-Express</option>
+            </param>
+
+            <when value="probability">
+                <param type="integer" name="probiter" value="1000" label="Maximum number of iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="float" name="change" value="0.0005" label="Parameter change cutoff" optional="False" help="The cutoff for the absolute gradient values such that learning will cease if all values fall below this threshold.">
+                    <validator type="in_range" min="0.00000001"/>
+                </param>
+                <param type="float" name="step" value="0.5" label="Learning rate scaling factor" optional="False">
+                    <validator type="in_range" min="0.000001" max="1.0"/>
+                </param>
+                <param type="select" name="precalc" label="Precalculate probability corrections from fragment means">
+                    <option value="-p">yes</option>
+                    <option value="">no</option>
+                </param>
+            </when>
+
+            <when value="express">
+                <conditional name="subalgorithm">
+                    <param type="select" name="kr" label="Use Knight-Ruiz algorithm." help="This performs an unweighted matrix balancing for learning express corrections.">
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                    </param>
+                    <when value="yes"/>
+                    <when value="no">
+                        <param type="integer" name="expiter" value="1000" label="Number of express iterations" optional="False">
+                            <validator type="in_range" min="1"/>
+                        </param>
+                    </when>
+                </conditional>
+                <param type="select" name="removedist" label="Remove estimated distance-dependence prior to learning express corrections.">
+                    <option value="-d">yes</option>
+                    <option value="">no</option>
+                </param>
+                <param type="select" name="expreads" label="Reads to use for learning express corrections.">
+                    <option value="cis">cis</option>
+                    <option value="trans">trans</option>
+                    <option value="all">all</option>
+                </param>
+                <param type="float" name="change" value="0.0005" label="Parameter change cutoff" optional="False" help="The minimum mean change in fend correction parameter values needed to keep running past 'iterations' number of iterations. If using the Knight-Ruiz algorithm this is the residual cutoff.">
+                    <validator type="in_range" min="0.00000000000001"/>
+                </param>
+                <param type="select" name="binary" label="Use binary indicator instead of counts.">
+                    <option value="">no</option>
+                    <option value="-k">yes</option>
+                </param>
+            </when>
+
+            <when value="binning">
+                <param type="integer" name="biniter" value="1000" label="Maximum number of binning iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="float" name="threshold" value="1.0" label="Learning threshold" optional="False"
+                    help="The minimum change needed in the log-likelihood to continue learning binning corrections.">
+                    <validator type="in_range" min="0.000001" max="1.0"/>
+                </param>
+                <param type="select" name="binreads" label="Reads to use for learning binning corrections.">
+                    <option value="cis">cis</option>
+                    <option value="trans">trans</option>
+                    <option value="all">all</option>
+                </param>
+                <param type="text" size="60" name="model" value="len,distance" label="Model parameters" optional="False" help="A comma-separated list of fragment characteristics to learn corrections for. These can include 'len' and any characteristics included in the fragment bed file.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modelbins" value="20,20" label="Number of parameter bins" optional="False" help="A comma-separated list of bins to divide each model parameter into.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modeltypes" value="even,even" label="Parameter types" optional="False" help="A comma-separated list of model parameter types. These can be 'even', 'fixed', 'even-const', and 'fixed-const'.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="integer" name="pseudo" value="0" label="Number of pseudo-counts" optional="True">
+                    <validator type="in_range" min="0"/>
+                </param>
+            </when>
+
+            <when value="binning-probability">
+                <param type="integer" name="biniter" value="1000" label="Maximum number of binning iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="float" name="threshold" value="1.0" label="Learning threshold" optional="False"
+                    help="The minimum change needed in the log-likelihood to continue learning binning corrections.">
+                    <validator type="in_range" min="0.000001" max="1.0"/>
+                </param>
+                <param type="select" name="binreads" label="Reads to use for learning binning corrections.">
+                    <option value="cis">cis</option>
+                    <option value="trans">trans</option>
+                    <option value="all">all</option>
+                </param>
+                <param type="text" size="60" name="model" value="len,distance" label="Model parameters" optional="False" help="A comma-separated list of fragment characteristics to learn corrections for. These can include 'len' and any characteristics included in the fragment bed file.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modelbins" value="20,20" label="Number of parameter bins" optional="False" help="A comma-separated list of bins to divide each model parameter into.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modeltypes" value="even,even" label="Parameter types" optional="False" help="A comma-separated list of model parameter types. These can be 'even', 'fixed', 'even-const', and 'fixed-const'.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="integer" name="pseudo" value="0" label="Number of pseudo-counts" optional="True">
+                    <validator type="in_range" min="0"/>
+                </param>
+                <param type="integer" name="probiter" value="1000" label="Maximum number of iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="float" name="change" value="0.0005" label="Parameter change cutoff" optional="False" help="The cutoff for the absolute gradient values such that learning will cease if all values fall below this threshold.">
+                    <validator type="in_range" min="0.00000001"/>
+                </param>
+                <param type="float" name="step" value="0.5" label="Learning rate scaling factor" optional="False">
+                    <validator type="in_range" min="0.000001" max="1.0"/>
+                </param>
+                <param type="select" name="precalc" label="Precalculate probability corrections from fragment means">
+                    <option value="-p">yes</option>
+                    <option value="">no</option>
+                </param>
+            </when>
+
+            <when value="binning-express">
+                <param type="integer" name="biniter" value="1000" label="Maximum number of binning iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="float" name="threshold" value="1.0" label="Learning threshold" optional="False"
+                    help="The minimum change needed in the log-likelihood to continue learning binning corrections.">
+                    <validator type="in_range" min="0.000001" max="1.0"/>
+                </param>
+                <param type="select" name="binreads" label="Reads to use for learning binning corrections.">
+                    <option value="cis">cis</option>
+                    <option value="trans">trans</option>
+                    <option value="all">all</option>
+                </param>
+                <param type="text" size="60" name="model" value="len,distance" label="Model parameters" optional="False" help="A comma-separated list of fragment characteristics to learn corrections for. These can include 'len' and any characteristics included in the fragment bed file.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modelbins" value="20,20" label="Number of parameter bins" optional="False" help="A comma-separated list of bins to divide each model parameter into.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modeltypes" value="even,even" label="Parameter types" optional="False" help="A comma-separated list of model parameter types. These can be 'even', 'fixed', 'even-const', and 'fixed-const'.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="integer" name="pseudo" value="0" label="Number of pseudo-counts" optional="True">
+                    <validator type="in_range" min="0"/>
+                </param>
+                <param type="integer" name="expiter" value="1000" label="Number of express iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="select" name="removedist" label="Remove estimated distance-dependence prior to learning express corrections.">
+                    <option value="-d">yes</option>
+                    <option value="">no</option>
+                </param>
+                <param type="select" name="expreads" label="Reads to use for learning express corrections.">
+                    <option value="cis">cis</option>
+                    <option value="trans">trans</option>
+                    <option value="all">all</option>
+                </param>
+            </when>
+        </conditional>
+    </xml>
+    <token name="@HIC_DATATYPE@">
+-d $command.datatype
+    </token>
+    <xml name="hic_datatype_xml">
+        <!-- Options controlling type of hic data to return -->
+        <param name="datatype" type="select" label="Datatype">
+            <option value="raw">raw</option>
+            <option value="fend">fend-corrected</option>
+            <option value="distance">distance-corrected</option>
+            <option value="enrichment">enrichment</option>
+        </param>
+    </xml>
+    <token name="@5C_FRAGMENT@">
+$command.bed
+    </token>
+    <xml name="5c_fragment_xml">
+        <!-- Options controlling fragment file creation -->
+        <param format="bed" name="bed" type="data" label="Probed RE fragment boundary BED File" optional="False"/>
+    </xml>
+    <token name="@5C_SEQUENCE@">
+#if str( $command.datafile.format ) == "bam":
+    #for $bam_file in $command.datafile.paired_bam:
+        -B ${bam_file.readend1} ${bam_file.readend2}
+    #end for
+#else:
+    #for $count_file in $command.datafile.count_files:
+        -C ${count_file.count}
+    #end for
+#end if
+    </token>
+    <xml name="5c_sequence_xml">
+        <!-- Options controlling 5c sequence data input -->
+        <conditional name="datafile">
+            <param name="format" type="select" label="Data Format">
+                <option value="bam">bam</option>
+                <option value="count">count</option>
+            </param>
+            <when value="bam">
+                <repeat name="paired_bam" title="Sequencing lane" min="1">
+                    <param format="bam" name="readend1" label="First read end" type="data"/>
+                    <param format="bam" name="readend2" label="Second read end" type="data"/>
+                </repeat>
+            </when>
+            <when value="count">
+                <repeat name="count_files" title="Counts file" min="1">
+                    <param format="tabular" name="count" type="data" label="Counts file" optional="False"/>
+                </repeat>
+            </when>
+        </conditional>
+    </xml>
+    <token name="@5C_PROJECT@">
+-f $command.minint
+    </token>
+    <xml name="5c_project_xml">
+        <!-- Options controlling 5c project creation -->
+        <param type="integer" name="minint" value="20" label="Minimum interactions per fragment" optional="False">
+            <validator type="in_range" min="1"/>
+        </param>
+    </xml>
+    <token name="@5C_RANGE@">
+-m $command.mindist
+-x $command.maxdist
+    </token>
+    <xml name="5c_range_xml">
+        <!-- Options controlling 5c interaction size range limits -->
+        <param type="integer" name="mindist" value="0" label="Minimum interaction distance" optional="False" help="The minimum interaction distance included for filtering fragments and learning correction values.">
+            <validator type="in_range" min="0"/>
+        </param>
+        <param type="integer" name="maxdist" value="0" label="Maximum interaction distance" optional="False" help="The maximum interaction distance included for filtering fragments and learning correction values. A value of zero indicates no upper limit.">
+            <validator type="in_range" min="0"/>
+        </param>
+    </xml>
+    <token name="@5C_REGIONS@">
+#if str( $command.regions ) != "":
+    -r $command.regions
+#end if
+    </token>
+    <xml name="5c_regions_xml">
+        <!-- Options controlling 5c subset selection of regions -->
+        <param type="text" size="60" name="regions" value="" label="Included regions" optional="False" help="If a subset of regions are to be used, enter a comma-separated list of region indices."/>
+    </xml>
+    <token name="@5C_NORMALIZE@">        
+$command.analysis.algorithm
+#if str( $command.analysis.algorithm ) == "probability" or str( $command.analysis.algorithm ) == "binning-probability" or str( $command.analysis.algorithm ) == "probability-binning":
+    -b $command.analysis.probiter
+    -l $command.analysis.step
+    -g $command.analysis.change
+    $command.analysis.precalc
+#end if
+#if str( $command.analysis.algorithm ) == "express" or str( $command.analysis.algorithm ) == "binning-express" or str( $command.analysis.algorithm ) == "probability-express":
+    $command.analysis.removedist
+    -w $command.analysis.expreads
+    #if str( $command.analysis.subalgorithm.kr ) == "yes":
+        -z
+    #else:
+        -e $command.analysis.subalgorithm.expiter
+        $command.analysis.subalgorithm.logged
+    #end if
+#end if
+#if str( $command.analysis.algorithm ) == "binning" or str( $command.analysis.algorithm ) == "binning-express" or str( $command.analysis.algorithm ) == "binning-probability" or str( $command.analysis.algorithm ) == "express-binning" or str( $command.analysis.algorithm ) == "probability-binning":
+    -i $command.analysis.biniter
+    -t $command.analysis.threshold
+    -y $command.analysis.binreads
+    -v $command.analysis.model
+    -n $command.analysis.modelbins
+    -u $command.analysis.modeltypes
+#end if
+    </token>
+    <xml name="5c_normalize_xml">
+        <!-- Options controlling 5c algorithm selection and normalization parameters -->
+        <conditional name='analysis'>
+            <param name="algorithm" type="select" label="Learning Algorithm">
+                <option value="probability">Probability</option>
+                <option value="express">Express</option>
+                <option value="binning">Binning</option>
+                <option value="binning-probability">Binning-Probability</option>
+                <option value="binning-express">Binning-Express</option>
+                <option value="probability-binning">Probability-Binning</option>
+                <option value="express-binning">Express-Binning</option>
+            </param>
+
+            <when value="probability">
+                <param type="integer" name="probiter" value="1000" label="Maximum number of iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="float" name="change" value="0.0005" label="Parameter change cutoff" optional="False" help="The cutoff for the absolute gradient values such that learning will cease if all values fall below this threshold.">
+                    <validator type="in_range" min="0.00000001"/>
+                </param>
+                <param type="float" name="step" value="0.5" label="Learning rate scaling factor" optional="False">
+                    <validator type="in_range" min="0.000001" max="1.0"/>
+                </param>
+                <param type="select" name="precalc" label="Precalculate probability corrections from fragment means">
+                    <option value="-p">yes</option>
+                    <option value="">no</option>
+                </param>
+            </when>
+
+            <when value="express">
+                <conditional name="subalgorithm">
+                    <param type="select" name="kr" label="Use Knight-Ruiz algorithm." help="This performs an unweighted matrix balancing for learning express corrections.">
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                    </param>
+                    <when value="yes"/>
+                    <when value="no">
+                        <param type="integer" name="expiter" value="1000" label="Number of express iterations" optional="False">
+                            <validator type="in_range" min="1"/>
+                        </param>
+                        <param type="select" name="logged" label="Use logged-reads instead of reads.">
+                            <option value="-k">yes</option>
+                            <option value="">no</option>
+                        </param>
+                    </when>
+                </conditional>
+                <param type="select" name="removedist" label="Remove estimated distance-dependence prior to learning express corrections.">
+                    <option value="-d">yes</option>
+                    <option value="">no</option>
+                </param>
+                <param type="select" name="expreads" label="Reads to use for learning express corrections.">
+                    <option value="cis">cis</option>
+                    <option value="trans">trans</option>
+                    <option value="all">all</option>
+                </param>
+            </when>
+
+            <when value="binning">
+                <param type="integer" name="biniter" value="1000" label="Maximum number of binning iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="float" name="threshold" value="1.0" label="Learning threshold" optional="False"
+                    help="The minimum change needed in the log-likelihood to continue learning binning corrections.">
+                    <validator type="in_range" min="0.000001" max="1.0"/>
+                </param>
+                <param type="select" name="binreads" label="Reads to use for learning binning corrections.">
+                    <option value="cis">cis</option>
+                    <option value="trans">trans</option>
+                    <option value="all">all</option>
+                </param>
+                <param type="text" size="60" name="model" value="len" label="Model parameters" optional="False" help="A comma-separated list of fragment characteristics to learn corrections for. These can include 'len' and any characteristics included in the fragment bed file.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modelbins" value="10" label="Number of parameter bins" optional="False" help="A comma-separated list of bins to divide each model parameter into.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modeltypes" value="even" label="Parameter types" optional="False" help="A comma-separated list of model parameter types. These can be 'even', 'fixed', 'even-const', and 'fixed-const'.">
+                    <validator type="empty_field" />
+                </param>
+            </when>
+
+            <when value="binning-probability">
+                <param type="integer" name="biniter" value="1000" label="Maximum number of binning iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="float" name="threshold" value="1.0" label="Learning threshold" optional="False"
+                    help="The minimum change needed in the log-likelihood to continue learning binning corrections.">
+                    <validator type="in_range" min="0.000001" max="1.0"/>
+                </param>
+                <param type="select" name="binreads" label="Reads to use for learning binning corrections.">
+                    <option value="cis">cis</option>
+                    <option value="trans">trans</option>
+                    <option value="all">all</option>
+                </param>
+                <param type="text" size="60" name="model" value="len" label="Model parameters" optional="False" help="A comma-separated list of fragment characteristics to learn corrections for. These can include 'len' and any characteristics included in the fragment bed file.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modelbins" value="10" label="Number of parameter bins" optional="False" help="A comma-separated list of bins to divide each model parameter into.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modeltypes" value="even" label="Parameter types" optional="False" help="A comma-separated list of model parameter types. These can be 'even', 'fixed', 'even-const', and 'fixed-const'.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="integer" name="probiter" value="1000" label="Maximum number of iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="float" name="change" value="0.0005" label="Parameter change cutoff" optional="False" help="The cutoff for the absolute gradient values such that learning will cease if all values fall below this threshold.">
+                    <validator type="in_range" min="0.00000001"/>
+                </param>
+                <param type="float" name="step" value="0.5" label="Learning rate scaling factor" optional="False">
+                    <validator type="in_range" min="0.000001" max="1.0"/>
+                </param>
+                <param type="select" name="precalc" label="Precalculate probability corrections from fragment means">
+                    <option value="-p">yes</option>
+                    <option value="">no</option>
+                </param>
+            </when>
+
+            <when value="binning-express">
+                <param type="integer" name="biniter" value="1000" label="Maximum number of binning iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="float" name="threshold" value="1.0" label="Learning threshold" optional="False"
+                    help="The minimum change needed in the log-likelihood to continue learning binning corrections.">
+                    <validator type="in_range" min="0.000001" max="1.0"/>
+                </param>
+                <param type="select" name="binreads" label="Reads to use for learning binning corrections.">
+                    <option value="cis">cis</option>
+                    <option value="trans">trans</option>
+                    <option value="all">all</option>
+                </param>
+                <param type="text" size="60" name="model" value="len" label="Model parameters" optional="False" help="A comma-separated list of fragment characteristics to learn corrections for. These can include 'len' and any characteristics included in the fragment bed file.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modelbins" value="10" label="Number of parameter bins" optional="False" help="A comma-separated list of bins to divide each model parameter into.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modeltypes" value="even" label="Parameter types" optional="False" help="A comma-separated list of model parameter types. These can be 'even', 'fixed', 'even-const', and 'fixed-const'.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="integer" name="expiter" value="1000" label="Number of express iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="select" name="removedist" label="Remove estimated distance-dependence prior to learning express corrections.">
+                    <option value="-d">yes</option>
+                    <option value="">no</option>
+                </param>
+                <param type="select" name="expreads" label="Reads to use for learning express corrections.">
+                    <option value="cis">cis</option>
+                    <option value="trans">trans</option>
+                    <option value="all">all</option>
+                </param>
+            </when>
+
+            <when value="probability-binning">
+                <param type="integer" name="probiter" value="1000" label="Maximum number of iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="float" name="change" value="0.0005" label="Parameter change cutoff" optional="False" help="The cutoff for the absolute gradient values such that learning will cease if all values fall below this threshold.">
+                    <validator type="in_range" min="0.00000001"/>
+                </param>
+                <param type="float" name="step" value="0.5" label="Learning rate scaling factor" optional="False">
+                    <validator type="in_range" min="0.000001" max="1.0"/>
+                </param>
+                <param type="select" name="precalc" label="Precalculate probability corrections from fragment means">
+                    <option value="-p">yes</option>
+                    <option value="">no</option>
+                </param>
+                <param type="select" name="precalc" label="Precalculate probability corrections from fragment means">
+                    <option value="-p">yes</option>
+                    <option value="">no</option>
+                </param>
+                <param type="integer" name="biniter" value="1000" label="Maximum number of binning iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="float" name="threshold" value="1.0" label="Learning threshold" optional="False"
+                    help="The minimum change needed in the log-likelihood to continue learning binning corrections.">
+                    <validator type="in_range" min="0.000001" max="1.0"/>
+                </param>
+                <param type="select" name="binreads" label="Reads to use for learning binning corrections.">
+                    <option value="cis">cis</option>
+                    <option value="trans">trans</option>
+                    <option value="all">all</option>
+                </param>
+                <param type="text" size="60" name="model" value="len" label="Model parameters" optional="False" help="A comma-separated list of fragment characteristics to learn corrections for. These can include 'len' and any characteristics included in the fragment bed file.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modelbins" value="10" label="Number of parameter bins" optional="False" help="A comma-separated list of bins to divide each model parameter into.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modeltypes" value="even" label="Parameter types" optional="False" help="A comma-separated list of model parameter types. These can be 'even', 'fixed', 'even-const', and 'fixed-const'.">
+                    <validator type="empty_field" />
+                </param>
+            </when>
+
+            <when value="express-binning">
+                <param type="integer" name="expiter" value="1000" label="Number of express iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="select" name="removedist" label="Remove estimated distance-dependence prior to learning express corrections.">
+                    <option value="-d">yes</option>
+                    <option value="">no</option>
+                </param>
+                <param type="select" name="expreads" label="Reads to use for learning express corrections.">
+                    <option value="cis">cis</option>
+                    <option value="trans">trans</option>
+                    <option value="all">all</option>
+                </param>
+                <param type="integer" name="biniter" value="1000" label="Maximum number of binning iterations" optional="False">
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param type="float" name="threshold" value="1.0" label="Learning threshold" optional="False"
+                    help="The minimum change needed in the log-likelihood to continue learning binning corrections.">
+                    <validator type="in_range" min="0.000001" max="1.0"/>
+                </param>
+                <param type="select" name="binreads" label="Reads to use for learning binning corrections.">
+                    <option value="cis">cis</option>
+                    <option value="trans">trans</option>
+                    <option value="all">all</option>
+                </param>
+                <param type="text" size="60" name="model" value="len" label="Model parameters" optional="False" help="A comma-separated list of fragment characteristics to learn corrections for. These can include 'len' and any characteristics included in the fragment bed file.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modelbins" value="10" label="Number of parameter bins" optional="False" help="A comma-separated list of bins to divide each model parameter into.">
+                    <validator type="empty_field" />
+                </param>
+                <param type="text" size="60" name="modeltypes" value="even" label="Parameter types" optional="False" help="A comma-separated list of model parameter types. These can be 'even', 'fixed', 'even-const', and 'fixed-const'.">
+                    <validator type="empty_field" />
+                </param>
+            </when>
+        </conditional>
+    </xml>
+    <token name="@5C_DATATYPE@">
+-d $command.datatype
+    </token>
+    <xml name="5c_datatype_xml">
+        <!-- Options controlling type of 5c data to return -->
+        <param name="datatype" type="select" label="Datatype">
+            <option value="raw">raw</option>
+            <option value="fragment">fragment-corrected</option>
+            <option value="distance">distance-corrected</option>
+            <option value="enrichment">enrichment</option>
+        </param>
+    </xml>
+    <token name="@BINSIZE@">
+-b $command.binsize
+    </token>
+    <xml name="binsize_xml">
+        <!-- Options controlling binning size-->
+        <param type="integer" name="binsize" value="10000" label="Binsize" optional="False" help="A value of zero will return unbinned data.">
+            <validator type="in_range" min="0"/>
+        </param>
+    </xml>
+    <token name="@MRH_OPTIONS@">
+-f $command.mrhminobs
+-b $command.mrhminbinsize
+-B $command.mrhmaxbinsize
+#if str( $command.mrhtransminbinsize ) != "":
+    -r $command.mrhtransminbinsize
+#end if
+#if str( $command.mrhtransmaxbinsize ) != "":
+    -R $command.mrhtransmaxbinsize
+#end if
+    </token>
+    <xml name="mrh_options_xml">
+        <param name="mrhminobs" type="integer" label="Minimum observations" value="20" help="The number of observations needed to include a bin." >
+            <validator type="in_range" min="1"/>
+        </param>
+        <!-- Options controlling binning sizes-->
+        <param type="integer" name="mrhminbinsize" label="Cis minimum binsize (bp)" value="5000" >
+            <validator type="in_range" min="1"/>
+        </param>
+        <param type="integer" name="mrhmaxbinsize" label="Cis maximum binsize (bp)" value="1280000" help="Must be a multiple of an integer power of two times the minimum binsize (i.e. minbin * 2^N = maxbin for an integer N). ">
+            <validator type="in_range" min="1"/>
+        </param>
+        <param type="integer" name="mrhtransminbinsize" label="Trans minimum binsize (bp)" value='' help="If not specified, this will be set to the cis minimum binsize." optional="True" />
+        <param type="integer" name="mrhtransmaxbinsize" label="Trans maximum binsize (bp)" value='' help="If not specified, this will be set to the cis maximum binsize." optional="True" />
+    </xml>
+    <token name="@HIC_DYNAMIC@">
+#if str( $command.dynamic.binning ) == "yes":
+    -y
+    -x $command.dynamic.expbinsize
+    -f $command.dynamic.minobs
+    -a $command.dynamic.search
+    $command.dynamic.failed
+#end if
+    </token>
+    <token name="@5C_DYNAMIC@">
+#if str( $command.dynamic.binning ) == "yes":
+    -y
+    -x $command.dynamic.expbinsize
+    -f $command.dynamic.minobs
+    -g $command.dynamic.search
+    $command.dynamic.failed
+#end if
+    </token>
+    <xml name="dynamic_xml">
+        <!-- Options controlling dynamic binning of data -->
+        <conditional name="dynamic">
+            <param name="binning" type="select" label="Dynamically bin data">
+                <option value="no">no</option>
+                <option value="yes">yes</option>
+            </param>
+            <when value="yes">
+                <param name="expbinsize" type="integer" label="Expansion binning size (bp)" value="10000" help="The size of bins to use when expanding heatmap bins. A zero indicates unbinned expansion." >
+                    <validator type="in_range" min="0"/>
+                </param>
+                <param name="minobs" type="integer" label="Minimum observations" value="20" help="The number of observations needed to stop expanding a bin." >
+                    <validator type="in_range" min="1"/>
+                </param>
+                <param name="search" type="integer" label="Maximum search distance" value="0" help="The maximum distance a bin can be expanded. A value of zero indicates no maximum." >
+                    <validator type="in_range" min="0"/>
+                </param>
+                <param name="failed" type="select" label="Remove failed bins">
+                    <option value="">no</option>
+                    <option value="-v">yes</option>
+                </param>
+            </when>
+            <when value="no"/>
+        </conditional>
+    </xml>
+    <token name="@IMAGE@">
+-k min_color=$command.image.mincolor
+-k mid_color=$command.image.midcolor
+-k max_color=$command.image.maxcolor
+-k logged=$command.image.logged
+#if $command.image.minscore:
+    -k minscore=$command.image.minscore
+#end if
+#if $command.image.maxscore:
+    -k maxscore=$command.image.maxscore
+#end if
+    </token>
+    <xml name="image_xml">
+        <!-- Options controlling hic image options -->
+        <param name="mincolor" type="color" value="#0000ff" label="Minimum value color"/>
+        <param name="midcolor" type="color" value="#ffffff" label="Middle value color"/>
+        <param name="maxcolor" type="color" value="#ff0000" label="Maximum value color"/>
+        <param name="logged" type="select" label="Logged values">
+            <option value="true">yes</option>
+            <option value="false">no</option>
+        </param>
+        <param name="minscore" type="float" optional="True" label="Minimum score limit"/>
+        <param name="maxscore" type="float" optional="True" label="Maximum score limit"/>
+    </xml>
+    <token name="@ROTATE@">
+$command.image.rotate
+    </token>
+    <xml name="rotate_xml">
+        <!-- Options controlling hic image rotation -->
+        <param name="rotate" type="select" label="Rotate image 45 degrees (horizontal axis)">
+            <option value="">no</option>
+            <option value="-r">yes</option>
+        </param>
+    </xml>
+    <token name="@COMMAND_HELP@"><![CDATA[
+HiFive is a tool for handling, normalizing, and plotting HiC and 5C chromatin interaction data. It has numerous normalization approaches built in with a variety of options, allowing for fine-scale control and data processing. HiFive is broken down into a series of selectable commands, each with a HiC or 5C version.
+
+COMMANDS
+--------
+
+Complete HiC analysis / Complete 5C analysis - this command creates a genome partion file, loads data into a dataset, creates a project file and performs data normalization on that project file.
+
+Create HiC fend set / Create 5C fragment set - this command takes a bed file containing restriction fragment information and creates a HiFive partition file that will be used for downstream data processing.
+
+Create HiC data set / Create 5C data set - this command loads data from BAM file pairs or a variety of other file formats, partitions reads according to the information in the HiFive genome partition file and creates a HiFive data file.
+
+Create HiC project / Create 5C project - this command creates a HiFive project, associates a specific data set with it, constructs a distance-dependence function and filters fragments based on coverage.
+
+Normalize HiC project / Normalize 5C project - this command provides a selection of normalization algorithms and finds correction values for data normalization.
+
+Create HiC heatmap set / Create 5C heatmap set - this command creates a set of heatmaps, one per chromosome and, if selected, one per chromosome pair (trans), in a compact HDF5 format. Heatmaps can also be plotted at the time of creation.
+
+Extract HiC interval / Extract 5C interval - this command returns a genomic interval files with data from a specified region. This data may also be plotted at the tie of extraction.
+
+Create HiC multi-resolution heatmap - this command returns a multi-resolution heatmap file with data heatmapped across resolutions from the smallest to largest specified binsizes in 2X steps.
+
+]]></token>
+    <token name="@HIC_HELP@"><![CDATA[
+HiC genomic partitioning - fend file
+----------------------------------------
+
+A bed file containing either restriction enzyme cutopoints or fragment bounds is converted into an hdf5-type fragment file of fragment characteristics. In addition to coordinates, strand, and chromosome information, additional columns can be included containing other fragment characteristics, such as GC content. If additional columns are included, they must be labeled in the header with a label containing no spaces or commas. These names can be used with the binning algorithm to include the fragment characteristic in the model to be learned. Additional characteristics should be comma-separated pairs of values corresponding to the upstream and downstream sides of the cutsite or ends of the fragment, depending on the whether the bed file contains cutsites or fragment coordinates, respectively.
+
+HiC data
+--------
+
+Reads are paired with the specified fend file, creating a HiFive dataset object. Data can be a series of paired-end bam files, a tabular format list of paired genomic positions (chromosome1 coordinate1 strand1 chromosome2 coordinate2 strand2), or a HiCPipe-style mat-formatted list of fend-pairs and observed read counts.
+
+HiC project
+-----------
+
+Fends are filtered in an iterative manner using the minimum interaction cutoff and interaction size parameters specified to ensure that all valid fends have at least the minimum number of interactions with other valid fends. Subsequently, a distance dependence approximation curve is calculated piecewise using the number of bins specified. The first bin encompasses all interactions less than or equal to the minimum bin cutoff value. The remaining bins are evenly sized between log(minimum cutoff) and log(max possible interaction size).
+
+HiC normalization
+-----------------
+
+Corrections values are learned for either each valid fend, ranges of fend characteristics, or both. The 'probability' and 'express' algorithms learn correction values associated with each fend while the 'binning' algorithm learns fend characteristic corrections. These can be chained together in either order to produce more robust corrections.
+
+Using the probability algorithm, observation of counts are assumed to be distributed according to a binomial distribution with an observation probability for each interaction equal to the product of the distance-dependence signal and the two fend correction parameters. Using the probability algorithm, learning is done using a backtracking line gradient descent approach. Learning proceeds for up to the maximum number of iterations but is terminated early if all of the absolute gradient values fall below the cutoff threshold. At each step, the learning rate is scaled down by the step value if the current learning rate does not produce sufficient improvement as measured by the Arjimo criterion.
+
+The express algorithm is a variant of matrix balancing and approximates the corrections through an iterative norm-2 adjustment to given all fragments a mean ratio of one for valid counts versus signal predicted from distance-dependence. This can be done using intra-regional interactions, inter-regional interactions, or all interactions.
+
+The binning algorithm divides each model parameter into some number of bins and based on a binomial distribution, correction values for each bin are learned, maximizing the log-likelihood of the data. Model parameters can be the fend lengths ('len'), fend GC content ('gc'), and any other characteristics passed as additional columns (with header labels) in the bed file used to create the HiFive fend file. Each parameter has a number of bins specified to divide it into and can be partitioned according to its type to contain approximately equal numbers of fends ('even'), or to cover equal portions of the range of parameter values ('fixed'). In addition, parameter types can include the '-const' suffix to denote a parameter that should not be optimized after seeding.
+
+HiC multi-resolution heatmapping
+--------------------------------
+
+Multi-resolution heatmapping (MRH) allows multiple levels of resolution to be stored and accessed simultaneously using an intelligent binning scheme that only accepts bin with a number of observed reads meeting the minimum observation threshold. MRH files can be interactively explored through the MRH plugin in Galaxy.
+
+]]></token>
+    <token name="@5C_HELP@"><![CDATA[
+5C genomic partitioning - fragment file
+---------------------------------------
+
+A bed file containing targeted restriction enzyme fragment boundaries is converted into an hdf5-type fragment file of fragment characteristics. In addition to coordinates, strand, and chromosome information, additional columns can be included containing other fragment characteristics, such as GC content. If additional columns are included, they must be labeled in the header with a label containing no spaces or commas. These names can be used with the binning algorithm to include the fragment characteristic in the model to be learned.
+
+5C data
+-------
+
+Reads are loaded and paired with the specified fragment file, creating a HiFive dataset object. Data can be a series of paired-end bam files or a tabular format list of paired fragments and their observed read count (fragment1 fragment2 count).
+
+5C project
+----------
+
+Fragments are filtered in an iterative manner using the minimum interaction cutoff and interaction size parameters specified to ensure that all valid fragments have at least the minimum number of interactions with other valid fragments. Subsequently, a distance dependence approximation line is calculated using a regression line to approximate the linear relationship between log(# reads) and log(distance).
+
+5C normalization
+----------------
+
+Corrections values are learned for either each valid fragment, ranges of fragment characteristics, or both. The 'probability' and 'express' algorithms learn correction values associated with each fragment while the 'binning' algorithm learns fragment characteristic corrections. These can be chained together in either order to produce more robust corrections.
+
+The probability algorithm assumes non-zero counts to distributed according to a log-normal distribution with each interaction having a mean equal to the distance-depedence predicted signal times each of the interaction fragment correction parameters and a universal sigma value. Using the probability algorithm, learning is done using a backtracking line gradient descent approach. Learning proceeds for up to the maximum number of iterations but is terminated early if all of the absolute gradient values fall below the cutoff threshold. At each step, the learning rate is scaled down by the step value if the current learning rate does not produce sufficient improvement as measured by the Arjimo criterion.
+
+The express algorithm is a variant of matrix balancing and approximates the corrections through an iterative norm-2 adjustment to given all fragments a mean ratio of one for valid counts versus predicted signal from distance-dependence. This can be done using intra-regional interactions, inter-regional interactions, or all interactions.
+
+The binning algorithm divides each model parameter into some number of bins and based on a log-normal distribution, correction values for each bin are learned, maximizing the log-likelihood of the data. Model parameters can be the fragment lengths ('len') and any other characteristics passed as additional columns (with header labels) in the bed file used to create the HiFive fragment file. Each parameter has a number of bins specified to divide it into and can be partitioned according to its type to contain approximately equal numbers of fragments ('even'), or to cover equal portions of the range of parameter values ('fixed'). In addition, parameter types can include the '-const' suffix to denote a parameter that should not be optimized after seeding.
+
+]]></token>
+</macros>

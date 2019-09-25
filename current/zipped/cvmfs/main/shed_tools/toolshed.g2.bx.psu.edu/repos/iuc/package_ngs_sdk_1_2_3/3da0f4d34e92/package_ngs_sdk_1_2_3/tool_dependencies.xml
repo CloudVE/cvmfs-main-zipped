@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="perl" version="5.18.1">
+        <repository changeset_revision="35f117d7396b" name="package_perl_5_18" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="ngs_sdk" version="1.2.3">
+        <install version="1.0">
+            <actions>
+                <action sha256sum="625ec04737dea787f3800744f1d5fddb4d83b21013c281bcbc8691149b230794" target_filename="ngs-1.2.3.tar.gz" type="download_by_url">https://github.com/ncbi/ngs/archive/1.2.3.tar.gz</action>
+                <action type="set_environment_for_install">
+                    <repository changeset_revision="35f117d7396b" name="package_perl_5_18" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
+                        <package name="perl" version="5.18.1" />
+                    </repository>
+                </action>
+                <action type="change_directory">ngs-sdk</action>
+                <action type="autoconf">--build=$INSTALL_DIR</action>
+                <action type="set_environment">
+                    <environment_variable action="prepend_to" name="PATH">$INSTALL_DIR/bin</environment_variable>
+                    <environment_variable action="set_to" name="NGS_SDK_DIR">$INSTALL_DIR</environment_variable>
+                </action>
+            </actions>
+        </install>
+        <readme>
+            ncbi-ngs-sdk, required for sra-tools package.
+
+        </readme>
+    </package>
+</tool_dependency>

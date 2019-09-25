@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<repositories>
+    <repository changeset_revision="d6c944f1581a" name="vcf2tsv" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="4d4b16af67aa" name="vcfaddinfo" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="3f4fefbc52c8" name="vcfallelicprimitives" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="87d916fbb7c4" name="vcfannotate" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="c6be83b8883d" name="vcfannotategenotypes" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="8a482a9aa45d" name="vcfbedintersect" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="f0dae4ac267e" name="vcfbreakcreatemulti" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="d7d4d88ae84d" name="vcfcheck" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="da419f5ed589" name="vcfcombine" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="202ff1d8c57f" name="vcfcommonsamples" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="6e0fc18309f4" name="vcfdistance" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="34c3b846e0b6" name="vcffilter" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" /> 
+    <repository changeset_revision="a03f346b6aae" name="vcffixup" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="38d93ca9c0f0" name="vcfflatten" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="2bdb74ab3270" name="vcfgeno2haplo" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="1673e7848bf4" name="vcfgenotypes" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="586d614a4c2d" name="vcfhethom" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="3e3d0dffeb1f" name="vcfleftalign" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="67a4da1a4df3" name="vcfprimers" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="d9efe7842413" name="vcfrandomsample" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="88fd8ef7e4af" name="vcfselectsamples" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="433d50620231" name="vcfsort" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="b29dbe1270b5" name="vcfvcfintersect" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+</repositories>

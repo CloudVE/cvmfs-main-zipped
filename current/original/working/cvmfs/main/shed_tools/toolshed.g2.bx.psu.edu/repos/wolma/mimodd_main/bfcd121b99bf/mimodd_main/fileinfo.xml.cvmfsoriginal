@@ -1,0 +1,102 @@
+<tool id="mimodd_info" name="MiModD File Information" version="@MIMODD_WRAPPER_VERSION@">
+    <description>provides summary reports for supported sequence data formats.</description>
+    <macros>
+        <import>macros.xml</import>
+        <xml name="test_with_formats" token_ifile="a.sam" token_oformat="text"
+        token_expectformat="txt">
+            <test>
+                <conditional name="input_selection">
+                    <param name="source" value="history" />
+                    <param name="ifile" value="@IFILE@" />
+                </conditional>
+                <param name="oformat" value="@OFORMAT@" />
+                <output name="ofile" ftype="@EXPECTFORMAT@">
+                    <assert_contents>
+                        <has_text text="chrI" />
+                        <has_text text="chrII" />
+                        <has_text text="chrIII" />
+                        <has_text text="chrIV" />
+                        <has_text text="chrV" />
+                        <has_text text="chrX" />
+                    </assert_contents>
+                </output>
+            </test>
+        </xml>
+    </macros>
+    <expand macro="requirements" />
+    <expand macro="stdio" />
+    <expand macro="version_command" />
+    <command><![CDATA[
+    mimodd info -o '$ofile' --verbose --oformat $oformat
+    #if str($input_selection.source) == "history":
+      '$input_selection.ifile'
+    #else:
+      '$input_selection.ifile.fields.path'
+    #end if
+    ]]></command>
+
+    <inputs>
+        <conditional name="input_selection">
+            <param name="source" type="select" label="Input is a">
+                <option value="history">Dataset in history</option>
+                <option value="cached">Genome on server</option>
+            </param>
+            <when value="history">
+                <param name="ifile" type="data" format="bam,sam,vcf,bcf,fasta"
+                label="input dataset" />
+            </when>
+            <when value="cached">
+                <param name="ifile" type="select" label="installed genome">
+                    <options from_data_table="all_fasta" />
+                </param>
+            </when>
+        </conditional>
+        <param name="oformat" type="select" display="radio"
+        label="output format">
+            <option value="txt">text</option>
+            <option value="html">html</option>
+        </param>
+    </inputs>
+
+    <outputs>
+        <data name="ofile" format="txt" label="Sample Info on ${on_string}">
+            <change_format>
+	            <when input="oformat" value="html" format="html"/>
+            </change_format>
+            <actions>
+                <conditional name="input_selection.source">
+                    <when value="cached">
+                        <action type="metadata" name="dbkey">
+                            <option type="from_data_table" name="all_fasta" column="1" offset="0">
+                                <filter type="param_value" ref="input_selection.ifile" column="0" />
+                            </option>
+                        </action>
+                    </when>
+                </conditional>
+            </actions>
+        </data>
+    </outputs>
+
+    <tests>
+        <expand macro="test_with_formats" ifile="a.bam" />
+        <expand macro="test_with_formats" ifile="a.sam" />
+        <expand macro="test_with_formats" ifile="a.bcf" />
+        <expand macro="test_with_formats" ifile="a.vcf" />
+        <expand macro="test_with_formats" ifile="a.fa" />
+        <expand macro="test_with_formats" ifile="a.bam" oformat="html"
+        expectformat="html" />
+    </tests>
+
+    <help><![CDATA[
+.. class:: infomark
+
+   **What it does**
+
+The tool inspects the input datasets and generates a report summarizing its contents.
+
+It autodetects and works with most file formats produced by MiModD, i.e., **SAM / BAM, vcf / bcf and fasta**, and produces a standardized report for all of them.
+
+@HELP_FOOTER@
+    ]]></help>
+    <expand macro="citations" />
+</tool>

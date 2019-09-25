@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="vegan" version="2.3-0">
+        <repository changeset_revision="1ab514ba46e7" name="package_r_vegan_2_3_0" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="R" version="3.2.1">
+        <repository changeset_revision="d0bf97420fb5" name="package_r_3_2_1" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+</tool_dependency>

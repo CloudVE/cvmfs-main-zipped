@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+  <package name="kraken" version="0.10.5">
+      <repository changeset_revision="89a36b0f718c" name="package_kraken_0_10_5" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+</tool_dependency>

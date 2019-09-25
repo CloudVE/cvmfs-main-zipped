@@ -1,0 +1,78 @@
+<macros>
+  <macro name="refGenomeSourceConditional">
+    <conditional name="refGenomeSource">
+      <param name="genomeSource" type="select" label="Use a built in reference genome or own from your history" help="Built-ins genomes were created using default options">
+        <option value="indexed" selected="True">Use a built-in genome</option>
+        <option value="history">Use a genome from history</option>
+      </param>
+      <when value="indexed">
+        <param name="index" type="select" label="Select a reference genome" help="If your genome of interest is not listed, contact the Galaxy team">
+          <yield />
+        </param>
+      </when>
+      <when value="history">
+        <param name="ownFile" type="data" format="fasta" metadata_name="dbkey" label="Select the reference genome" />
+      </when>  <!-- history -->
+    </conditional>  <!-- refGenomeSource -->
+  </macro>
+  <macro name="indel_searchConditional">
+    <conditional name="indel_search">
+      <param name="allow_indel_search" type="select" label="Allow indel search">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </param>
+      <when value="No"/>
+      <when value="Yes">
+        <param name="max_insertion_length" type="integer" value="3" label="Max insertion length." help="--max-insertion-length; The maximum insertion length. The default is 3." />
+        <param name="max_deletion_length" type="integer" value="3" label="Max deletion length." help="--max-deletion-length; The maximum deletion length. The default is 3." />
+      </when>
+    </conditional>    
+  </macro>
+  <macro name="own_junctionsConditional">
+    <conditional name="own_junctions">
+      <param name="use_junctions" type="select" label="Do you want to supply your own junction data" help="The options below allow you validate your own list of known transcripts or junctions with your RNA-Seq data. Note that the chromosome names in the files provided with the options below must match the names in the Bowtie index.">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </param>
+      <when value="Yes">
+        <conditional name="gene_model_ann">
+          <param name="use_annotations" type="select" label="Use Gene Annotation Model" help="-G/--GTF; TopHat with a set of gene model annotations and/or known transcripts, as a GTF 2.2 or GFF3 formatted file. If this option is provided, TopHat will first extract the transcript sequences and use Bowtie to align reads to this virtual transcriptome first. Only the reads that do not fully map to the transcriptome will then be mapped on the genome. The reads that did map on the transcriptome will be converted to genomic mappings (spliced as needed) and merged with the novel mappings and junctions in the final tophat output. Please note that the values in the first column of the provided GTF/GFF file (column which indicates the chromosome or contig on which the feature is located), must match the name of the reference sequence in the Bowtie index you are using with TopHat.">
+            <option value="No">No</option>
+             <option value="indexed">Use a built-in gene annotation</option>
+            <option value="history">Use a gene annotation from history</option>
+          </param>
+          <when value="No" />
+          <when value="indexed">
+            <param format="gtf,gff3" name="gene_annotation_model" type="select" label="Gene Model Annotations">
+                <options from_data_table="gff_gene_annotations"/>
+             </param>
+          </when>
+          <when value="history">
+            <param format="gtf,gff3" name="gene_annotation_model" type="data" label="Gene Model Annotations" metadata_name="dbkey" />
+          </when>  
+        </conditional>
+        <expand macro="raw_juncsConditional" />
+        <expand macro="no_novel_juncsParam" />
+      </when>
+      <when value="No" />
+    </conditional> <!-- /own_junctions -->
+  </macro>
+  <macro name="raw_juncsConditional">
+    <conditional name="raw_juncs">
+      <param name="use_juncs" type="select" label="Use Raw Junctions">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </param>
+      <when value="No" />
+      <when value="Yes">
+        <param format="interval" name="raw_juncs" type="data" label="Raw Junctions" help="-j/--raw-juncs; Supply TopHat with a list of raw junctions. Junctions are specified one per line, in a tab-delimited format. Records look like: [chrom] [left] [right] [+/-] left and right are zero-based coordinates, and specify the last character of the left sequenced to be spliced to the first character of the right sequence, inclusive."/>
+      </when>
+    </conditional>
+  </macro>
+  <macro name="no_novel_juncsParam">
+    <param name="no_novel_juncs" type="select" label="Only look for supplied junctions" help="--no-novel-juncs; Only look for reads across junctions indicated in the supplied GFF or junctions file.">
+      <option value="No">No</option>
+      <option value="Yes">Yes</option>
+    </param>
+  </macro>    
+</macros>

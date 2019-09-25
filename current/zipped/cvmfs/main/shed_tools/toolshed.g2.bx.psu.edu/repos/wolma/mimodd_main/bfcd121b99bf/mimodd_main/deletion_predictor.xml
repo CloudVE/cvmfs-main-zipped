@@ -1,0 +1,117 @@
+<tool id="mimodd_delcall" name="MiModD Deletion Calling (for PE data)" 
+version="@MIMODD_WRAPPER_VERSION@">
+    <description>
+    predicts deletions in one or more aligned paired-end read samples based on coverage of the reference genome and on insert sizes
+    </description>
+    <macros>
+        <import>macros.xml</import>
+    </macros>
+    <expand macro="requirements" />
+    <expand macro="stdio" />
+    <expand macro="version_command" />
+    <command><![CDATA[
+    mimodd delcall
+      #for $bam_file in $list_input
+        '$bam_file'
+      #end for
+        '$covfile' -o '$ofile'
+        --index-files 
+      #for $bam_file in $list_input
+        '${bam_file.metadata.bam_index}'
+      #end for
+        --max-cov $max_cov --min-size $min_size 
+        $include_uncovered 
+        $group_by_id 
+        --verbose
+    ]]></command>
+
+    <inputs>
+        <param name="list_input" type="data" multiple="true" format="bam"
+        label="Aligned reads input dataset(s)" />
+        <param name="covfile" type="data" format="bcf" 
+        label="BCF variant call dataset to extract coverage from" 
+        help="Use the MiModD Variant Calling Tool to generate this file."/>
+        <param name="group_by_id" type="boolean" truevalue="-i" falsevalue="" checked="false" 
+        label="group reads based on read group id only" 
+        help="If selected, reads from different read groups will be treated strictly separate. If turned off, read groups with identical sample names are used together for identifying uncovered regions, but are still treated separately for the prediction of deletions." />
+        <param name="include_uncovered" type="boolean" truevalue="-u" falsevalue="" checked="false" 
+        label="include low-coverage regions" 
+        help="If selected, regions that fulfill the coverage criteria below, but are not statistically significant deletions, will be included in the output." />  
+        <param name="max_cov" type="integer" value="0" 
+        label="maximal coverage allowed inside a low-coverage region (default: 0)" 
+        help="The maximal coverage at a site allowed to consider it as part of a low-coverage region" />
+        <param name="min_size" type="integer" value="100" 
+        label="minimal deletion size (default: 100)" 
+        help="A low-coverage region must consist of at least this number of consecutive bases below the maximal coverage to consider it in further analyses."/>
+    </inputs>
+
+    <outputs>
+        <data name="ofile" format="gff" />
+    </outputs>
+
+    <tests>
+        <test>
+            <param name="list_input" value="a.bam" />
+            <param name="covfile" value="a.bcf" />
+            <param name="include_uncovered" value="true" />
+            <assert_command>
+                <has_text text=" -u " />
+                <not_has_text text=" -i " />
+            </assert_command>
+            <output name="ofile" ftype="gff">
+                <assert_contents>
+                    <has_n_columns n="9" />
+                    <has_line_matching
+                    expression="^chrI&#009;MiModD&#009;Uncovered_Region.+" />
+                    <has_line_matching
+                    expression="^chrII&#009;MiModD&#009;Uncovered_Region.+" />
+                    <has_line_matching
+                    expression="^chrIII&#009;MiModD&#009;Uncovered_Region.+" />
+                    <has_line_matching
+                    expression="^chrIV&#009;MiModD&#009;Uncovered_Region.+" />
+                    <has_line_matching
+                    expression="^chrV&#009;MiModD&#009;Uncovered_Region.+" />
+                    <has_line_matching
+                    expression="^chrX&#009;MiModD&#009;Uncovered_Region.+" />
+                    <has_line_matching
+                    expression="^MtDNA&#009;MiModD&#009;Uncovered_Region.+" />
+                </assert_contents>
+            </output>
+        </test>
+    </tests>
+    
+    <help><![CDATA[
+.. class:: infomark
+
+   **What it does**
+
+The tool predicts deletions from paired-end data in a two-step process:
+
+1) It finds regions of low-coverage, i.e., candidate regions for deletions, by scanning a BCF file produced by the *Variant Calling* tool.
+
+   The *maximal coverage allowed inside a low-coverage region* and the *minimal deletion size* parameters are used at this step to define what is considered a low-coverage region.
+
+   .. class:: warningmark
+
+      The tool treats genome positions missing from the BCF input as zero coverage, so it is safe to use ONLY with BCF files produced by the *Variant Calling* tool or through other commands that keep the information for all sites.
+
+2) It assesses every low-coverage region statistically for evidence of it being a real deletion. **This step requires paired-end data** since it relies on shifts in the distribution of read pair insert sizes around real deletions.
+
+By default, the tool only reports Deletions, i.e., the subset of low-coverage regions that pass the statistical test.
+If *include low-coverage regions* is selected, regions that failed the test will also be reported.
+
+With *group reads based on read group id only* selected, as it is by default, grouping of reads into samples is done strictly based on their read group IDs.
+With the option deselected, grouping is done based on sample names in the first step of the analysis, i.e. the reads of all samples with a shared sample name are used to identify low-coverage regions.
+In the second step, however, reads will be regrouped by their read group IDs again, i.e. the statistical assessment for real deletions is always done on a per read group basis.
+
+**TIP:**
+Deselecting *group reads based on read group id only* can be useful, for example, if you have both paired-end and single-end sequencing data for the same sample.
+
+In this case, the two sets of reads will usually share a common sample name, but differ in their read groups.
+With grouping based on sample names, the single-end data can be used together with the paired-end data to identify low-coverage regions, thus increasing overall coverage and reliability of this step.
+Still, the assessment of deletions will use only the paired-end data (auto-detecting that the single-end reads do not provide insert size information).
+
+@HELP_FOOTER@
+    ]]></help>
+    <expand macro="citations" />
+</tool>

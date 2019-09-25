@@ -1,0 +1,75 @@
+<tool id="mimodd_rebase" name="MiModD Rebase Sites" 
+version="@MIMODD_WRAPPER_VERSION@">
+    <description>from a VCF file</description>
+    <macros>
+        <import>macros.xml</import>
+    </macros>
+    <expand macro="requirements" />
+    <expand macro="stdio" />
+    <expand macro="version_command" />
+    <command><![CDATA[
+	mimodd rebase '$ifile'
+	  '$chainfile'
+	  $reverse
+	  --ofile '$output_vcf'
+	  --filter $filter
+	  --verbose
+    ]]></command>
+
+    <inputs>
+        <param name="ifile" type="data" format="vcf" label="VCF input file"
+        help="the VCF file to rebase"/>
+        <param name="chainfile" type="data" format="tabular" label="Input chainfile"
+        help="the UCSC chain file to calculate new coordinates from"/>
+        <param name="reverse" type="boolean" truevalue="-r" falsevalue="" checked="false"
+        label="reverse the target and query sites of the initial chainfile"
+        help="swap the genome versions specified in the chain file, i.e., assume the coordinates in the input file are based on the chain file target genome version and should be mapped to the source genome version" />
+        <param name="filter" type="select" display="radio"
+        label="Ambiguously mapping variants"
+        help="How to treat variants that map to more than one position in the target coordinate system" >
+            <option value="unique">Ignore</option>
+            <option value="best">Report only the mapping with the highest score</option>
+            <option value="all">Report all possible mappings</option>
+        </param>
+    </inputs>
+    <outputs>
+        <data name="output_vcf" format="vcf"
+        label="Variants rebased with MiModd from ${on_string}"/>
+    </outputs>
+
+    <tests>
+        <test>
+            <param name="ifile" value="a.vcf" />
+            <param name="chainfile" value="ce11ToCe10.over.chain" />
+            <assert_command>
+                <not_has_text text=" -r" />
+            </assert_command>
+            <output name="output_vcf" file="rebased.vcf" ftype="vcf"
+            lines_diff="0" />
+        </test>
+        <test>
+            <param name="ifile" value="rebased.vcf" />
+            <param name="chainfile" value="ce11ToCe10.over.chain" />
+            <param name="reverse" value="true" />
+            <assert_command>
+                <has_text text=" -r" />
+            </assert_command>
+            <output name="output_vcf" file="a.vcf" ftype="vcf"
+            lines_diff="20" />
+        </test>
+    </tests>
+    
+    <help><![CDATA[
+.. class:: infomark
+
+   **What it does**
+   
+The tool takes as input a VCF file like the ones produced by the
+**Extract Variant** tool and a Genome Browser chain format, and maps the
+variant positions found in the VCF file to a different reference genome
+coordinate system according to the mapping defined in a UCSC chain file.
+
+@HELP_FOOTER@
+    ]]></help>
+    <expand macro="citations" />
+</tool>

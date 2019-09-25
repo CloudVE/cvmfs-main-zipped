@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<repositories>
+    <repository changeset_revision="74b09c8e5f6e" name="data_manager_twobit_builder" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+</repositories>

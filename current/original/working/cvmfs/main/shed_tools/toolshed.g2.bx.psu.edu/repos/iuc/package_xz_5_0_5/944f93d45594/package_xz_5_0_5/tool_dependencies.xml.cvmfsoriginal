@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="libtool" version="2.4">
+        <repository changeset_revision="7f67694b167c" name="package_libtool_2_4" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="xz" version="5.0.5">
+        <install version="1.0">
+            <actions>
+                <action type="download_by_url">https://github.com/bgruening/download_store/raw/master/xz/xz-5.0.5.tar.bz2</action>
+
+                <!-- populate the environment variables from the dependend repos -->
+                <action type="set_environment_for_install">
+                    <repository changeset_revision="af4887e1f595" name="package_bzlib_1_0" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
+                        <package name="bzlib" version="1.0.6" />
+                    </repository>
+                </action>
+
+                <action type="autoconf" />
+                <action type="set_environment">
+                    <environment_variable action="prepend_to" name="LD_LIBRARY_PATH">$INSTALL_DIR/lib</environment_variable>
+                    <environment_variable action="set_to" name="XZ_ROOT_PATH">$INSTALL_DIR</environment_variable>
+                    <environment_variable action="prepend_to" name="C_INCLUDE_PATH">$INSTALL_DIR/include</environment_variable>
+                    <environment_variable action="prepend_to" name="CPLUS_INCLUDE_PATH">$INSTALL_DIR/include</environment_variable>
+                </action>
+            </actions>
+        </install>
+        <readme>
+        XZ Utils is free general-purpose data compression software with high compression ratio. XZ Utils were written for POSIX-like systems,
+        but also work on some not-so-POSIX systems. XZ Utils are the successor to LZMA Utils.
+
+        http://tukaani.org/xz/
+        </readme>
+    </package>
+</tool_dependency>
