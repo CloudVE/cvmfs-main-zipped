@@ -1,0 +1,81 @@
+<tool id="gd_new_oscar" name="Get Pathways" version="1.0.0">
+  <description>: Look up KEGG pathways for given Ensembl transcripts</description>
+
+  <command interpreter="python">
+    rtrnKEGGpthwfENSEMBLTc.py
+      "--loc_file=${GALAXY_DATA_INDEX_DIR}/gd.oscar.loc"
+      "--species=${input.metadata.dbkey}"
+      "--input=${input}"
+      "--posENSEMBLclmn=${ensembl_col}"
+      "--output=${output}"
+  </command>
+
+  <inputs>
+    <param name="input" type="data" format="tabular" label="Dataset" >
+       <validator type="unspecified_build" message="This dataset does not have a database/build and cannot be used with this tool" />
+    </param>
+    <param name="ensembl_col" type="data_column" data_ref="input" label="Column with ENSEMBL transcript ID" />
+  </inputs>
+
+  <outputs>
+    <data name="output" format="tabular" />
+  </outputs>
+
+  <!--
+  <tests>
+    <test>
+      <param name="input" value="test_in/ensembl.tabular" ftype="tabular">
+        <metadata name="dbkey" value="canFam2" />
+      </param>
+      <param name="ensembl_col" value="1" />
+
+      <output name="output" file="test_out/map_ensembl_transcripts/map_ensembl_transcripts.tabular" />
+    </test>
+  </tests>
+  -->
+
+  <help>
+
+**Dataset formats**
+
+The input and output datasets are in tabular_ format.
+The input dataset must have a column with an ENSEMBL transcript ID and have
+the database/build set.  Even though positions are not needed the correct
+database/build must be given to look up the pathways.
+The output dataset will have added columns for the pathway.
+(`Dataset missing?`_)
+
+.. _tabular: ./static/formatHelp.html#tab
+.. _Dataset missing?: ./static/formatHelp.html
+
+-----
+
+**What it does**
+
+Adds the fields "KEGG gene ID" and "KEGG pathways" to an input table of ENSEMBL 
+transcript IDs.  A "U" in the KEGG gene ID field indicates that the 
+tool cannot link the ENSEMBL transcript ID to a KEGG gene ID.
+An "N" in the pathway field means the KEGG pathway is unknown.
+
+-----
+
+**Example**
+
+- input::
+
+   ENSCAFT00000000001
+   ENSCAFT00000000144
+   ENSCAFT00000000160
+   ENSCAFT00000000215
+   etc.
+
+- output::
+
+   ENSCAFT00000000001      476153  cfa00230=Purine metabolism.cfa00500=Starch and sucrose metabolism.cfa00740=Riboflavin metabolism.cfa00760=Nicotinate and nicotinamide metabolism.cfa00770=Pantothenate and CoA biosynthesis.cfa01100=Metabolic pathways
+   ENSCAFT00000000144      483960  N
+   ENSCAFT00000000160      610160  N
+   ENSCAFT00000000215      U       N
+   etc.
+ 
+  </help>
+</tool>

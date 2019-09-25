@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<repositories description="A suite of Galaxy tools designed to work with version 1.2 of the SAMtools package.">
+    <repository changeset_revision="c3276afba416" name="data_manager_build_kraken_database" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="0f17a8816b28" name="kraken" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="cbb802a726fd" name="kraken_filter" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="f2757ab26483" name="kraken_report" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+    <repository changeset_revision="77ca66b1f5e9" name="kraken_translate" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu" />
+</repositories>

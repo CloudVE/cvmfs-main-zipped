@@ -1,0 +1,591 @@
+<tool id="mimodd_map" name="MiModD NacreousMap" version="@MIMODD_WRAPPER_VERSION@">
+    <description>maps phenotypically selected variants by multi-variant linkage analysis</description>
+    <macros>
+        <import>macros.xml</import>
+        <macro name="svd_unconditional">
+            <expand macro="hidden_algo_params" />
+            <expand macro="seqdict_param" />
+            <expand macro="bins" />
+            <conditional name="plotopts">
+                <param name="plots" type="select" label="graphical output settings">
+                    <option value="-p">Give me graphics.</option>
+                    <option value="">Do not generate graphs.</option>
+                </param>
+                <when value="">
+                </when>
+                <when value="-p">
+                    <expand macro="scatter_default" />
+                    <param name="show_kde" type="boolean" truevalue="" falsevalue="--no-kde" checked="true"
+                    label="show kde line in histogram plots"
+                    help="The tool can calculate a kernel density estimate for the linkage data based on a bin size of 10 kilobases and display it as a solid line in the histogram plots." />
+                    <param name="hylim" type="float" value="0.0"
+                    label="upper limit for the histogram y-axis (leave at 0.0 for automatic scaling)" />
+                    <param name="xlim" type="select" label="x-axis scaling">
+                        <option value="">preserve relative contig sizes</option>
+                        <option value="--fit-width">scale each contig to fit the plot width</option>
+                    </param>
+                    <expand macro="hist_colors" />
+                </when>
+            </conditional>
+        </macro>
+        <macro name="vaf_unconditional">
+            <expand macro="bins" />
+            <conditional name="plotopts">
+                <param name="plots" type="select" label="graphical output settings">
+                    <option value="-p">Give me everything (scatter plots and histograms)</option>
+                    <option value="--no-scatter -p">Generate only histograms</option>
+                    <option value="--no-hist -p">Generate only scatter plots</option>
+                    <option value="">Do not generate graphs.</option>
+                </param>
+                <when value="">
+                </when>
+                <when value="--no-scatter -p">
+                    <expand macro="scatter_default" />
+                    <param name="show_kde" type="boolean" truevalue="" falsevalue="--no-kde" checked="true"
+                    label="show kde line in histogram plots"
+                    help="The tool can calculate a kernel density estimate for the linkage data based on a bin size of 10 kilobases and display it as a solid line in the histogram plots." />
+                    <param name="hylim" type="float" value="0.0" 
+                    label="upper limit for the histogram y-axis (leave at 0.0 for automatic scaling)" />
+                    <param name="xlim" type="select" label="x-axis scaling">
+                        <option value="">preserve relative contig sizes</option>
+                        <option value="--fit-width">scale each contig to fit the plot width</option>
+                    </param>
+                    <expand macro="hist_colors" />
+                </when>
+                <when value="--no-hist -p">
+                    <expand macro="hist_default" />
+                    <param name="sylim" type="float" value="1.0" 
+                    label="upper limit for the scatter plot y-axis (default: 1)" />
+                    <param name="xlim" type="select" label="x-axis scaling">
+                        <option value="">preserve relative contig sizes</option>
+                        <option value="--fit-width">scale each contig to fit the plot width</option>
+                    </param>
+                    <param name="span" type="float" value="0.1" 
+                    label="span value to be used in calculating the Loess regression line through the scatter data (default=0.1, specify 0 to prevent calculation)" 
+                    help="smaller values give a more responsive curve that often picks up local evidence for tight linkage better, but too small values lead to plotting failures (in that case just rerun the tool with a larger value)." />
+                    <expand macro="scatter_colors" />
+                </when>
+                <when value="-p">
+                    <expand macro="plot_all" />
+                </when>
+            </conditional>
+        </macro>
+        <macro name="vac_unconditional">
+            <expand macro="bins" />
+            <conditional name="plotopts">
+                <param name="plots" type="select" label="graphical output settings">
+                    <option value="--no-scatter -p">Give me graphical output</option>
+                    <option value="">Do not generate graphs.</option>
+                </param>
+                <when value="">
+                </when>
+                <when value="--no-scatter -p">
+                    <expand macro="scatter_default" />
+                    <param name="show_kde" type="boolean" truevalue="" falsevalue="--no-kde" checked="true"
+                    label="show kde line in histogram plots"
+                    help="The tool can calculate a kernel density estimate for the linkage data based on a bin size of 10 kilobases and display it as a solid line in the histogram plots." />
+                    <param name="hylim" type="float" value="0.0" 
+                    label="upper limit for the histogram y-axis (leave at 0.0 for automatic scaling)" />
+                    <param name="xlim" type="select" label="x-axis scaling">
+                        <option value="">preserve relative contig sizes</option>
+                        <option value="--fit-width">scale each contig to fit the plot width</option>
+                    </param>
+                    <expand macro="hist_colors" />
+                </when>
+            </conditional>
+        </macro>
+        <macro name="hidden_algo_params">
+            <param name="sample" type="hidden" value="" />
+            <expand macro="hidden_vaf_algo_params" />
+            <param name="contrast_sample" type="hidden" value="" />
+        </macro>
+        <macro name="hidden_vaf_algo_params">
+            <param name="related_parent_sample" type="hidden" value="" />
+            <param name="unrelated_parent_sample" type="hidden" value="" />
+            <param name="infer_missing" type="hidden" value="" />
+        </macro>
+        <macro name="bins">
+            <repeat name="bin_sizes" default="0" min="0" title="bin sizes to analyze variants in (defaults to: 1Mb and 500Kb)" 
+            help="Values can be entered in bases (e.g., 1000000), kilobases (e.g., 500Kb) or megabases (e.g., 1Mb), but must be integral, i.e. no decimal numbers are allowed.">
+                <param name="bin_size" type="text">
+                     <validator type="empty_field" />
+                     <validator type="expression" message="Malformed bin size">not value or all(c.isdigit() or c in 'KMb' for c in value)</validator>
+                </param>
+            </repeat>
+        </macro>
+        <macro name="scatter_default">
+            <param name="sylim" type="hidden" value="" />
+            <param name="span" type="hidden" value="" />
+            <param name="scols" type="hidden" value="" />
+        </macro>
+        <macro name="hist_default">
+            <param name="show_kde" type="hidden" value="" />
+            <param name="hylim" type="hidden" value="" />
+            <param name="hcols" type="hidden" value="" />
+        </macro>
+        <macro name="hist_colors">
+            <repeat name="hcols" default="0" min="0" title="histogram colors"
+            help="For each bin size chosen above a histogram will be generated with its color selected from the list provided here (defaults to alternating darkgrey, red).">
+                <param name="hcolor" type="color" value="darkgrey">
+                    <sanitizer><valid><add value="#" /></valid></sanitizer>
+                </param>
+            </repeat>
+        </macro>
+        <macro name="scatter_colors">
+            <repeat name="scols" default="0" min="0" max="1" title="custom scatter plot colors">
+                <param name="pcol" type="color" value="black"
+                label="data points base color">
+                    <sanitizer><valid><add value="#" /></valid></sanitizer>
+                </param>
+                <param name="lcol" type="color" value="red"
+                label="regression line color">
+                    <sanitizer><valid><add value="#" /></valid></sanitizer>
+                </param>
+            </repeat>
+        </macro>
+        <macro name="plot_all">
+            <param name="show_kde" type="boolean" truevalue="" falsevalue="--no-kde" checked="true"
+            label="show kde line in histogram plots"
+            help="The tool can calculate a kernel density estimate for the linkage data based on a bin size of 10 kilobases and display it as a solid line in the histogram plots." />
+            <param name="hylim" type="float" value="0.0"
+            label="upper limit for the histogram y-axis (leave at 0.0 for automatic scaling)" />
+            <param name="sylim" type="float" value="1.0"
+            label="upper limit for the scatter plot y-axis (default: 1)" />
+            <param name="xlim" type="select" label="x-axis scaling">
+                <option value="">preserve relative contig sizes</option>
+                <option value="--fit-width">scale each contig to fit the plot width</option>
+            </param>
+            <param name="span" type="float" value="0.1"
+            label="span value to be used in calculating the Loess regression line through the scatter data (default=0.1, specify 0 to prevent calculation)" 
+            help="smaller values give a more responsive curve that often picks up local evidence for tight linkage better, but too small values lead to plotting failures (in that case just rerun the tool with a larger value)." />
+            <expand macro="hist_colors" />
+            <expand macro="scatter_colors" />
+        </macro>
+        <macro name="seqdict_param">
+            <conditional name="seqinfo_external">
+                <param name="source" type="select"
+                label="does this input provide contig name and size information?"
+                help="ALWAYS select 'yes' here if the input dataset was generated with MiModD. Input generated with third-party tools may or may not provide the information. If in doubt, execute the job with 'yes' selected and see if you are getting a corresponding error message.">
+                    <option value="">Yes</option>
+                    <option value="fasta">No, get the information from a reference genome in my history</option>
+                    <option value="cached">No, get the information from a built-in genome</option>
+                    <option value="seqdict">No, get the information from a CloudMap-style sequence dictionary in my history</option>
+                </param>
+                <when value="fasta">
+                    <param name="seqinfo" type="data" format="fasta"
+                    label="Reference genome to extract contig info from" />
+                </when>
+                <when value="cached">
+                    <param name="seqinfo" type="select"
+                    label="Reference genome to extract contig info from">
+                        <options from_data_table="all_fasta" />
+                    </param>
+                </when>
+                <when value="seqdict">
+                    <param name="seqinfo" type="data" format="tabular"
+                    label="CloudMap-style sequence dictionary to extract contig info from" />
+                </when>
+                <when value="">
+                </when>
+            </conditional>
+        </macro>
+        <macro name="test_tabular_out">
+            <output name="ofile" ftype="tabular">
+                <assert_contents>
+                    <has_text text="chrI" />
+                    <has_text text="chrII" />
+                    <has_text text="chrIII" />
+                    <has_text text="chrIV" />
+                    <has_text text="chrV" />
+                    <has_text text="chrX" />
+                    <has_text text="MtDNA" />
+                </assert_contents>
+            </output>
+        </macro>
+    </macros>
+    <expand macro="requirements" />
+    <expand macro="stdio" />
+    <expand macro="version_command" />
+    <command><![CDATA[
+    mimodd map ${opt.mode} '${opt.source.ifile}'
+      #if $str($opt.source.sample):
+        -m '${opt.source.sample}'
+      #end if
+      #if $str($opt.source.related_parent_sample):
+        -r '${opt.source.related_parent_sample}'
+      #end if
+      #if $str($opt.source.unrelated_parent_sample):
+        -u '${opt.source.unrelated_parent_sample}'
+      #end if
+      #if $str($opt.source.contrast_sample):
+        -c '${opt.source.contrast_sample}'
+      #end if
+        $opt.source.infer_missing
+        -o '$ofile'
+      #if $str($opt.source.seqinfo_external.source) in ("fasta", "seqdict"):
+        -s '${opt.source.seqinfo_external.seqinfo}'
+      #else if $str($opt.source.seqinfo_external.source) == "cached":
+        -s '${opt.source.seqinfo_external.seqinfo.fields.path}'
+      #end if
+      #if $len($opt.source.bin_sizes):
+        --bin-sizes
+        #for $size in $opt.source.bin_sizes:
+          '${size.bin_size}'
+        #end for
+      #end if
+      #if $str($opt.source.tabfile):
+        $str($opt.source.tabfile) '$tfile'
+      #end if
+      #if $str($opt.source.plotopts.plots):
+        $str($opt.source.plotopts.plots) '$pfile'
+        $opt.source.plotopts.show_kde
+        $str($opt.source.plotopts.xlim)
+        #if $str($opt.source.plotopts.hylim) and $opt.source.plotopts.hylim != 0.0:
+          --ylim-hist $str($opt.source.plotopts.hylim)
+        #end if
+        #if $str($opt.source.plotopts.hcols) and $len($opt.source.plotopts.hcols):
+          --hist-colors
+          #for $color in $opt.source.plotopts.hcols:
+            '${color.hcolor}'
+          #end for
+        #end if
+        #if $str($opt.source.plotopts.sylim):
+          --ylim-scatter $str($opt.source.plotopts.sylim)
+        #end if
+        #if $str($opt.source.plotopts.scols) and $len($opt.source.plotopts.scols):
+          #for $color_scheme in $opt.source.plotopts.scols:
+            --points-colors '${color_scheme.pcol}'
+            --loess-colors '${color_scheme.lcol}'
+          #end for
+        #end if
+        #if $str($opt.source.plotopts.span):
+          --loess-span $str($opt.source.plotopts.span)
+        #end if
+      #end if
+    ]]></command>
+  
+    <inputs>
+        <conditional name="opt">
+            <param name="mode" type="select" label="type of mapping analysis to perform" 
+            help="Select Simple Variant Density (SVD) Mapping to map mutations based on linked inheritance in near isogenic populations, Variant Allele Frequency (VAF) Mapping for bulk segregant analysis. Select Reprocess for rapidly replotting the result of a previous VAF analysis.">
+                <option value="SVD">Simple Variant Density Mapping</option>
+                <option value="VAF">Variant Allele Frequency Mapping</option>
+                <option value="VAC">Variant Allele Contrast Mapping</option>
+            </param>
+            <when value="SVD">
+                <conditional name="source">
+                    <param name="inputtype" type="select" label="data source to use">
+                        <option value="vcf">VCF file of variants (for de-novo mapping)</option>
+                        <option value="rep">per-variant report file (for remapping a previous analysis)</option>
+                    </param>
+                    <when value="vcf">
+                        <param name="ifile" type="data" format="vcf" 
+                        label="input file with variants to analyze" />
+                        <expand macro="svd_unconditional" />
+                        <param name="tabfile" type="select" 
+                        label="additional per-variant output file" 
+                        help="You can either choose to produce a tabular per-variant report, which is useful for fast replotting with different plot settings, or a VCF-like CloudMap-compatibility output that can be used as input for the older CloudMap EMS Variant Density Mapping tool as an alternative plotting tool.">
+                            <option value="">Do not generate per-variant output</option>
+                            <option value="-t">Tabular per-variant report</option>
+                            <option value="--cloudmap -t">CloudMap compatibility output</option>
+                        </param>
+                    </when>
+                    <when value="rep">
+                        <param name="ifile" type="data" format="tabular,csv" 
+                        label="input file with variants to analyze" />
+                        <param name="tabfile" type="hidden" value="" />
+                        <expand macro="svd_unconditional" />
+                    </when>
+                </conditional>
+            </when>
+            <when value="VAF">
+                <conditional name="source">
+                    <param name="inputtype" type="select" label="data source to use">
+                        <option value="vcf">VCF file of variants (for de-novo mapping)</option>
+                        <option value="rep">per-variant report file (for remapping a previous analysis)</option>
+                    </param>
+                    <when value="vcf">
+                        <param name="ifile" type="data" format="vcf" 
+                        label="input file with variants to analyze" />
+                        <expand macro="seqdict_param" />
+                        <param name="sample" type="text" 
+                        label="mapping sample name" help="the sample to perform mutation mapping for">
+                            <validator type="empty_field" />
+                            <expand macro="lex_sam_header" />
+                        </param>
+                        <param name="related_parent_sample" type="text" 
+                        label="name of the related parent sample" 
+                        help="the sample that provides variants present in your original mutant strain or in an ancestor (like the pre-mutagenesis strain); leave blank if not available">
+                            <expand macro="lex_sam_header" />
+                        </param>
+                        <param name="unrelated_parent_sample" type="text" 
+                        label="name of the unrelated parent sample" 
+                        help="the sample that provides variants present in the unrelated mapping strain (or in an ancestor of it) used in the mapping cross; leave blank if not available">
+                            <expand macro="lex_sam_header" />
+                        </param>
+                        <param name="infer_missing" type="boolean" truevalue="--infer-missing" falsevalue="" checked="false" 
+                        label="Infer alleles for missing parent" 
+                        help="if variant data for either the related or the unrelated parent strain is not available, the tool can try to infer the alleles present in that parent from the allele spectrum found in the mapping sample. Use with caution on carefully filtered variant lists only!" />
+                        <param name="contrast_sample" type="hidden" value="" />
+                        <expand macro="vaf_unconditional" />
+                        <param name="tabfile" type="select" 
+                        label="additional per-variant output file" 
+                        help="You can either choose to produce a tabular per-variant report, which is useful for fast replotting with different plot settings, or a VCF-like CloudMap-compatibility output that can be used as input for the older CloudMap Hawaiian Variant Mapping tool as an alternative plotting tool.">
+                            <option value="">Do not generate per-variant output</option>
+                            <option value="-t">Tabular per-variant report</option>
+                            <option value="--cloudmap -t">CloudMap compatibility output</option>
+                        </param>
+                    </when>
+                    <when value="rep">
+                        <param name="ifile" type="data" format="tabular,csv" 
+                        label="input file with variants to analyze" />
+                        <expand macro="seqdict_param" />
+                        <param name="tabfile" type="hidden" value="" />
+                        <expand macro="hidden_algo_params" />
+                        <expand macro="vaf_unconditional" />
+                    </when>
+                </conditional>
+            </when>
+            <when value="VAC">
+                <conditional name="source">
+                    <param name="inputtype" type="select"
+                    label="data source to use">
+                        <option value="vcf">VCF file of variants (for de-novo mapping)</option>
+                        <option value="rep">per-variant report file (for remapping a previous analysis)</option>
+                    </param>
+                    <when value="vcf">
+                        <param name="ifile" type="data" format="vcf"
+                        label="input file with variants to analyze" />
+                        <expand macro="seqdict_param" />
+                        <expand macro="hidden_vaf_algo_params" />
+                        <param name="sample" type="text"
+                        label="mapping sample name"
+                        help="the sample to perform mutation mapping for">
+                            <validator type="empty_field" />
+                            <expand macro="lex_sam_header" />
+                        </param>
+                        <param name="contrast_sample" type="text"
+                        label="name of the contrast sample"
+                        help="the sample that provides contrasting allele composition around the causal variant">
+                            <validator type="empty_field" />
+                            <expand macro="lex_sam_header" />
+                        </param>
+                        <expand macro="vac_unconditional" />
+                        <param name="tabfile" type="select"
+                        label="additional per-variant output file"
+                        help="You can choose to produce a tabular per-variant report, which is useful for fast replotting with different plot settings.">
+                            <option value="">Do not generate per-variant output</option>
+                            <option value="-t">Tabular per-variant report</option>
+                        </param>
+                    </when>
+                    <when value="rep">
+                        <param name="ifile" type="data" format="tabular,csv"
+                        label="input file with variants to analyze" />
+                        <expand macro="seqdict_param" />
+                        <param name="tabfile" type="hidden" value="" />
+                        <expand macro="hidden_algo_params" />
+                        <expand macro="vac_unconditional" />
+                    </when>
+                </conditional>
+            </when>
+        </conditional>
+    </inputs>
+    <outputs>
+        <data name="ofile" format="tabular" 
+        label="MiModD ${opt.mode} Mapping - binned variant counts for ${on_string}" />
+        <data name="tfile" format="tabular" 
+        label="MiModD ${opt.mode} Mapping - per-variant report for ${on_string}">
+            <filter>(opt['source']['tabfile'])</filter>
+        </data>
+        <data name="pfile" format="pdf" 
+        label="MiModD ${opt.mode} Mapping - linkage plots for ${on_string}">
+            <filter>(opt['source']['plotopts']['plots'])</filter>
+        </data>
+    </outputs>
+
+    <tests>
+        <test expect_num_outputs="1">
+            <conditional name="opt">
+                <param name="mode" value="SVD" />
+                <conditional name="source">
+                    <param name="inputtype" value="vcf" />
+                    <conditional name="plotopts">
+                        <param name="plots" value="" />
+                    </conditional>
+                    <param name="ifile" value="a.vcf" />
+                </conditional>
+            </conditional>
+            <expand macro="test_tabular_out" />
+        </test>
+        <test expect_num_outputs="2">
+            <conditional name="opt">
+                <param name="mode" value="VAF" />
+                <conditional name="source">
+                    <param name="inputtype" value="vcf" />
+                    <conditional name="plotopts">
+                        <param name="plots" value="-p" />
+                    </conditional>
+                    <param name="sample" value="ot266" />
+                    <param name="related_parent_sample" value="N2" />
+                    <param name="ifile" value="a.vcf" />
+                </conditional>
+            </conditional>
+            <expand macro="test_tabular_out" />
+            <output name="pfile" file="vaf_linkage.pdf" ftype="pdf"
+            compare="sim_size" delta="100000" />
+        </test>
+    </tests>
+    
+    <help><![CDATA[
+.. class:: infomark
+
+   **What it does**
+
+This is the most downstream tool in
+`mapping-by-sequencing analysis workflows in MiModD`_.
+
+It can be used to analyze and visualize the inheritance pattern of variants
+detected and selected with other MiModD tools or as an alternative (and more
+versatile) plotting engine for data generated with `CloudMap`_.
+
+-------------
+
+**Usage Modes:**
+
+This tool can be run in one of three different modes depending on the type of
+mapping analysis that should be performed:
+
+1) *Simple Variant Density (SVD) Mapping* mode analyzes the density of variants
+   along the reference genome by dividing each chromosome into regions of
+   user-defined size (bins) and counting the variants found in each bin. 
+    
+   All variants listed in the input file are analyzed in this mode, which means
+   that as input you will typically want to use filtered lists of variants (as
+   produced by the VCF Filter tool). 
+    
+   The aim of SVD analysis is to identify clusters of variants in an outcrossed
+   strain carrying a selectable unknown mutation, which is interpreted as
+   linkage between the corresponding genomic region and the unknown mutation.
+    
+   This mode corresponds roughly to EMS Variant Density Mapping in CloudMap.
+
+2) *Variant Allele Frequency (VAF) Mapping* mode analyzes the inheritance
+   pattern in cross-progeny at sites, at which the parents are homozygous for
+   different alleles. 
+    
+   The aim of VAF analysis is to identify clusters of variants with (near)
+   homozygous inheritance in a F2 (or later generation) population obtained
+   from a cross between a strain carrying a selectable unknown mutation and an
+   unrelated mapping strain. Such a cluster is interpreted as linkage between
+   the corresponding genomic region and the unknown mutation selected for in
+   the F2 generation. 
+    
+   This mode corresponds roughly to Hawaiian Variant Mapping in CloudMap, but
+   can simultaneously take into account non-reference alleles found in either
+   parent strain (CloudMap users may think of this as a combined Hawaiian
+   Variant and Variant Discovery Mapping analysis).
+
+3) *Variant Allele Contrast (VAC) Mapping* mode analyzes and visualizes the
+   divergence between two samples at all sites in the input dataset. It works
+   independent of any parent strain information and can be used if you have two
+   samples selected for contrary phenotypes, but also with a selected and a
+   non-selected sample.
+
+-------------
+
+**Input:**
+
+Valid input for this tool are VCF datasets (any such dataset in SVD mode, a
+MiModD-generated multi-sample VCF dataset in VAF and VAC modes) or a tabular
+report as generated by the CloudMap Hawaiian Variant Mapping tool.
+Alternatively, the tool can generate (in both modes) its own tabular reports,
+which can be used as input instead of the original VCF dataset, when rerunning
+the tool with different plotting parameters, to reduce analysis time. 
+
+-------------
+
+**Output:**
+
+The tool produces up to three output files:
+
+1) a default tabular report of binned variant counts that can be used to plot
+   the data with external software such as Excel,
+
+2) an optional pdf containing linkage plots, and
+  
+3) an optional tabular per-variant report, which can be configured to be either
+   valid input for the corresponding original CloudMap tool (for users who
+   really, really want to continue using CloudMap for plotting) or to be
+   reusable in fast reruns of the tool (which can be useful to experiment with
+   different plotting parameters).
+
+-------------
+
+**Settings:**
+
+1) Analysis settings
+
+   *bin size to analyze variants in* - determines the width of the regions
+   along each chromosome, in which variants are counted and analyzed together. 
+     
+   Several bin sizes can be specified and for each size you will get a
+   corresponding results section in the binned variant counts report and a
+   linkage histogram plot.
+      
+   *sample names (in VAF and VAC modes only)* - to analyze inheritance
+   patterns, the VAF and VAC modes need information about the relationship
+   between the samples defined in the input. While VAC mode simply requires
+   you to name the two contrasting samples for the analysis, the sample roles
+   in VAF mode are a bit more complicated to understand. Specifically:
+
+   The *mapping sample name* should be set to the name of the sample for which
+   the inheritance pattern is to be analyzed (the pooled progeny population). 
+
+   The *name of the related sample* should indicate the parent sample that
+   carried and brought in the unknown mutation to be mapped (or, alternatively,
+   a closely related ancestor). 
+
+   The *name of the unrelated sample* should be that of the other parent strain
+   used in the cross. 
+     
+   At least one of the parent samples MUST be specified, but if the input
+   contains variant information for both parents, they can be analyzed together
+   for higher mapping accuracy. If you are reanalyzing a tabular report from a
+   previous tool run or from CloudMap, the association between variants and
+   samples is already stored in the input dataset and cannot be specified
+   again.
+
+2) Graphical output settings
+
+   .. class:: warningmark
+  
+      To be able to generate plots, the system running MiModD needs to have the
+      statistical programming environment R and its Python interface rpy2
+      installed. Disable graphical output if this is not the case.
+
+   *y-axes scaling* - if you want to override the defaults
+
+   *x-axis scaling* - choose *preserve relative contig sizes* if you want the
+   largest chromosome to fit the page width and smaller chromosomes to appear
+   according to their relative size or choose *scale each contig to fit the
+   plot width* if all chromosomes should exploit the available space
+
+   *span value to be used in calculating the Loess regression line* - this
+   value determines the degree of smoothing of the regression line through the
+   scatterplot data. Information on loess regression and the loess span
+   parameter can be found at http://en.wikipedia.org/wiki/Local_regression.
+   
+   *colors used for plotting* - can be selected freely from the offered
+   palette. For histogram colors, the list of selected colors will be used to
+   provide the colors for the different histograms plotted. If less colors than
+   histograms (determined by the number of bin sizes selected) are specified,
+   colors from the list will be recycled.
+
+.. _CloudMap: https://usegalaxy.org/u/gm2123/p/cloudmap
+.. _mapping-by-sequencing analysis workflows in MiModD: http://mimodd.readthedocs.io/en/latest/nacreousmap.html
+.. _CloudMap-style sequence dictionary: http://mimodd.readthedocs.io/en/latest/fileformats.html#cloudmap-style-sequence-dictionary
+
+@HELP_FOOTER@
+    ]]></help>
+    <expand macro="citations" />
+</tool>

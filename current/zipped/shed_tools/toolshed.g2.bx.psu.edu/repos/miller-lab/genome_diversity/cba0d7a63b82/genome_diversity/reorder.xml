@@ -1,0 +1,19 @@
+<tool id="gd_reorder" name="Reorder" version="1.0.0">
+  <description>individuals</description>
+
+  <command interpreter="python">
+    reorder.py "$input" "$output" "$order"
+  </command>
+
+  <inputs>
+    <param name="input" type="data" format="gd_indivs" label="Individuals dataset" />
+    <param name="order" size="40" type="text" value="" label="New order"/>
+  </inputs>
+
+  <outputs>
+    <data name="output" format="gd_indivs" metadata_source="input"/>
+  </outputs>
+
+  <help>
+  </help>
+</tool>

@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<tool id="align_families" name="Du Novo: Align families" version="0.8.1">
+  <description>of duplex sequencing reads</description>
+  <requirements>
+    <requirement type="package" version="7.221">mafft</requirement>
+    <requirement type="package" version="0.8.1">dunovo</requirement>
+    <!-- TODO: require Python 2.7 -->
+  </requirements>
+  <command detect_errors="exit_code">align_families.py --galaxy $phone --processes \${GALAXY_SLOTS:-1} '$input' &gt; '$output'
+  </command>
+  <inputs>
+    <param name="input" type="data" format="tabular" label="Input reads" help="with barcodes, grouped by family"/>
+    <param name="phone" type="boolean" truevalue="--phone-home" falsevalue="" checked="False" label="Send anonymous usage data" help="Report helpful usage data to the developer, to better understand the use cases and performance of the tool. The only data which will be recorded is the name and version of the tool, the size of the input data, the time taken to process it, and the IP address of the machine running it. No parameters or filenames are sent."/>
+  </inputs>
+  <outputs>
+    <data name="output" format="tabular"/>
+  </outputs>
+  <tests>
+    <test>
+      <param name="input" value="smoke.families.tsv"/>
+      <output name="output" file="smoke.families.aligned.tsv"/>
+    </test>
+    <test>
+      <param name="input" value="families.in.tsv"/>
+      <output name="output" file="families.sort.tsv"/>
+    </test>
+  </tests>
+  <citations>
+    <citation type="bibtex">@article{Stoler2016,
+      author = {Stoler, Nicholas and Arbeithuber, Barbara and Guiblet, Wilfried and Makova, Kateryna D and Nekrutenko, Anton},
+      doi = {10.1186/s13059-016-1039-4},
+      issn = {1474-760X},
+      journal = {Genome biology},
+      number = {1},
+      pages = {180},
+      pmid = {27566673},
+      publisher = {Genome Biology},
+      title = {{Streamlined analysis of duplex sequencing data with Du Novo.}},
+      url = {http://www.ncbi.nlm.nih.gov/pubmed/27566673},
+      volume = {17},
+      year = {2016}
+    }</citation>
+  </citations>
+  <help>
+
+**What it does**
+
+This is for processing duplex sequencing data. It does a multiple sequence alignment on each (single-stranded) family of reads.
+
+-----
+
+**Input**
+
+This expects the output format of the "Make families" tool.
+
+-----
+
+**Output**
+
+The output is a tabular file where each line corresponds to a (single) read.
+
+The columns are::
+
+  1: barcode (both tags)
+  2: tag order in barcode ("ab" or "ba")
+  3: read mate ("1" or "2")
+  4: read name
+  5: read sequence, aligned ("-" for gaps)
+  6: read quality scores, aligned (" " for gaps)
+
+-----
+
+**Alignments**
+
+The alignments are done using MAFFT, specifically the command
+::
+
+  $ mafft --nuc --quiet family.fa &gt; family.aligned.fa
+
+    </help>
+</tool>

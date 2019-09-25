@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="meme" version="4.11.0">
+        <repository changeset_revision="6ee2e1225125" name="package_meme_4_11_0" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+</tool_dependency>
