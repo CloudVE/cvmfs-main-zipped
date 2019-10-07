@@ -9,4 +9,4 @@ before_install:
 
 jobs:
  include:
-   - script: travis_wait 50 sudo sh ./mount.sh && travis_wait 50 sudo sh ./modify.sh && travis_wait 50 sudo sh ./push.sh
+   - script: sudo sh ./mount.sh && sudo sh ./modify.sh && sudo sh ./push.sh
