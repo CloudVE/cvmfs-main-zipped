@@ -2,7 +2,6 @@
 
 git config --global user.email "travis@travis-ci.org"p
 git config --global user.name "Travis CI"
-git checkout master
 git add .
 git commit -m "Travis update: $(date) (Build $TRAVIS_BUILD_NUMBER)" -m "[skip ci]" > ./current/commit.log
 git add .
