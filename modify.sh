@@ -15,5 +15,6 @@ find ./working -name '*.cvmfsoriginal' -exec cp --parents \{\} ./current/ \;
 mv ./current/working/ ./current/original
 find ./working -name "*.cvmfsoriginal" -type f -delete
 mv ./working/ ./current/zipped/
+ls ./current/zipped/
 tar -zcvf ./current/zipped.tar.gz ./current/zipped/ > ./current/tar.log
 
