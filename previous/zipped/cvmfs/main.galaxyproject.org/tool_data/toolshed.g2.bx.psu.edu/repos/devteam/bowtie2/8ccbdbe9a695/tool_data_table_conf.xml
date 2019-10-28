@@ -3,7 +3,7 @@
 <!-- Locations of indexes in the Bowtie2 mapper format -->
     <table comment_char="#" name="bowtie2_indexes">
         <columns>value, dbkey, name, path</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/devteam/bowtie2/8ccbdbe9a695/bowtie2_indices.loc" />
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/devteam/bowtie2/8ccbdbe9a695/bowtie2_indices.loc" />
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>bowtie2</repository_name>

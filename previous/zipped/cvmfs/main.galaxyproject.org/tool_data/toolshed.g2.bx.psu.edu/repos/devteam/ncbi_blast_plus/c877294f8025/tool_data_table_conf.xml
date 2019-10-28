@@ -2,7 +2,7 @@
 <tables>
 <table allow_duplicate_entries="False" comment_char="#" name="blastdb">
         <columns>value, name, path</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/devteam/ncbi_blast_plus/c877294f8025/blastdb.loc" />
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/devteam/ncbi_blast_plus/c877294f8025/blastdb.loc" />
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>ncbi_blast_plus</repository_name>
@@ -12,7 +12,7 @@
     </table>
 <table allow_duplicate_entries="False" comment_char="#" name="blastdb_p">
         <columns>value, name, path</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/devteam/ncbi_blast_plus/c877294f8025/blastdb_p.loc" />
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/devteam/ncbi_blast_plus/c877294f8025/blastdb_p.loc" />
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>ncbi_blast_plus</repository_name>
@@ -22,7 +22,7 @@
     </table>
 <table allow_duplicate_entries="False" comment_char="#" name="blastdb_d">
         <columns>value, name, path</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/devteam/ncbi_blast_plus/c877294f8025/blastdb_d.loc" />
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/devteam/ncbi_blast_plus/c877294f8025/blastdb_d.loc" />
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>ncbi_blast_plus</repository_name>

@@ -3,7 +3,7 @@
     <!-- Locations of all fasta files under genome directory -->
     <table comment_char="#" name="all_fasta">
         <columns>value, dbkey, name, path</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/bedtools/87ee588b3d45/all_fasta.loc"/>
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/bedtools/87ee588b3d45/all_fasta.loc"/>
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>bedtools</repository_name>
@@ -14,7 +14,7 @@
     <!-- Locations of all sam indexes under genome directory -->
     <table comment_char="#" name="fasta_indexes">
         <columns>value, dbkey, name, path</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/bedtools/87ee588b3d45/fasta_indexes.loc"/>
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/bedtools/87ee588b3d45/fasta_indexes.loc"/>
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>bedtools</repository_name>
@@ -25,7 +25,7 @@
     <!-- Locations of all gff files with annotations of genome builds -->
     <table comment_char="#" name="all_gff">
         <columns>value, dbkey, name, path</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/bedtools/87ee588b3d45/all_gff.loc"/>
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/bedtools/87ee588b3d45/all_gff.loc"/>
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>bedtools</repository_name>
@@ -36,7 +36,7 @@
     <!-- Locations of dbkeys and len files under genome directory -->
     <table comment_char="#" name="__dbkeys__">
         <columns>value, name, len_path</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/bedtools/87ee588b3d45/dbkeys.loc"/>
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/bedtools/87ee588b3d45/dbkeys.loc"/>
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>bedtools</repository_name>

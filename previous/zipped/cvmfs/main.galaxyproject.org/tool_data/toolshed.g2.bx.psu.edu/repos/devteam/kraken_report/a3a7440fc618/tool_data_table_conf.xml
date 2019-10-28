@@ -3,7 +3,7 @@
 <!-- Locations of Kraken database in the required format -->
     <table comment_char="#" name="kraken_databases">
         <columns>value, name, path</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/devteam/kraken_report/a3a7440fc618/kraken_databases.loc" />
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/devteam/kraken_report/a3a7440fc618/kraken_databases.loc" />
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>kraken_report</repository_name>

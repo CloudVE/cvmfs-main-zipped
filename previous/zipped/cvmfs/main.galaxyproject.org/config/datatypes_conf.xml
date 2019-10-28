@@ -619,11 +619,11 @@
       cannot change if you want the old-style display links for these sites to
       work.
       -->
-      <site type="ucsc" file="/cvmfs/zipped/galaxy/tool-data/shared/ucsc/ucsc_build_sites.txt.sample" display="main,test,archaea,ucla"/>
-      <site type="gbrowse" file="/cvmfs/zipped/galaxy/tool-data/shared/gbrowse/gbrowse_build_sites.txt" display="modencode,sgd_yeast,tair,wormbase,wormbase_ws120,wormbase_ws140,wormbase_ws170,wormbase_ws180,wormbase_ws190,wormbase_ws200,wormbase_ws204,wormbase_ws210,wormbase_ws220,wormbase_ws225"/>
-      <site type="ensembl" file="/cvmfs/zipped/galaxy/tool-data/shared/ensembl/ensembl_sites.txt"/>
-      <site type="ensembl_data_url" file="/cvmfs/zipped/galaxy/tool-data/shared/ensembl/ensembl_sites_data_URL.txt"/>
-      <site type="igv" file="/cvmfs/zipped/galaxy/tool-data/shared/igv/igv_build_sites.txt.sample"/>
-      <site type="rviewer" file="/cvmfs/zipped/galaxy/tool-data/shared/rviewer/rviewer_build_sites.txt.sample"/>
+      <site type="ucsc" file="/cvmfs/zipped/cvmfs/main.galaxyproject.org/galaxy/tool-data/shared/ucsc/ucsc_build_sites.txt.sample" display="main,test,archaea,ucla"/>
+      <site type="gbrowse" file="/cvmfs/zipped/cvmfs/main.galaxyproject.org/galaxy/tool-data/shared/gbrowse/gbrowse_build_sites.txt" display="modencode,sgd_yeast,tair,wormbase,wormbase_ws120,wormbase_ws140,wormbase_ws170,wormbase_ws180,wormbase_ws190,wormbase_ws200,wormbase_ws204,wormbase_ws210,wormbase_ws220,wormbase_ws225"/>
+      <site type="ensembl" file="/cvmfs/zipped/cvmfs/main.galaxyproject.org/galaxy/tool-data/shared/ensembl/ensembl_sites.txt"/>
+      <site type="ensembl_data_url" file="/cvmfs/zipped/cvmfs/main.galaxyproject.org/galaxy/tool-data/shared/ensembl/ensembl_sites_data_URL.txt"/>
+      <site type="igv" file="/cvmfs/zipped/cvmfs/main.galaxyproject.org/galaxy/tool-data/shared/igv/igv_build_sites.txt.sample"/>
+      <site type="rviewer" file="/cvmfs/zipped/cvmfs/main.galaxyproject.org/galaxy/tool-data/shared/rviewer/rviewer_build_sites.txt.sample"/>
   </build_sites>
 </datatypes>

@@ -3,7 +3,7 @@
     <!-- Location of SAMTools indexes for FASTA files -->
     <table comment_char="#" name="fasta_indexes">
         <columns>value, dbkey, name, path</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/bcftools_plugin_setgt/46eb13bc2c73/fasta_indexes.loc"/>
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/bcftools_plugin_setgt/46eb13bc2c73/fasta_indexes.loc"/>
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>bcftools_plugin_setgt</repository_name>

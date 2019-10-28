@@ -14200,4 +14200,34 @@
             <installed_changeset_revision>ff313de5f7f4</installed_changeset_revision>
         </tool_shed_repository>
     </table>
+    <table comment_char="#" name="plant_tribes_scaffolds">
+        <columns>value, name, path, description</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/greg/plant_tribes_gene_family_classifier/8ec75782a05b/plant_tribes_scaffolds.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>plant_tribes_gene_family_classifier</repository_name>
+            <repository_owner>greg</repository_owner>
+            <installed_changeset_revision>8ec75782a05b</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="plant_tribes_scaffolds">
+        <columns>value, name, path, description</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/greg/plant_tribes_gene_family_integrator/a322e5e668a3/plant_tribes_scaffolds.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>plant_tribes_gene_family_integrator</repository_name>
+            <repository_owner>greg</repository_owner>
+            <installed_changeset_revision>a322e5e668a3</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="plant_tribes_scaffolds">
+        <columns>value, name, path, description</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/greg/plant_tribes_gene_family_phylogeny_builder/c088c185f63f/plant_tribes_scaffolds.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>plant_tribes_gene_family_phylogeny_builder</repository_name>
+            <repository_owner>greg</repository_owner>
+            <installed_changeset_revision>c088c185f63f</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
 </tables>

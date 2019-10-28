@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<toolbox tool_path="/cvmfs/zipped/shed_tools">
+<toolbox tool_path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/shed_tools">
     <section id="sam_bam" name="SAM/BAM">
         <label id="samtools_label" text="SAMTools"/>
         <label id="bamtools_label" text="BAMTools"/>

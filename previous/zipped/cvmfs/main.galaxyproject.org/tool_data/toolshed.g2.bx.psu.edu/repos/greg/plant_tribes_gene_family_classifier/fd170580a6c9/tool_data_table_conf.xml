@@ -2,7 +2,7 @@
 <tables>
 <table comment_char="#" name="plant_tribes_scaffolds">
         <columns>value, name, path, description</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/greg/plant_tribes_gene_family_classifier/fd170580a6c9/plant_tribes_scaffolds.loc" />
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/greg/plant_tribes_gene_family_classifier/fd170580a6c9/plant_tribes_scaffolds.loc" />
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>plant_tribes_gene_family_classifier</repository_name>

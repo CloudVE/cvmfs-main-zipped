@@ -3,7 +3,7 @@
 <!-- Locations of all gtf files with annotations of genome builds -->
     <table allow_duplicate_entries="False" comment_char="#" name="gene_sets">
         <columns>value, dbkey, name, path</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/stringtie/76d290331481/gene_sets.loc" />
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/stringtie/76d290331481/gene_sets.loc" />
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>stringtie</repository_name>

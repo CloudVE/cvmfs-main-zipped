@@ -3,7 +3,7 @@
     <!--  Adapter sequences -->
     <table allow_duplicate_entries="False" comment_char="#" name="adapters">
         <columns>value, name</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/49370cb85f0f/adapters.loc"/>
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/49370cb85f0f/adapters.loc"/>
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>cutadapt</repository_name>

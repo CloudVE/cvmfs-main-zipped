@@ -3,7 +3,7 @@
 <!-- Locations of all fasta files under genome directory -->
     <table comment_char="#" name="all_fasta">
         <columns>value, dbkey, name, path</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/bedtools/fadebae7e69b/all_fasta.loc" />
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/bedtools/fadebae7e69b/all_fasta.loc" />
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>bedtools</repository_name>

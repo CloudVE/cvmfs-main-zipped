@@ -2,7 +2,7 @@
 <tables>
 <table allow_duplicate_entries="False" comment_char="#" name="mothur_aligndb">
         <columns>name, value</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/mothur_collect_shared/afac0d63dac6/mothur_aligndb.loc" />
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/mothur_collect_shared/afac0d63dac6/mothur_aligndb.loc" />
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>mothur_collect_shared</repository_name>
@@ -12,7 +12,7 @@
     </table>
 <table allow_duplicate_entries="False" comment_char="#" name="mothur_lookup">
         <columns>name, value</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/mothur_collect_shared/afac0d63dac6/mothur_lookup.loc" />
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/mothur_collect_shared/afac0d63dac6/mothur_lookup.loc" />
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>mothur_collect_shared</repository_name>
@@ -22,7 +22,7 @@
     </table>
 <table allow_duplicate_entries="False" comment_char="#" name="mothur_map">
         <columns>name, value</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/mothur_collect_shared/afac0d63dac6/mothur_map.loc" />
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/mothur_collect_shared/afac0d63dac6/mothur_map.loc" />
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>mothur_collect_shared</repository_name>
@@ -32,7 +32,7 @@
     </table>
 <table allow_duplicate_entries="False" comment_char="#" name="mothur_taxonomy">
         <columns>name, value</columns>
-        <file path="/cvmfs/zipped/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/mothur_collect_shared/afac0d63dac6/mothur_taxonomy.loc" />
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/mothur_collect_shared/afac0d63dac6/mothur_taxonomy.loc" />
         <tool_shed_repository>
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>mothur_collect_shared</repository_name>
