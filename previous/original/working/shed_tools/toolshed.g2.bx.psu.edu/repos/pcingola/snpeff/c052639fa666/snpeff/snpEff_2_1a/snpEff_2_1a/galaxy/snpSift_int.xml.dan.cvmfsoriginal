@@ -1,0 +1,26 @@
+<tool id="snpSift_int" name="SnpSift Intervals" version="1.0">
+	<description>Filter variants using intervals </description>
+	<!-- 
+	    You will need to change the path to wherever your installation is.
+		You can change the amount of memory used, just change the -Xmx parameter (e.g. use -Xmx2G for 2Gb of memory)
+	-->
+	<command>
+		cat $input | java -Xmx2G -jar ${GALAXY_DATA_INDEX_DIR}/shared/jars/snpEff/SnpSift.jar int $bedFile > $output
+2&gt; out.stderr || echo "Error running snpSift." >&amp;2 &amp;&amp;cat out.stderr
+	</command>
+	<inputs>
+		<param format="Tabular" name="input" type="data" label="VCF input"/>
+		<param format="Tabular" name="bedFile" type="data" label="Intervals (BED file)"/>
+	</inputs>
+	<outputs>
+		<data format="tabular" name="output" />
+	</outputs>
+
+	<help>
+
+You can filter using intervals (BED file)
+
+For details about this tool, please go to http://snpeff.sourceforge.net/SnpSift.html#intervals
+
+	</help>
+</tool>

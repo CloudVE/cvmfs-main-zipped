@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tables>
+<!-- Locations of all fasta files under genome directory -->
+    <table allow_duplicate_entries="False" comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/meme_meme/57e5d9382f36/all_fasta.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>meme_meme</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>57e5d9382f36</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+</tables>

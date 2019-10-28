@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<tool_dependency>
+<<<<<<< HEAD:tools/uniprot_id_mapping/tool_dependencies.xml
+    <package name="requests" version="2.7">
+        <repository name="package_requests_2_7" owner="iuc" />
+=======
+    <package name="request" version="2.7">
+        <repository name="package_python_2_7_request_2_7" owner="iuc" />
+>>>>>>> dc07b37de57cdd358da4ecabd9558736d5b80f97:tools/uniprot_rest_interface/tool_dependencies.xml
+    </package>
+</tool_dependency>

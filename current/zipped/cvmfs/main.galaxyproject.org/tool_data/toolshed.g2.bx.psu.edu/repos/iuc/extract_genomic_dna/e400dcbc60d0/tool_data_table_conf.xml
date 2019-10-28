@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<tables>
+<table allow_duplicate_entries="False" comment_char="#" name="twobit">
+        <columns>dbkey, value</columns>
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/extract_genomic_dna/e400dcbc60d0/twobit.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>extract_genomic_dna</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>e400dcbc60d0</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+</tables>

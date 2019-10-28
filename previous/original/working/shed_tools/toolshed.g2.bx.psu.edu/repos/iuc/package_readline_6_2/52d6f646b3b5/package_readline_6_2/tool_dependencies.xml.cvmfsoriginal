@@ -1,22 +1,21 @@
 <?xml version="1.0"?>
 <tool_dependency>
      <package name="ncurses" version="5.9">
-        <repository changeset_revision="5e1760c773ba" name="package_ncurses_5_9" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+        <repository changeset_revision="335ebf512407" name="package_ncurses_5_9" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
     </package>
     <package name="readline" version="6.2">
         <install version="1.0">
             <actions>
-                <action type="download_by_url">ftp://ftp.gnu.org/gnu/readline/readline-6.2.tar.gz</action>
+                <action sha256sum="79a696070a058c233c72dd6ac697021cc64abd5ed51e59db867d66d196a89381" type="download_by_url">https://depot.galaxyproject.org/software/readline/readline_6.2_src_all.tar.gz</action>
                 <action type="set_environment_for_install">
-                    <repository changeset_revision="5e1760c773ba" name="package_ncurses_5_9" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
+                    <repository changeset_revision="335ebf512407" name="package_ncurses_5_9" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
                         <package name="ncurses" version="5.9" />
                     </repository>
                 </action>
                 <action type="shell_command">
                     ./configure CPPFLAGS=-I$NCURSES_INCLUDE_PATH LDFLAGS=-L$NCURSES_LIB_PATH --prefix $INSTALL_DIR
                 </action>
-                <action type="shell_command">make SHLIB_LIBS=-lncurses</action>
-                <action type="shell_command">make install</action>
+                <action type="make_install">SHLIB_LIBS=-lncurses</action>
                 <action type="set_environment">
                     <environment_variable action="set_to" name="READLINE_INCLUDE_PATH">$INSTALL_DIR/include</environment_variable>
                     <environment_variable action="prepend_to" name="C_INCLUDE_PATH">$INSTALL_DIR/include</environment_variable>

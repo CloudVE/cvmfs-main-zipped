@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<tool_dependency>
+  <package name="rnastructure" version="5.7">
+      <repository changeset_revision="a7e4328e1919" name="package_rnastructure_5_7" owner="iuc" toolshed="http://gaius.bx.psu.edu:9009" />
+    </package>
+    <package name="biopython" version="1.61">
+      <repository changeset_revision="12eb2448f7e3" name="package_biopython_1_61" owner="biopython" prior_installation_required="True" toolshed="http://gaius.bx.psu.edu:9009" />
+    </package>
+    <package name="numpy" version="1.7.1">
+      <repository changeset_revision="b8c74cd7b4e9" name="package_numpy_1_7" owner="iuc" toolshed="http://gaius.bx.psu.edu:9009" />
+    </package>
+    <package name="samtools" version="0.1.18">
+      <repository changeset_revision="f1885df2a943" name="package_samtools_0_1_18" owner="devteam" toolshed="http://gaius.bx.psu.edu:9009" />
+    </package>
+    <package name="bowtie" version="0.12.7">
+      <repository changeset_revision="de68886e7e18" name="package_bowtie_0_12_7" owner="devteam" toolshed="http://gaius.bx.psu.edu:9009" />
+    </package>
+    <package name="imaging" version="1.1.7">
+      <repository changeset_revision="213af494db5a" name="package_imaging_1_1_7" owner="iuc" toolshed="http://gaius.bx.psu.edu:9009" />
+    </package>
+    <package name="matplotlib" version="1.2.1">
+      <repository changeset_revision="ef93c83f8c07" name="package_matplotlib_1_2" owner="iuc" toolshed="http://gaius.bx.psu.edu:9009" />
+    </package>
+</tool_dependency>

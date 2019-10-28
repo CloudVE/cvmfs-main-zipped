@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<tables>
+    <!-- Location of SAMTools indexes for FASTA files -->
+    <table comment_char="#" name="fasta_indexes">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/bcftools_plugin_counts/5ad5d4243987/fasta_indexes.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bcftools_plugin_counts</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>5ad5d4243987</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+</tables>

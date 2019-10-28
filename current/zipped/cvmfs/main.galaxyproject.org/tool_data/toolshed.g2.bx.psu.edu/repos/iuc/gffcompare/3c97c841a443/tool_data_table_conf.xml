@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tables>
+<!-- Location of SAMTools indexed FASTA files -->
+    <table comment_char="#" name="fasta_indexes">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/iuc/gffcompare/3c97c841a443/fasta_indexes.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>gffcompare</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>3c97c841a443</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+</tables>

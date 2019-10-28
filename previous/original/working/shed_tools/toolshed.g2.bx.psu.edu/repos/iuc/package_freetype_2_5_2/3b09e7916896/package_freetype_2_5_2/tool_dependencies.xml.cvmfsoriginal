@@ -1,14 +1,20 @@
 <?xml version="1.0"?>
-<tool_dependency>
+<tool_dependency> 
+    <package name="zlib" version="1.2.8">
+        <repository changeset_revision="63a4a902cda2" name="package_zlib_1_2_8" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
     <package name="libpng" version="1.6.7">
-        <repository changeset_revision="05df724aefbb" name="package_libpng_1_6_7" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+        <repository changeset_revision="7da8c5e453cc" name="package_libpng_1_6_7" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
     </package>
     <package name="freetype" version="2.5.2">
         <install version="1.0">
             <actions>
                 <action sha256sum="376bc32bd907cb6f1a826a9c52627747b6d95259129df0f2c8faf99491168b55" type="download_by_url">https://depot.galaxyproject.org/software/freetype/freetype_2.5.2_src_all.tar.gz</action>
                 <action type="set_environment_for_install">
-                    <repository changeset_revision="05df724aefbb" name="package_libpng_1_6_7" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu">
+                    <repository changeset_revision="63a4a902cda2" name="package_zlib_1_2_8" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu">
+                        <package name="zlib" version="1.2.8" />
+                    </repository>
+                    <repository changeset_revision="7da8c5e453cc" name="package_libpng_1_6_7" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu">
                         <package name="libpng" version="1.6.7" />
                     </repository>
                 </action>

@@ -1,0 +1,464 @@
+#!/usr/bin/env python
+
+"""
+Take a specification file and draw the Miller plot.
+
+The specification should have a header where each line starts with a "@". "@"
+should be followed by a tag and value separated by a "=". Currently the only
+defined tag is GL which is the genome length of the genome under consideration.
+
+The lines after the header should be one for each genome. The first column
+should be the name of the individual/genome followed by the space separated
+positions which need to be marked.
+
+An example spec file will be as follows:
+
+@GN=IR_3
+@GL=14574
+@GA=0:64::tRNA
+@GA=64:1035:nad2:gene
+@GA=1035:1100::tRNA
+@GA=1092:1153::tRNA
+@GA=1160:1226::tRNA
+@GA=1218:2757:cox1:gene
+@GA=2764:3440:cox2:gene
+@GA=3440:3509::tRNA
+@GA=3508:3574::tRNA
+@GA=3574:3730:atp8:gene
+@GA=3723:4389:atp6:gene
+@GA=4395:5173:cox3:gene
+@GA=5173:5236::tRNA
+@GA=5236:5572:nad3:gene
+@GA=5572:5633::tRNA
+@GA=5632:5696::tRNA
+@GA=5695:5763::tRNA
+@GA=5765:5820::tRNA
+@GA=5820:5885::tRNA
+@GA=5883:5948::tRNA
+@GA=5948:7617:nad5:gene
+@GA=7617:7678::tRNA
+@GA=7680:8997:nad4:gene
+@GA=8990:9266:nad4L:gene
+@GA=9268:9330::tRNA
+@GA=9330:9395::tRNA
+@GA=9397:9826:nad6:gene
+@GA=9829:10910:cob:gene
+@GA=10910:10976::tRNA
+@GA=10993:11912:nad1:gene
+@GA=11912:11978::tRNA
+@GA=11992:12053::tRNA
+@GA=12034:13289:rrnL:gene
+@GA=12034:13289:16S:rRNA
+@GA=13289:13351::tRNA
+@GA=13351:14069:rrnS:gene
+@GA=13351:14069:12S:rRNA
+@GA=14423:14492::tRNA
+@GA=14499:14569::tRNA
+@CL=rRNA:#2B83BA
+@CL=tRNA:#FFFFBF
+@CL=gene:#D7191C
+@CL=special:#000000
+@CL=indel:#FDAE61
+@CL=missing:#ABDDA4
+IR_65 2618 3267 3752 7768 8523 special=10177 10848 12790 13157 indel=3500:3560
+missing=4000:6000
+IR_66 2618 3267 3752 7768 8523 special=10177 10848 12790 13157 missing=4000:6000
+IR_63 2618 3267 3752 4883 8523 9798 10848 13157 missing=1:1000
+"""
+
+from sys import argv, stderr, exit
+from getopt import getopt, GetoptError
+from commands import getstatusoutput
+
+__author__ = "Aakrosh Ratan"
+__email__  = "ratan@bx.psu.edu"
+
+# do we want the debug information to be printed?
+debug_flag = False
+
+varstrokewidth = 1
+
+# print the header for the image.. Inputs are in cm
+def printheader(imagewidth, imageheight):
+    print "<?xml version=\"1.0\" standalone=\"no\"?>"
+    print "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\""
+    print "\"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">"
+
+    print "<svg width=\"%dcm\"" % imagewidth
+    print "\theight=\"%dcm\"" % imageheight
+    print "\tviewBox=\"0 0 %d %d\"" % (100*imagewidth, 100*imageheight)
+    print "\txmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">"
+
+# print the footer for the svg image.. Inputs are in cm
+def printfooter():
+    print "</svg>"
+
+# print a rectangle
+def printrectangle(x, y, w, h, 
+                   sw = 2, 
+                   so = 1.0,
+                   rx = None, 
+                   cp = None, 
+                   fl = "none",
+                   fo = 1.0):
+#    print >> stderr, "Rectangle: %d %d %d %d" % (x, y, w, h)
+    print "<rect x=\"%d\"" % x
+    print "\ty=\"%d\"" % y
+    print "\twidth=\"%d\"" % w 
+    print "\theight=\"%d\"" % h
+    if rx != None: print "\trx=\"%d\"" % rx
+    print "\tstroke=\"black\""
+    if cp != None: print "\tclip-path=\"url(#g%d)\"" % cp
+    print "\tstroke-width=\"%d\"" % sw
+    print "\tstroke-opacity=\"%2.2f\"" % so
+    print "\tfill-opacity=\"%2.2f\"" % fo
+    print "\tfill=\"%s\" />" % fl
+
+def printtext(x, y, text, 
+              fontfamily  = "Times", 
+              fontweight  = "bold",
+              fontsize    = "0.9cm",
+              fontvariant = "normal",
+              fill = "black",
+              dx = 0):
+#    print >> stderr, "Text: %d %d %s" % (x, y, text)
+    print "<text x=\"%d\"" % x
+    print "\tdx=\"%d\"" % dx
+    print "\ty=\"%d\"" % y
+    print "\tfill=\"%s\"" % fill
+    print "\tfont-family=\"%s\"" % fontfamily
+    print "\tfont-weight=\"%s\"" % fontweight
+    print "\tfont-size=\"%s\"" % fontsize
+    print "\tfont-variant=\"%s\">" % fontvariant
+    print "\t%s" % text
+    print "</text>"
+
+def printline(x1, y1, x2, y2, sw = 1, cp = None, sc = "black"):
+#    print >> stderr, "Line: %d %d %d %d" % (x1, y1, x2, y2)
+    print "<line x1=\"%d\"" % x1
+    print "\ty1=\"%d\"" %  y1
+    print "\tx2=\"%d\"" %  x2
+    print "\ty2=\"%d\"" %  y2
+    print "\tstroke=\"%s\"" % sc
+    if cp != None: print "\tclip-path=\"url(#g%d)\"" % cp
+    print "\tstroke-width=\"%d\"/>" % sw
+
+def main(filename, cm2bp, eachplotheight, vgap):
+    file = open(filename, "r")
+
+    # the genome length
+    genomelength = None
+    # the name of the genome
+    genomename = None
+    # the atrributes for the genome
+    attributes = []
+    # the colors of the various attributes
+    colors = {}
+    # how much of the box should be filled
+    filltypes = {}
+
+    # the variants that should be marked
+    variants = {}
+    # the order in which I want to display the names
+    names = []
+
+    # lets read the spec file and make sure the format is correct    
+    for line in file:
+        if line.startswith("\n"): continue
+
+        if line.startswith("#"): continue
+
+        if line.startswith("@"):
+            tag,value = line.strip().split("=")
+            if tag[1:] == "GL":
+                genomelength = int(value)
+            elif tag[1:] == "GN":
+                genomename = value
+            elif tag[1:] == "GA":
+                tokens = value.split(":")
+                assert len(tokens) == 4
+                attributes.append(tokens)
+            elif tag[1:] == "CL":
+                tokens = value.split(":")
+                filltype = "C"
+                if len(tokens) == 2:
+                    name,color = tokens
+                elif len(tokens) == 3:
+                    name,color,filltype = tokens
+                else:
+                    print >> stderr, "Incorrect specification for colors"
+                    exit(4)
+                colors[name] = color
+                assert filltype in ["C","L","U"], "color can include C,L,U attributes for the fillsizes"
+                filltypes[name] = filltype
+            else:
+                print >> stderr, "Undefined tag: %s" % tag
+                exit(5)
+            continue
+
+        tokens = line.strip().split()
+
+        name = tokens[0]
+
+        positions = []
+        specialpositions = []
+        intervals = []
+        for token in tokens[1:]:
+            if token.find("=") == -1:
+                positions.append(int(token))
+            else:
+                type,position = token.split("=")
+                if position.find(":") == -1:
+                    specialpositions.append((type, int(position)))
+                else:
+                    s,e = position.split(":")
+                    intervals.append((type, int(s), int(e)))
+
+        variants[name] = (positions, specialpositions, intervals)
+        names.append(name)
+    file.close()
+
+    # if genomename or genomelength is not specified, tell the user that it is
+    # necessary to do so
+    if genomename == None or genomelength == None:
+        print >> stderr, \
+        "Please specify a tags for genomename (@GN) and genomelength (@GL)"
+        exit(6)
+
+    # how much space would I need for the name
+    namelengths = [len(x) for x in names]
+    namelengths.append(len(genomename))
+    namelength = max(namelengths)
+
+    # gap between the name and the bar plots themselves (in cm)
+    hgap = 0.3
+
+    # the padding on the left side (in cm)
+    lpad = 0.5
+    # the padding on the right (in cm)
+    rpad = 1.0
+    # the padding on the top (in cm)
+    tpad = 0.5
+    # the padding on the bottom (in cm)
+    bpad = 0.5
+
+    # convert cm into pt
+    cm2pt = 100
+
+    # so the width of the image is going to be :
+    #   lpad + namelength + hgap + (genomelength/cm2bp) + rpad
+    # the image will be 1 cm wide for each cm2bp genome locations
+    # mf is the mulriplication factor to convert number of alphabets into cms.
+    mf = 0.20 
+    imagewidth = lpad + (namelength*mf) + hgap + (genomelength/cm2bp) + rpad
+
+    # the height of the image is going to be 
+    if len(attributes) == 0:
+        imageheight = tpad + (len(names) * (eachplotheight + vgap)) + bpad
+    else:
+        imageheight = tpad + ((len(names)+3) * (eachplotheight + vgap)) + bpad
+
+    # start the image
+    printheader(imagewidth, imageheight)
+
+    if debug_flag == True:
+        printrectangle(0, 0, imagewidth * cm2pt, imageheight * cm2pt)
+        printrectangle(0, 0, lpad * cm2pt, imageheight * cm2pt)
+        printrectangle(lpad*cm2pt, 0, namelength*mf*cm2pt, imageheight*cm2pt)
+        printrectangle((lpad+(namelength*mf))*cm2pt, 0, hgap*cm2pt,imageheight*cm2pt)
+        printrectangle((lpad+(namelength*mf)+hgap)*cm2pt, 0, genomelength*cm2pt/cm2bp, imageheight*cm2pt)
+
+    # set up persistent variables in the documents
+    docstart = lpad * cm2pt
+    figstart = (lpad * cm2pt) + (namelength * mf * cm2pt) + (hgap * cm2pt)
+    figlen   = genomelength * cm2pt / cm2bp
+    
+    # print the details for all the individuals
+    y = tpad * cm2pt
+    for index,name in enumerate(names):
+        if debug_flag == True:
+            printrectangle(0, y, imagewidth * cm2pt, eachplotheight * cm2pt)
+
+        printtext(docstart, y + (eachplotheight * 85), name)
+        printrectangle(figstart, y, figlen, eachplotheight * cm2pt)
+
+        # print vertical lines for the variants
+        positions = variants[name][0]
+        for position in positions:
+            x = figstart + (position * cm2pt / cm2bp)
+            printline(x, y, x, y + (eachplotheight * 100), sw = varstrokewidth)
+
+        # print colored lines for special variants
+        specialpositions = variants[name][1]
+        for type,position in specialpositions:
+            x = figstart + (position * cm2pt / cm2bp)
+            h = eachplotheight * 100
+            if filltypes[type] == "C":
+                printline(x, y, x, y + h, sc = colors[type], sw = 4)
+            elif filltypes[type] == "L":
+                printline(x, y + h/2, x, y + h, sc = colors[type], sw = 4)
+            elif filltypes[type] == "U":
+                printline(x, y, x, y + h/2, sc = colors[type], sw = 4)
+                
+            else:
+                print >> stderr, "Incorrect fillsize type specified"
+                exit(7)
+        
+        # print translucent rectangles for the missing regions and indels
+        intervals = variants[name][2]
+        for type,s,e in intervals:
+            s = int(s)
+            e = int(e)
+            x = figstart + (s * cm2pt / cm2bp)
+            w = (e - s) * cm2pt / cm2bp
+            h = eachplotheight * 100
+            if filltypes[type] == "C":
+                printrectangle(x, y, w, h, sw=1, so=0.1, fl=colors[type])
+            elif filltypes[type] == "L":
+                printrectangle(x, y + h/2, w, h/2, sw=1, so=0.1,fl=colors[type])
+            elif filltypes[type] == "U":
+                printrectangle(x, y, w, h/2, sw=1, so=0.1, fl=colors[type])
+            else:
+                print >> stderr, "Incorrect fillsize type specified"
+                exit(8)
+
+        y += ((eachplotheight + vgap) * cm2pt)
+
+    # print the attributes if we have any
+    if len(attributes) > 0:
+        if debug_flag == True:
+            printrectangle(0, y, imagewidth * cm2pt, eachplotheight * cm2pt)
+    
+        printtext(docstart, y + (eachplotheight * 85), genomename)
+        printrectangle(figstart, y, figlen, eachplotheight * cm2pt)
+
+        # lets color the attributes as specified by the user
+        for index,(start,stop,name,group) in enumerate(attributes):
+            start = int(start)
+            stop  = int(stop)
+
+            x = figstart + (start * cm2pt / cm2bp)
+            printrectangle(x, 
+                           y, 
+                           (stop - start) * cm2pt / cm2bp, 
+                           eachplotheight * cm2pt,
+                           fl = colors.get(group, "White"))
+
+            # can I fit the name of the gene/feature in the colored area?
+            wordlen = len(name) * mf
+            if (wordlen * cm2pt) < ((stop - start) * cm2pt / cm2bp):
+                if group in colors:
+                    color = "White"
+                else:
+                    color = "Black"
+      
+                printtext(x,
+                          y + (eachplotheight * 85),
+                          name,
+                          fill = color,
+                          dx = (((stop-start)*cm2pt/cm2bp)-(wordlen*cm2pt))/2)
+            else:
+                # will this name fit at all, even at the bottom? Where is the
+                # next text label that I need to write?
+                tmpidx = index + 1
+                while tmpidx < len(attributes) and \
+                      len(attributes[tmpidx][2]) == 0:
+                    tmpidx += 1
+                
+                if tmpidx < len(attributes):
+                    nextstart = int(attributes[tmpidx][0])
+                    if ((wordlen*cm2pt) < ((nextstart-start) * cm2pt/cm2bp)):
+                        printtext(x, 
+                                  y + (eachplotheight + vgap) * cm2pt, 
+                                  name,
+                                  colors.get(group, "Black"))
+       
+        y += ((eachplotheight + vgap) * cm2pt)
+       
+    # print the coordinates on a line
+    y += vgap * cm2pt
+    if debug_flag == True:
+        printrectangle(0, y, imagewidth * cm2pt, eachplotheight * cm2pt) 
+
+    printline(figstart, y, figstart + figlen, y)
+
+    x = figstart
+    ticlength = 15
+    for i in range(0, genomelength, 2000):
+        printline(x, y, x, y + ticlength)
+        printtext(x, y + ticlength + vgap * cm2pt, str(i), fontweight="normal")
+        x += (2000 * cm2pt / cm2bp)        
+    printline(figstart + figlen, y, figstart + figlen, y + ticlength)
+
+    # print the legend if there were attributes
+    if len(attributes) > 0:
+        if debug_flag == True:
+            printrectangle(0, y, imagewidth * cm2pt, eachplotheight * cm2pt) 
+     
+        y += ((eachplotheight + 2 * vgap) * cm2pt)
+        x  = figstart
+       
+        for name,color in colors.items():
+            printtext(x, y, name, fontsize = "0.9cm")
+            x += ((len(name) + 1) * mf * cm2pt) 
+            printrectangle(x, 
+                           y - eachplotheight * cm2pt + 10, 
+                           100, 
+                           eachplotheight * cm2pt * 3 / 4,
+                           fl = color)
+            x += 125
+
+    # end of the image
+    printfooter()
+
+def usage():
+    f = stderr
+    print >> f, "usage:"
+    print >> f, "varplot [options] specfile"
+    print >> f, "where the options are:"
+    print >> f, "-h,--help : print usage and quit"
+    print >> f, "-d,--debug: print debug information"
+    print >> f, "-w,--strokewidth: stroke width for normal variants [1]"
+    print >> f, "-b,--eachplotheight : height of the plot for an individual (in cm) [0.4]"
+    print >> f, "-g,--eachplotgap : vertical gap between plots of different individuals (in cm) [0.4]"
+
+if __name__ == "__main__":
+    try:
+        opts, args = getopt(argv[1:],"hdw:s:g:",["help","debug","strokewidth=", "eachplotheight=", "eachplotgap="])
+    except GetoptError, err:
+        print str(err)
+        usage()
+        exit(2) 
+
+    # number of bases to be drawn in 1 cm
+    cm2bp = 1000
+
+    # the strokewidth used to show simple SNPs
+    varstrokewidth = 1
+
+    # the height of the plot for each individual (in cm)
+    eachplotheight = 0.4
+
+    # vertical gap between plots of different individuals (in cm)
+    vgap = 0.4
+
+    for o, a in opts:
+        if o in ("-h", "--help"):
+            usage()
+            exit()
+        elif o in ("-d", "--debug"):
+            debug_flag = True
+        elif o in ("-w", "--strokewidth"):
+            varstrokewidth = int(a)
+        elif o in ("-s", "--eachplotheight"):
+            eachplotheight = float(a)
+        elif o in ("-g", "--eachplotgap"):
+            vgap = float(a)
+        else:
+            assert False, "unhandled option"
+
+    if len(args) != 1:
+        usage()
+        exit(3)
+
+    main(args[0], cm2bp, eachplotheight, vgap)

@@ -2,6 +2,7 @@
     <description>Map a mutation using in silico bulk segregant linkage analysis using variants that are already present in the mutant strain of interest (rather than those introduced by a cross to a polymorphic strain).</description>
     <command interpreter="python">
 	#if $source.source_select=="elegans" #VDM_Mapping.py --sample_vcf "$sample_vcf" --loess_span "$loess_span" --d_yaxis "$d_yaxis" --h_yaxis "$h_yaxis" --points_color "$points_color" --loess_color "$loess_color" --output "$output" --location_plot_output "$location_plot_output" --standardize "$standardize" --normalize_bins "$normalize_bins" --break_file "$source.Celegans" 
+    #else if  $source.source_select=="brachypodium" #SNP_Mapping.py --sample_vcf "$sample_vcf" --loess_span "$loess_span" --d_yaxis "$d_yaxis" --h_yaxis "$h_yaxis" --points_color "$points_color" --loess_color "$loess_color" --output "$output" --location_plot_output "$location_plot_output" --standardize "$standardize" --normalize_bins "$normalize_bins" --break_file "$source.Brachy" 
 	#else if  $source.source_select=="arabidopsis" #VDM_Mapping.py --sample_vcf "$sample_vcf" --loess_span "$loess_span" --d_yaxis "$d_yaxis" --h_yaxis "$h_yaxis" --points_color "$points_color" --loess_color "$loess_color" --output "$output" --location_plot_output "$location_plot_output" --standardize "$standardize" --normalize_bins "$normalize_bins" --break_file "$source.Arabidop" 
 	#else if  $source.source_select=="other" #VDM_Mapping.py --sample_vcf "$sample_vcf" --loess_span "$loess_span" --d_yaxis "$d_yaxis" --h_yaxis "$h_yaxis" --points_color "$points_color" --loess_color "$loess_color" --output "$output" --location_plot_output "$location_plot_output" --standardize "$standardize" --normalize_bins "$normalize_bins" --break_file "$source.Other" 
 	#end if 
@@ -11,12 +12,16 @@
 	<conditional name="source">
 		<param name="source_select" type="select" label="Please select the species">
 		        <option value="elegans">C. elegans</option>
+                <option value="brachypodium">Brachypodium</option>
         		<option value="arabidopsis">Arabidopsis</option>
         		<option value="other">Other</option>
       	</param>
       	<when value="elegans">
         		<param name="Celegans" type="hidden" value="C.elegans" label="The C.elegans configuration file by default" help="C.elegans help" />
 		</when>
+        <when value="brachypodium">
+            <param name="Brachy" type="hidden" value="Brachypodium" label="The Brachypodium configuration file by default" help="Brachypodium help" />
+        </when>
       	<when value="arabidopsis">
         		<param name="Arabidop" type="hidden" value="Arabidopsis" label="The Arabidopsis configuration file by default" help="Arabidopsis help" />
 		</when>
@@ -27,7 +32,7 @@
         <param name="sample_vcf" size = "125" type="data" format="vcf" label="WGS Mutant VCF File" help="WGS Mutant VCF file from pooled F2 mutants that have been outcrossed to any strain. The VCF should contain data from only heterozygous or homozygous base position as determined by the GATK Unified Genotyper filtered for quality score > Q200" />
 		<param name="loess_span" size = "15" type="float" value=".4" label="Loess span" help="Parameter that controls the degree of data smoothing."/>    
 		<param name="d_yaxis" size = "15" type="float" value="1" label="Y-axis upper limit for scatter plot" />
-		<param name="h_yaxis" size = "15" type="integer" value="20" label="Y-axis upper limit for frequency plot" />
+		<param name="h_yaxis" size = "15" type="integer" value="0" label="Y-axis upper limit for frequency plot" help="'0' default adjusts scale to tallest peak"/>
 		<param name="points_color" size = "15" type="text" value="gray27" label="Color for data points" help="See below for list of supported colors"/> 
 		<param name="loess_color" size = "15" type="text" value="green" label="Color for loess regression line" help="See below for list of supported colors"/>
 		<param name="standardize" type="boolean" truevalue="true" falsevalue="false" checked="true"  label="Standardize X-axis" help="Scatter plots and frequency plots from separate chromosomes will have uniform X-axis spacing for comparison"/>

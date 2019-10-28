@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tables>
+<!-- Locations of Kraken database in the required format -->
+    <table comment_char="#" name="kraken_databases">
+        <columns>value, name, path</columns>
+        <file path="/cvmfs/zipped/cvmfs/main.galaxyproject.org/tool_data/toolshed.g2.bx.psu.edu/repos/devteam/kraken/658d47fd33e3/kraken_databases.loc" />
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>kraken</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>658d47fd33e3</installed_changeset_revision>
+            </tool_shed_repository>
+    </table>
+</tables>

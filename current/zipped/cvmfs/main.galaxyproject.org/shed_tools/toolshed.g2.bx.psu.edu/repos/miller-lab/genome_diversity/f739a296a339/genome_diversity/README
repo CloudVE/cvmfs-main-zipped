@@ -1,0 +1,3 @@
+The Genome Diversity tools require the following software:
+    ADMIXTURE  (we used version 1.22)  http://www.genetics.ucla.edu/software/admixture/
+    KING       (we used version 1.4)   http://people.virginia.edu/~wc9c/KING/
