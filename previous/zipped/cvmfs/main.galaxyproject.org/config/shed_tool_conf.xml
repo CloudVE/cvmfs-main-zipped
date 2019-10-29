@@ -20225,4 +20225,64 @@
             <version>3.0.1+galaxy2</version>
         </tool>
     </section>
+    <section id="operate_on_genomic_intervals" name="Operate on Genomic Intervals" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/merge/381cd27bf67a/merge/merge.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/merge/gops_merge_1/1.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>merge</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>381cd27bf67a</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/merge/gops_merge_1/1.0.0</id>
+            <version>1.0.0</version>
+        </tool>
+    </section>
+    <section id="operate_on_genomic_intervals" name="Operate on Genomic Intervals" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/flanking_features/a09d13b108fd/flanking_features/flanking_features.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/flanking_features/flanking_features_1/4.0.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>flanking_features</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>a09d13b108fd</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/flanking_features/flanking_features_1/4.0.1</id>
+            <version>4.0.1</version>
+        </tool>
+    </section>
+    <section id="planttribes" name="PlantTribes" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/greg/plant_tribes_gene_family_classifier/8ec75782a05b/plant_tribes_gene_family_classifier/gene_family_classifier.xml" guid="toolshed.g2.bx.psu.edu/repos/greg/plant_tribes_gene_family_classifier/plant_tribes_gene_family_classifier/1.0.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>plant_tribes_gene_family_classifier</repository_name>
+            <repository_owner>greg</repository_owner>
+            <installed_changeset_revision>8ec75782a05b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/greg/plant_tribes_gene_family_classifier/plant_tribes_gene_family_classifier/1.0.2</id>
+            <version>1.0.2</version>
+        </tool>
+    </section>
+    <section id="planttribes" name="PlantTribes" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/greg/plant_tribes_gene_family_integrator/a322e5e668a3/plant_tribes_gene_family_integrator/gene_family_integrator.xml" guid="toolshed.g2.bx.psu.edu/repos/greg/plant_tribes_gene_family_integrator/plant_tribes_gene_family_integrator/1.0.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>plant_tribes_gene_family_integrator</repository_name>
+            <repository_owner>greg</repository_owner>
+            <installed_changeset_revision>a322e5e668a3</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/greg/plant_tribes_gene_family_integrator/plant_tribes_gene_family_integrator/1.0.2</id>
+            <version>1.0.2</version>
+        </tool>
+    </section>
+    <section id="planttribes" name="PlantTribes" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/greg/plant_tribes_gene_family_phylogeny_builder/c088c185f63f/plant_tribes_gene_family_phylogeny_builder/gene_family_phylogeny_builder.xml" guid="toolshed.g2.bx.psu.edu/repos/greg/plant_tribes_gene_family_phylogeny_builder/plant_tribes_gene_family_phylogeny_builder/1.0.3.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>plant_tribes_gene_family_phylogeny_builder</repository_name>
+            <repository_owner>greg</repository_owner>
+            <installed_changeset_revision>c088c185f63f</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/greg/plant_tribes_gene_family_phylogeny_builder/plant_tribes_gene_family_phylogeny_builder/1.0.3.0</id>
+            <version>1.0.3.0</version>
+        </tool>
+    </section>
+    <section id="presto" name="pRESTO" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/migmap/6ad9d48a512e/migmap/migmap.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/migmap/migmap/1.0.2.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>migmap</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>6ad9d48a512e</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/migmap/migmap/1.0.2.2</id>
+            <version>1.0.2.2</version>
+        </tool>
+    </section>
 </toolbox>
