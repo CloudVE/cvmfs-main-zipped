@@ -20285,4 +20285,254 @@
             <version>1.0.2.2</version>
         </tool>
     </section>
+    <section id="picard" name="Picard" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_FastqToSam.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_FastqToSam/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_FastqToSam/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_CollectBaseDistributionByCycle.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CollectBaseDistributionByCycle/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CollectBaseDistributionByCycle/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_AddOrReplaceReadGroups.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_AddOrReplaceReadGroups/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_AddOrReplaceReadGroups/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_MeanQualityByCycle.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_MeanQualityByCycle/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_MeanQualityByCycle/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_RevertOriginalBaseQualitiesAndAddMateCigar.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_RevertOriginalBaseQualitiesAndAddMateCigar/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_RevertOriginalBaseQualitiesAndAddMateCigar/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_CollectHsMetrics.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CollectHsMetrics/2.18.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CollectHsMetrics/2.18.2</id>
+            <version>2.18.2</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_SortSam.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_SortSam/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_SortSam/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_RevertSam.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_RevertSam/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_RevertSam/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_FixMateInformation.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_FixMateInformation/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_FixMateInformation/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_CollectAlignmentSummaryMetrics.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CASM/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CASM/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_NormalizeFasta.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_NormalizeFasta/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_NormalizeFasta/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_DownsampleSam.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_DownsampleSam/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_DownsampleSam/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_MergeBamAlignment.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_MergeBamAlignment/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_MergeBamAlignment/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_MarkDuplicatesWithMateCigar.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_MarkDuplicatesWithMateCigar/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_MarkDuplicatesWithMateCigar/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_CleanSam.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CleanSam/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CleanSam/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_ReplaceSamHeader.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_ReplaceSamHeader/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_ReplaceSamHeader/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_MarkDuplicates.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_MarkDuplicates/2.18.2.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_MarkDuplicates/2.18.2.2</id>
+            <version>2.18.2.2</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_MergeSamFiles.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_MergeSamFiles/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_MergeSamFiles/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_ValidateSamFile.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_ValidateSamFile/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_ValidateSamFile/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_QualityScoreDistribution.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_QualityScoreDistribution/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_QualityScoreDistribution/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_BedToIntervalList.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_BedToIntervalList/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_BedToIntervalList/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_CollectRnaSeqMetrics.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CollectRnaSeqMetrics/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CollectRnaSeqMetrics/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_CollectWgsMetrics.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CollectWgsMetrics/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CollectWgsMetrics/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_CollectSequencingArtifactsMetrics.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_artifact_metrics/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_artifact_metrics/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_ReorderSam.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_ReorderSam/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_ReorderSam/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_CollectGcBiasMetrics.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CollectGcBiasMetrics/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CollectGcBiasMetrics/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_FilterSamReads.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_FilterSamReads/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_FilterSamReads/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_AddCommentsToBam.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_AddCommentsToBam/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_AddCommentsToBam/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_EstimateLibraryComplexity.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_EstimateLibraryComplexity/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_EstimateLibraryComplexity/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_SamToFastq.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_SamToFastq/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_SamToFastq/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/picard/7d34178f2812/picard/picard_CollectInsertSizeMetrics.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CollectInsertSizeMetrics/2.18.2.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>picard</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d34178f2812</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_CollectInsertSizeMetrics/2.18.2.1</id>
+            <version>2.18.2.1</version>
+        </tool>
+    </section>
 </toolbox>

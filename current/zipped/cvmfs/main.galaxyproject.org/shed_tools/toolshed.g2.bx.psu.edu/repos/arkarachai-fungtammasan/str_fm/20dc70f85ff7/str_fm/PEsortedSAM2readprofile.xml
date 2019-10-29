@@ -1,0 +1,61 @@
+<tool id="PEsortedSAM2readprofile" name="Combine mapped faux paired-end reads" version="1.1.0">
+  <description> and get the reference STR allele from the reference genome  </description>
+  <command interpreter="python2.7">PEsortedSAM2readprofile.py  $flankedbasesSAM $twobitref $maxTRlength $maxoriginalreadlength $output </command>
+
+  <inputs>
+    <param name="flankedbasesSAM" type="data" format="sam" label="Select sorted SAM file (by readname) of flaked bases" />
+    <param name="twobitref" type="data" label="Select twobit file reference genome" />
+	<param name="maxTRlength" type="integer" value="100" label="Maximum microsatellite length in reference (bp)" />
+	<param name="maxoriginalreadlength" type="integer" value="101" label="Maxinum original read length" />
+
+  </inputs>
+  <outputs>
+    <data name="output" format="tabular" />
+  </outputs>
+  <tests>
+    <!-- Test data with valid values -->
+    <test>
+      <param name="flankedbasesSAM" value="samplesortedPESAM_C.sam"/>
+      <param name="twobitref" value="shifted.2bit"/>
+      <param name="maxTRlength" value="100"/>
+      <param name="maxoriginalreadlength" value="250"/>
+      <output name="output" file="samplePESAM_2_profile_C.txt"/>
+    </test>
+    
+  </tests>
+  <help>
+
+
+.. class:: infomark
+
+**What it does**
+
+- This tool will take SAM file (sorted by read name), remove unpaired reads, and combine paired faux read-pairs into a single row. It also reports Short Tandem Repeats (STRs) sequences in the reference genome that correspond to the space between the faux paired end reads and the coordinate of start and stop for left and right flanking regions of STRs.
+
+**Citation**
+
+When you use this tool, please cite **Fungtammasan A, Ananda G, Hile SE, Su MS, Sun C, Harris R, Medvedev P, Eckert K, Makova KD. 2015. Accurate Typing of Short Tandem Repeats from Genome-wide Sequencing Data and its Applications, Genome Research**
+ 
+**Input**
+
+- Sorted SAM files by read name. 
+
+**Output**
+
+The output will combine the two faux paired-end read lines of input ito the following single line format:
+
+- Column 1 = read name
+- Column 2 = chromosome 
+- Column 3 = left flanking region start
+- Column 4 = left flanking region stop
+- Column 5 = STR start
+- Column 6 = STR stop
+- Column 7 = right flanking region start
+- Column 8 = right flanking region stop
+- Column 9 = STR length in reference
+- Column 10= STR sequence in reference
+
+
+
+</help>
+</tool>

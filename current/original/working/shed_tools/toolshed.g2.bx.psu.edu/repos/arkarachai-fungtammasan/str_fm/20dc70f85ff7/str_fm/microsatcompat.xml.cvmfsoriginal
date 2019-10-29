@@ -1,0 +1,76 @@
+<tool id="microsatcompat" name="Check STR motif compatibility between reference and read STRs" version="1.0.0">
+  <description> </description>
+  <command interpreter="python">microsatcompat.py $input $column1 $column2 > $output </command>
+
+  <inputs>
+    <param name="input" type="data" label="Select input" />
+    <param name="column1" type="integer" value="4" label="First column number" />
+    <param name="column2" type="integer" value="10" label="Second column number" />
+  </inputs>
+  <outputs>
+    <data format="tabular" name="output" />
+    
+  </outputs>
+  <tests>
+    <!-- Test data with valid values -->
+    <test>
+      <param name="input" value="microsatcompat_in.txt"/>
+      <param name="column1" value="4"/>      
+      <param name="column2" value="10"/>
+      <output name="output" file="microsatcompat_out.txt"/>
+    </test>
+    
+  </tests>
+  <help>
+
+
+.. class:: infomark
+
+**What it does**
+
+This tool is used to select only those input lines that have compatible STR motifs between the two user-specified columns. Two STR motifs are called compatible if they are either identical, or complementary, or produce the same sequence on rotating the start of the motif. For example, **A** is considered compatible with **A** and its reverse complement **T**. Similarly, **AGG** considered compatible with **AGG**, its reverse complement **TCC**, and their rotations **GGA**, **GAG**, **CCT** and **CTC**.
+
+For STR-FM pipeline (profiling STRs in short read data), this tool can be used to make sure that the STRs in the reads have the compatible motif as the STRs in the reference at the corresponding mapped location. 
+
+**Citation**
+
+When you use this tool, please cite **Fungtammasan A, Ananda G, Hile SE, Su MS, Sun C, Harris R, Medvedev P, Eckert K, Makova KD. 2015. Accurate Typing of Short Tandem Repeats from Genome-wide Sequencing Data and its Applications, Genome Research**
+ 
+**Input**
+
+The input files can be any tab delimited file. 
+
+If this tool is used in STR-FM pipeline for STRs profiling, it should contains:
+
+- Column 1 = STR location in reference chromosome
+- Column 2 = STR location in reference start
+- Column 3 = STR location in reference stop
+- Column 4 = STR location in reference motif
+- Column 5 = STR location in reference length
+- Column 6 = STR location in reference motif size
+- Column 7 = length of STR (bp)
+- Column 8 = length of left flanking region (bp)
+- Column 9 = length of right flanking region (bp)
+- Column 10 = repeat motif (bp)
+- Column 11 = hamming distance 
+- Column 12 = read name
+- Column 13 = read sequence with soft masking of STR
+- Column 14 = read quality (the same Phred score scale as input)
+- Column 15 = read name (The same as column 12)
+- Column 16 = chromosome 
+- Column 17 = left flanking region start
+- Column 18 = left flanking region stop
+- Column 19 = STR start as infer from pair-end
+- Column 20 = STR stop as infer from pair-end
+- Column 21 = right flanking region start
+- Column 22 = right flanking region stop
+- Column 23 = STR length in reference
+- Column 24 = STR sequence in reference
+
+**Output**
+
+The same as input format.
+
+
+</help>
+</tool>
