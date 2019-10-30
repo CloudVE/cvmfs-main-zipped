@@ -1,4 +1,0 @@
-#<species> <prefix> <kxml_dir_path> <path_to_dict_file>
-#hg19	hsa	/galaxy/local_data/genome_diversity/rank/KXML_hsa.d	/galaxy/local_data/genome_diversity/rank/hsa_dict.txt
-#canFam2	cfa	/galaxy/local_data/genome_diversity/rank/KXML_cfa.d	/galaxy/local_data/genome_diversity/rank/cfa_dict.txt
-#bosTau4	bta	/galaxy/local_data/genome_diversity/rank/KXML_bta.d	/galaxy/local_data/genome_diversity/rank/bta_dict.txt
