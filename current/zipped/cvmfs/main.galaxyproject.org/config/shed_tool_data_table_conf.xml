@@ -14710,4 +14710,44 @@
             <installed_changeset_revision>33a416e1659e</installed_changeset_revision>
         </tool_shed_repository>
     </table>
+    <table allow_duplicate_entries="False" comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/idba_hybrid/a81c5169e9fc/all_fasta.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>idba_hybrid</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>a81c5169e9fc</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table allow_duplicate_entries="False" comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/idba_tran/a30d991a3fdd/all_fasta.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>idba_tran</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>a30d991a3fdd</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table allow_duplicate_entries="False" comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/idba_ud/2ed5c0795f99/all_fasta.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>idba_ud</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>2ed5c0795f99</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/pilon/11e5408fd238/all_fasta.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>pilon</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>11e5408fd238</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
 </tables>
