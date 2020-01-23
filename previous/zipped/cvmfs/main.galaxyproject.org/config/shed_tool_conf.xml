@@ -22259,4 +22259,154 @@
             <version>2.2.6</version>
         </tool>
     </section>
+    <section id="collection_operations" name="Collection Operations" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/collection_element_identifiers/d3c07d270a50/collection_element_identifiers/collection_element_identifiers.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/collection_element_identifiers/collection_element_identifiers/0.0.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>collection_element_identifiers</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>d3c07d270a50</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/collection_element_identifiers/collection_element_identifiers/0.0.2</id>
+            <version>0.0.2</version>
+        </tool>
+    </section>
+    <section id="convert_formats" name="Convert Formats" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bax2bam/ee356d7a5518/bax2bam/bax2bam.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bax2bam/bax2bam/0.0.9+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bax2bam</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ee356d7a5518</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bax2bam/bax2bam/0.0.9+galaxy0</id>
+            <version>0.0.9+galaxy0</version>
+        </tool>
+    </section>
+    <section id="convert_formats" name="Convert Formats" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/crossmap_bam/0f0cf480051b/crossmap_bam/crossmap_bam.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/crossmap_bam/crossmap_bam/0.3.7">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>crossmap_bam</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>0f0cf480051b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/crossmap_bam/crossmap_bam/0.3.7</id>
+            <version>0.3.7</version>
+        </tool>
+    </section>
+    <section id="convert_formats" name="Convert Formats" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/crossmap_bed/91efc13d3ec1/crossmap_bed/crossmap_bed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/crossmap_bed/crossmap_bed/0.3.7">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>crossmap_bed</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>91efc13d3ec1</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/crossmap_bed/crossmap_bed/0.3.7</id>
+            <version>0.3.7</version>
+        </tool>
+    </section>
+    <section id="convert_formats" name="Convert Formats" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/crossmap_wig/e8d84292e510/crossmap_wig/crossmap_wig.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/crossmap_wig/crossmap_wig/0.3.7">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>crossmap_wig</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>e8d84292e510</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/crossmap_wig/crossmap_wig/0.3.7</id>
+            <version>0.3.7</version>
+        </tool>
+    </section>
+    <section id="convert_formats" name="Convert Formats" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/crossmap_vcf/97979c3d179f/crossmap_vcf/crossmap_vcf.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/crossmap_vcf/crossmap_vcf/0.3.7">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>crossmap_vcf</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>97979c3d179f</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/crossmap_vcf/crossmap_vcf/0.3.7</id>
+            <version>0.3.7</version>
+        </tool>
+    </section>
+    <section id="convert_formats" name="Convert Formats" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/crossmap_gff/09c6a9e067f9/crossmap_gff/crossmap_gff.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/crossmap_gff/crossmap_gff/0.3.7">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>crossmap_gff</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>09c6a9e067f9</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/crossmap_gff/crossmap_gff/0.3.7</id>
+            <version>0.3.7</version>
+        </tool>
+    </section>
+    <section id="convert_formats" name="Convert Formats" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/gfa_to_fa/49d6f8ef63b3/gfa_to_fa/gfa_to_fa.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/gfa_to_fa/gfa_to_fa/0.1.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>gfa_to_fa</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>49d6f8ef63b3</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/gfa_to_fa/gfa_to_fa/0.1.0</id>
+            <version>0.1.0</version>
+        </tool>
+    </section>
+    <section id="convert_formats" name="Convert Formats" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/gtftobed12/57d45064f114/gtftobed12/gtfToBed12.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/gtftobed12/gtftobed12/357">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>gtftobed12</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>57d45064f114</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/gtftobed12/gtftobed12/357</id>
+            <version>357</version>
+        </tool>
+    </section>
+    <section id="convert_formats" name="Convert Formats" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/ucsc_twobittofa/356dc923f8d3/ucsc_twobittofa/twobittofa.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/ucsc_twobittofa/ucsc-twobittofa/357">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ucsc_twobittofa</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>356dc923f8d3</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/ucsc_twobittofa/ucsc-twobittofa/357</id>
+            <version>357</version>
+        </tool>
+    </section>
+    <section id="fasta_fastq" name="FASTA/FASTQ" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/fasta_stats/9c620a950d3a/fasta_stats/fasta-stats.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/fasta_stats/fasta-stats/1.0.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>fasta_stats</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>9c620a950d3a</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/fasta_stats/fasta-stats/1.0.1</id>
+            <version>1.0.1</version>
+        </tool>
+    </section>
+    <section id="fasta_fastq" name="FASTA/FASTQ" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/filtlong/8880fb74ef56/filtlong/filtlong.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/filtlong/filtlong/0.2.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>filtlong</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>8880fb74ef56</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/filtlong/filtlong/0.2.0</id>
+            <version>0.2.0</version>
+        </tool>
+    </section>
+    <section id="fasta_fastq" name="FASTA/FASTQ" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/sickle/6756c87dc2d4/sickle/sickle.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/sickle/sickle/1.33.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sickle</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>6756c87dc2d4</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/sickle/sickle/1.33.2</id>
+            <version>1.33.2</version>
+        </tool>
+    </section>
+    <section id="fasta_fastq" name="FASTA/FASTQ" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/ucsc_fasplit/71f649c23021/ucsc_fasplit/fasplit.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/ucsc_fasplit/fasplit/357">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ucsc_fasplit</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>71f649c23021</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/ucsc_fasplit/fasplit/357</id>
+            <version>357</version>
+        </tool>
+    </section>
+    <section id="fasta_fastq" name="FASTA/FASTQ" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/umi_tools_count/276b4111b253/umi_tools_count/umi-tools_counts.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/umi_tools_count/umi_tools_count/0.5.5.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>umi_tools_count</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>276b4111b253</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/umi_tools_count/umi_tools_count/0.5.5.1</id>
+            <version>0.5.5.1</version>
+        </tool>
+    </section>
 </toolbox>
