@@ -22409,4 +22409,14 @@
             <version>0.5.5.1</version>
         </tool>
     </section>
+    <section id="fastq_quality_control" name="FASTQ Quality Control" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/prinseq/02befcb391f5/prinseq/prinseq.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/prinseq/prinseq/0.20.4">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>prinseq</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>02befcb391f5</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/prinseq/prinseq/0.20.4</id>
+            <version>0.20.4</version>
+        </tool>
+    </section>
 </toolbox>
