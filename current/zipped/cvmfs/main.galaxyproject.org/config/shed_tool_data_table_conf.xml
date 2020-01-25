@@ -15160,4 +15160,14 @@
             <installed_changeset_revision>4cc834cce4fb</installed_changeset_revision>
         </tool_shed_repository>
     </table>
+    <table allow_duplicate_entries="false" comment_char="#" name="sina_references">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/sina/49b937f12aa4/sina_references.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sina</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>49b937f12aa4</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
 </tables>

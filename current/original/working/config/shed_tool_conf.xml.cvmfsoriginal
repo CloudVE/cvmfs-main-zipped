@@ -22885,4 +22885,94 @@
             <version>1.0.0</version>
         </tool>
     </section>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/msaboot/99f8b4e631e5/msaboot/msaboot.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/msaboot/msaboot/0.1.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>msaboot</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>99f8b4e631e5</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/msaboot/msaboot/0.1.2</id>
+            <version>0.1.2</version>
+        </tool>
+    </section>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/mummer_delta_filter/502018997bae/mummer_delta_filter/delta-filter.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/mummer_delta_filter/mummer_delta_filter/4.0.0beta2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>mummer_delta_filter</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>502018997bae</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/mummer_delta_filter/mummer_delta_filter/4.0.0beta2</id>
+            <version>4.0.0beta2</version>
+        </tool>
+    </section>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/mummer_mummer/48badcd29c5d/mummer_mummer/mummer.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/mummer_mummer/mummer_mummer/4.0.0beta2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>mummer_mummer</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>48badcd29c5d</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/mummer_mummer/mummer_mummer/4.0.0beta2</id>
+            <version>4.0.0beta2</version>
+        </tool>
+    </section>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/mummer_dnadiff/deacc6b40cc0/mummer_dnadiff/dnadiff.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/mummer_dnadiff/mummer_dnadiff/4.0.0beta2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>mummer_dnadiff</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>deacc6b40cc0</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/mummer_dnadiff/mummer_dnadiff/4.0.0beta2</id>
+            <version>4.0.0beta2</version>
+        </tool>
+    </section>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/mummer_show_coords/f8734af48332/mummer_show_coords/show-coords.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/mummer_show_coords/mummer_show_coords/4.0.0beta2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>mummer_show_coords</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>f8734af48332</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/mummer_show_coords/mummer_show_coords/4.0.0beta2</id>
+            <version>4.0.0beta2</version>
+        </tool>
+    </section>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/mummer_mummerplot/e8c60daa41e0/mummer_mummerplot/mummerplot.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/mummer_mummerplot/mummer_mummerplot/4.0.0beta2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>mummer_mummerplot</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>e8c60daa41e0</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/mummer_mummerplot/mummer_mummerplot/4.0.0beta2</id>
+            <version>4.0.0beta2</version>
+        </tool>
+    </section>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/mummer_nucmer/a18fb4f826fc/mummer_nucmer/nucmer.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/mummer_nucmer/mummer_nucmer/4.0.0beta2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>mummer_nucmer</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>a18fb4f826fc</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/mummer_nucmer/mummer_nucmer/4.0.0beta2</id>
+            <version>4.0.0beta2</version>
+        </tool>
+    </section>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/pipelign/cd9d1eccda7e/pipelign/pipelign.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/pipelign/pipelign/0.2+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>pipelign</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>cd9d1eccda7e</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/pipelign/pipelign/0.2+galaxy0</id>
+            <version>0.2+galaxy0</version>
+        </tool>
+    </section>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/sina/49b937f12aa4/sina/sina.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/sina/sina/1.5.0+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sina</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>49b937f12aa4</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/sina/sina/1.5.0+galaxy1</id>
+            <version>1.5.0+galaxy1</version>
+        </tool>
+    </section>
 </toolbox>

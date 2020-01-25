@@ -22419,4 +22419,470 @@
             <version>0.20.4</version>
         </tool>
     </section>
+    <section id="genome_diversity" name="Genome Diversity" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/fasttree/ef46a404db96/fasttree/fasttree.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/fasttree/fasttree/2.1.10+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>fasttree</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ef46a404db96</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/fasttree/fasttree/2.1.10+galaxy1</id>
+            <version>2.1.10+galaxy1</version>
+        </tool>
+    </section>
+    <section id="get_data" name="Get Data" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/ebi_metagenomics_run_downloader/a1ef6c88ee37/ebi_metagenomics_run_downloader/ebi_metagenomics_run_downloader.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/ebi_metagenomics_run_downloader/ebi_metagenomics_run_downloader/0.1.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ebi_metagenomics_run_downloader</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>a1ef6c88ee37</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/ebi_metagenomics_run_downloader/ebi_metagenomics_run_downloader/0.1.0</id>
+            <version>0.1.0</version>
+        </tool>
+    </section>
+    <section id="get_data" name="Get Data" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/ebi_search_rest_results/42d5e40fcd0b/ebi_search_rest_results/ebi_search_rest_results.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/ebi_search_rest_results/ebi_search_rest_results/0.1.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ebi_search_rest_results</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>42d5e40fcd0b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/ebi_search_rest_results/ebi_search_rest_results/0.1.1</id>
+            <version>0.1.1</version>
+        </tool>
+    </section>
+    <section id="get_data" name="Get Data" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/gdcwebapp/7709b8ca3296/gdcwebapp/gdcwebapp.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/gdcwebapp/data_source_gdcwebapp/1.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>gdcwebapp</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>7709b8ca3296</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/gdcwebapp/data_source_gdcwebapp/1.0.0</id>
+            <version>1.0.0</version>
+        </tool>
+    </section>
+    <section id="get_data" name="Get Data" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/ncbi_acc_download/1c58de56d587/ncbi_acc_download/ncbi_acc_download.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/ncbi_acc_download/ncbi_acc_download/0.2.5+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ncbi_acc_download</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>1c58de56d587</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/ncbi_acc_download/ncbi_acc_download/0.2.5+galaxy0</id>
+            <version>0.2.5+galaxy0</version>
+        </tool>
+    </section>
+    <section id="mapping" name="Mapping" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bwameth/29bdbc353f20/bwameth/bwameth.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bwameth/bwameth/0.2.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bwameth</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>29bdbc353f20</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bwameth/bwameth/0.2.2</id>
+            <version>0.2.2</version>
+        </tool>
+    </section>
+    <section id="mapping" name="Mapping" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/minimap2/b3eab4b67562/minimap2/minimap2.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.17+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>minimap2</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>b3eab4b67562</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.17+galaxy0</id>
+            <version>2.17+galaxy0</version>
+        </tool>
+    </section>
+    <section id="mapping" name="Mapping" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/178bdbdb6d24/rna_starsolo/rg_rnaStarSolo.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/rna_starsolo/2.7.2b1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>rna_starsolo</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>178bdbdb6d24</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/rna_starsolo/2.7.2b1</id>
+            <version>2.7.2b1</version>
+        </tool>
+    </section>
+    <tool file="toolshed.g2.bx.psu.edu/repos/iuc/meme_psp_gen/ff2f53a32d0e/meme_psp_gen/meme_psp_gen.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/meme_psp_gen/meme_psp_gen/5.0.5.0">
+        <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+        <repository_name>meme_psp_gen</repository_name>
+        <repository_owner>iuc</repository_owner>
+        <installed_changeset_revision>ff2f53a32d0e</installed_changeset_revision>
+        <id>toolshed.g2.bx.psu.edu/repos/iuc/meme_psp_gen/meme_psp_gen/5.0.5.0</id>
+        <version>5.0.5.0</version>
+    </tool>
+    <tool file="toolshed.g2.bx.psu.edu/repos/iuc/meme_chip/091a9d638d78/meme_chip/meme_chip.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/meme_chip/meme_chip/4.11.2+galaxy1">
+        <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+        <repository_name>meme_chip</repository_name>
+        <repository_owner>iuc</repository_owner>
+        <installed_changeset_revision>091a9d638d78</installed_changeset_revision>
+        <id>toolshed.g2.bx.psu.edu/repos/iuc/meme_chip/meme_chip/4.11.2+galaxy1</id>
+        <version>4.11.2+galaxy1</version>
+    </tool>
+    <section id="nanopore" name="Nanopore" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/645159bcee2d/nanoplot/nanoplot.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.25.0+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>nanoplot</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>645159bcee2d</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.25.0+galaxy1</id>
+            <version>1.25.0+galaxy1</version>
+        </tool>
+    </section>
+    <section id="nanopore" name="Nanopore" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/porechop/93d623d9979c/porechop/porechop.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/porechop/porechop/0.2.3">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>porechop</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>93d623d9979c</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/porechop/porechop/0.2.3</id>
+            <version>0.2.3</version>
+        </tool>
+    </section>
+    <section id="ncbi_blast_" name="NCBI BLAST+" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/kraken2/328c607150ff/kraken2/kraken2.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.0.8_beta+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>kraken2</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>328c607150ff</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.0.8_beta+galaxy0</id>
+            <version>2.0.8_beta+galaxy0</version>
+        </tool>
+    </section>
+    <section id="sam_bam" name="SAM/BAM" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/qualimap_multi_bamqc/e38af83df163/qualimap_multi_bamqc/qualimap_multi_bamqc.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/qualimap_multi_bamqc/qualimap_multi_bamqc/2.2.2d">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>qualimap_multi_bamqc</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>e38af83df163</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/qualimap_multi_bamqc/qualimap_multi_bamqc/2.2.2d</id>
+            <version>2.2.2d</version>
+        </tool>
+    </section>
+    <section id="sam_bam" name="SAM/BAM" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/qualimap_bamqc/e7fd6754d093/qualimap_bamqc/qualimap_bamqc.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/qualimap_bamqc/qualimap_bamqc/2.2.2d+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>qualimap_bamqc</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>e7fd6754d093</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/qualimap_bamqc/qualimap_bamqc/2.2.2d+galaxy1</id>
+            <version>2.2.2d+galaxy1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/graphembed/f28678233baf/graphembed/graphembed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/graphembed/graphembed/2.4.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>graphembed</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>f28678233baf</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/graphembed/graphembed/2.4.0</id>
+            <version>2.4.0</version>
+        </tool>
+    </section>
+    <section id="transit" name="TRANSIT" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/transit_gumbel/ecce0cbe659f/transit_gumbel/transit_gumbel.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/transit_gumbel/transit_gumbel/3.0.1+galaxy2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>transit_gumbel</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ecce0cbe659f</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/transit_gumbel/transit_gumbel/3.0.1+galaxy2</id>
+            <version>3.0.1+galaxy2</version>
+        </tool>
+    </section>
+    <section id="transit" name="TRANSIT" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/transit_hmm/a15f2773a7d7/transit_hmm/transit_hmm.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/transit_hmm/transit_hmm/3.0.1+galaxy2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>transit_hmm</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>a15f2773a7d7</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/transit_hmm/transit_hmm/3.0.1+galaxy2</id>
+            <version>3.0.1+galaxy2</version>
+        </tool>
+    </section>
+    <section id="transit" name="TRANSIT" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/transit_resampling/0e0618c96ca4/transit_resampling/transit_resampling.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/transit_resampling/transit_resampling/3.0.1+galaxy2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>transit_resampling</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>0e0618c96ca4</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/transit_resampling/transit_resampling/3.0.1+galaxy2</id>
+            <version>3.0.1+galaxy2</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/cat_add_names/8dfc90f35aba/cat_add_names/cat_add_names.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/cat_add_names/cat_add_names/5.0.3.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>cat_add_names</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>8dfc90f35aba</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/cat_add_names/cat_add_names/5.0.3.0</id>
+            <version>5.0.3.0</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/cat_prepare/8315b5cebb82/cat_prepare/cat_prepare.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/cat_prepare/cat_prepare/5.0.3.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>cat_prepare</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>8315b5cebb82</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/cat_prepare/cat_prepare/5.0.3.0</id>
+            <version>5.0.3.0</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/cat_contigs/c6c77d840993/cat_contigs/cat_contigs.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/cat_contigs/cat_contigs/5.0.3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>cat_contigs</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>c6c77d840993</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/cat_contigs/cat_contigs/5.0.3.1</id>
+            <version>5.0.3.1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/cat_summarise/7f1aaa1932d8/cat_summarise/cat_summarise.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/cat_summarise/cat_summarise/5.0.3.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>cat_summarise</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>7f1aaa1932d8</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/cat_summarise/cat_summarise/5.0.3.0</id>
+            <version>5.0.3.0</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/cat_bins/18676df0cb3a/cat_bins/cat_bins.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/cat_bins/cat_bins/5.0.3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>cat_bins</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>18676df0cb3a</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/cat_bins/cat_bins/5.0.3.1</id>
+            <version>5.0.3.1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/dada2_plotqualityprofile/fa11922f3d91/dada2_plotqualityprofile/dada2_plotQualityProfile.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/dada2_plotqualityprofile/dada2_plotQualityProfile/1.12+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>dada2_plotqualityprofile</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>fa11922f3d91</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/dada2_plotqualityprofile/dada2_plotQualityProfile/1.12+galaxy1</id>
+            <version>1.12+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/dada2_plotcomplexity/498d57610fcd/dada2_plotcomplexity/dada2_plotComplexity.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/dada2_plotcomplexity/dada2_plotComplexity/1.12+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>dada2_plotcomplexity</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>498d57610fcd</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/dada2_plotcomplexity/dada2_plotComplexity/1.12+galaxy1</id>
+            <version>1.12+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/dada2_assigntaxonomyaddspecies/4d89978c6188/dada2_assigntaxonomyaddspecies/dada2_assignTaxonomyAddspecies.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/dada2_assigntaxonomyaddspecies/dada2_assignTaxonomyAddspecies/1.12+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>dada2_assigntaxonomyaddspecies</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4d89978c6188</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/dada2_assigntaxonomyaddspecies/dada2_assignTaxonomyAddspecies/1.12+galaxy1</id>
+            <version>1.12+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/dada2_removebimeradenovo/7f8f0e9fcb37/dada2_removebimeradenovo/dada2_removeBimeraDenovo.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/dada2_removebimeradenovo/dada2_removeBimeraDenovo/1.12+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>dada2_removebimeradenovo</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>7f8f0e9fcb37</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/dada2_removebimeradenovo/dada2_removeBimeraDenovo/1.12+galaxy1</id>
+            <version>1.12+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/dada2_filterandtrim/777f9846c56d/dada2_filterandtrim/dada2_filterAndTrim.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/dada2_filterandtrim/dada2_filterAndTrim/1.12+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>dada2_filterandtrim</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>777f9846c56d</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/dada2_filterandtrim/dada2_filterAndTrim/1.12+galaxy1</id>
+            <version>1.12+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/dada2_dada/6b4ddc3b64bd/dada2_dada/dada2_dada.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/dada2_dada/dada2_dada/1.12+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>dada2_dada</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>6b4ddc3b64bd</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/dada2_dada/dada2_dada/1.12+galaxy1</id>
+            <version>1.12+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/dada2_learnerrors/39638e0aff59/dada2_learnerrors/dada2_learnErrors.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/dada2_learnerrors/dada2_learnErrors/1.12+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>dada2_learnerrors</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>39638e0aff59</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/dada2_learnerrors/dada2_learnErrors/1.12+galaxy1</id>
+            <version>1.12+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/dada2_makesequencetable/9ccec6ed8e82/dada2_makesequencetable/dada2_makeSequenceTable.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/dada2_makesequencetable/dada2_makeSequenceTable/1.12+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>dada2_makesequencetable</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>9ccec6ed8e82</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/dada2_makesequencetable/dada2_makeSequenceTable/1.12+galaxy1</id>
+            <version>1.12+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/dada2_mergepairs/b1e55c248f17/dada2_mergepairs/dada2_mergePairs.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/dada2_mergepairs/dada2_mergePairs/1.12+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>dada2_mergepairs</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>b1e55c248f17</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/dada2_mergepairs/dada2_mergePairs/1.12+galaxy1</id>
+            <version>1.12+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/dada2_seqcounts/4cc834cce4fb/dada2_seqcounts/dada2_seqCounts.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/dada2_seqcounts/dada2_seqCounts/1.12+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>dada2_seqcounts</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4cc834cce4fb</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/dada2_seqcounts/dada2_seqCounts/1.12+galaxy1</id>
+            <version>1.12+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bio_hansel/e3698ac146d7/bio_hansel/bio_hansel.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bio_hansel/bio_hansel/0.1.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bio_hansel</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>e3698ac146d7</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bio_hansel/bio_hansel/0.1.0</id>
+            <version>0.1.0</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/khmer_partition/e562293ee5ec/khmer_partition/do-partition.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/khmer_partition/khmer_partition/3.0.0a3+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>khmer_partition</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>e562293ee5ec</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/khmer_partition/khmer_partition/3.0.0a3+galaxy1</id>
+            <version>3.0.0a3+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/khmer_extract_partitions/2c763fb18010/khmer_extract_partitions/extract-partitions.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/khmer_extract_partitions/khmer_extract_partitions/3.0.0a3+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>khmer_extract_partitions</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>2c763fb18010</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/khmer_extract_partitions/khmer_extract_partitions/3.0.0a3+galaxy1</id>
+            <version>3.0.0a3+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/khmer_count_median/77410799e8e9/khmer_count_median/count-median.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/khmer_count_median/khmer_count_median/3.0.0a3+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>khmer_count_median</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>77410799e8e9</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/khmer_count_median/khmer_count_median/3.0.0a3+galaxy1</id>
+            <version>3.0.0a3+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/khmer_filter_below_abundance_cutoff/569001af897d/khmer_filter_below_abundance_cutoff/filter-below-abund.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/khmer_filter_below_abundance_cutoff/khmer_filter_below_abundance_cutoff/3.0.0a3+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>khmer_filter_below_abundance_cutoff</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>569001af897d</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/khmer_filter_below_abundance_cutoff/khmer_filter_below_abundance_cutoff/3.0.0a3+galaxy1</id>
+            <version>3.0.0a3+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/khmer_normalize_by_median/557cc16931f4/khmer_normalize_by_median/normalize-by-median.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/khmer_normalize_by_median/khmer_normalize_by_median/3.0.0a3+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>khmer_normalize_by_median</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>557cc16931f4</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/khmer_normalize_by_median/khmer_normalize_by_median/3.0.0a3+galaxy1</id>
+            <version>3.0.0a3+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/khmer_abundance_distribution_single/55109291a355/khmer_abundance_distribution_single/abundance-dist-single.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/khmer_abundance_distribution_single/khmer_abundance_distribution_single/3.0.0a3+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>khmer_abundance_distribution_single</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>55109291a355</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/khmer_abundance_distribution_single/khmer_abundance_distribution_single/3.0.0a3+galaxy1</id>
+            <version>3.0.0a3+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/khmer_filter_abundance/8c6433857aa8/khmer_filter_abundance/filter-abund.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/khmer_filter_abundance/khmer_filter_abundance/3.0.0a3+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>khmer_filter_abundance</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>8c6433857aa8</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/khmer_filter_abundance/khmer_filter_abundance/3.0.0a3+galaxy1</id>
+            <version>3.0.0a3+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/khmer_abundance_distribution/e0de12ae3fc2/khmer_abundance_distribution/abundance-dist.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/khmer_abundance_distribution/khmer_abundance_distribution/3.0.0a3+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>khmer_abundance_distribution</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>e0de12ae3fc2</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/khmer_abundance_distribution/khmer_abundance_distribution/3.0.0a3+galaxy1</id>
+            <version>3.0.0a3+galaxy1</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/mbernt/maxbin2/cfd50144a871/maxbin2/maxbin2.xml" guid="toolshed.g2.bx.psu.edu/repos/mbernt/maxbin2/maxbin2/2.2.7+galaxy2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>maxbin2</repository_name>
+            <repository_owner>mbernt</repository_owner>
+            <installed_changeset_revision>cfd50144a871</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/mbernt/maxbin2/maxbin2/2.2.7+galaxy2</id>
+            <version>2.2.7+galaxy2</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/nonpareil/280386b252a5/nonpareil/nonpareil.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/nonpareil/nonpareil/3.1.1.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>nonpareil</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>280386b252a5</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/nonpareil/nonpareil/3.1.1.0</id>
+            <version>3.1.1.0</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/plasflow/bda6012394f7/plasflow/plasflow.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/plasflow/PlasFlow/1.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>plasflow</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>bda6012394f7</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/plasflow/PlasFlow/1.0</id>
+            <version>1.0</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/valet/56236acaad45/valet/valet.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/valet/valet/1.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>valet</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>56236acaad45</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/valet/valet/1.0.0</id>
+            <version>1.0.0</version>
+        </tool>
+    </section>
 </toolbox>
