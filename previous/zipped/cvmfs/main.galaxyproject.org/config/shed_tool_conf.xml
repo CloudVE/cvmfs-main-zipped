@@ -22975,4 +22975,14 @@
             <version>1.5.0+galaxy1</version>
         </tool>
     </section>
+    <section id="annotation" name="Annotation" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/crs4/prokka/bf68eb663bc3/prokka/prokka.xml" guid="toolshed.g2.bx.psu.edu/repos/crs4/prokka/prokka/1.14.5">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>prokka</repository_name>
+            <repository_owner>crs4</repository_owner>
+            <installed_changeset_revision>bf68eb663bc3</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/crs4/prokka/prokka/1.14.5</id>
+            <version>1.14.5</version>
+        </tool>
+    </section>
 </toolbox>
