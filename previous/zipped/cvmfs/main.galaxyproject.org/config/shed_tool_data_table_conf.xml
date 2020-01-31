@@ -15250,4 +15250,24 @@
             <installed_changeset_revision>d12a810c837e</installed_changeset_revision>
         </tool_shed_repository>
     </table>
+    <table comment_char="#" name="busco">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/busco/1e62c28ba91d/busco.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>busco</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>1e62c28ba91d</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/exonerate/b03ae2ba8688/all_fasta.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>exonerate</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>b03ae2ba8688</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
 </tables>

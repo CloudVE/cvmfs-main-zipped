@@ -15270,4 +15270,34 @@
             <installed_changeset_revision>b03ae2ba8688</installed_changeset_revision>
         </tool_shed_repository>
     </table>
+    <table comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/jcvi_gff_stats/8cffbd184762/all_fasta.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>jcvi_gff_stats</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>8cffbd184762</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table allow_duplicate_entries="False" comment_char="#" name="blastdb_p">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/kobas/20f1b45dea63/blastdb_p.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>kobas</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>20f1b45dea63</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/edb534491f92/all_fasta.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>jbrowse</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>edb534491f92</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
 </tables>
