@@ -23333,4 +23333,60 @@
             <version>0.1.7+galaxy11</version>
         </tool>
     </section>
+    <section id="annotation" name="Annotation" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/gubbins/637ec5d5368c/gubbins/gubbins.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/gubbins/gubbins/0.1.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>gubbins</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>637ec5d5368c</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/gubbins/gubbins/0.1.0</id>
+            <version>0.1.0</version>
+        </tool>
+    </section>
+    <section id="annotation" name="Annotation" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/jcvi_gff_stats/8cffbd184762/jcvi_gff_stats/jcvi_gff_stats.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/jcvi_gff_stats/jcvi_gff_stats/0.8.4">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>jcvi_gff_stats</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>8cffbd184762</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/jcvi_gff_stats/jcvi_gff_stats/0.8.4</id>
+            <version>0.8.4</version>
+        </tool>
+    </section>
+    <section id="annotation" name="Annotation" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/kobas/20f1b45dea63/kobas/kobas_annotate.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/kobas/kobas_annotate/2.1.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>kobas</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>20f1b45dea63</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/kobas/kobas_annotate/2.1.1</id>
+            <version>2.1.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/kobas/20f1b45dea63/kobas/kobas_identify.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/kobas/kobas_identify/2.1.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>kobas</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>20f1b45dea63</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/kobas/kobas_identify/2.1.1</id>
+            <version>2.1.1</version>
+        </tool>
+    </section>
+    <section id="graph_display_data" name="Graph/Display Data" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/edb534491f92/jbrowse/jbrowse.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.5+galaxy7">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>jbrowse</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>edb534491f92</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.5+galaxy7</id>
+            <version>1.16.5+galaxy7</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/edb534491f92/jbrowse/jbrowse-fromdir.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse_to_standalone/1.16.5+galaxy7">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>jbrowse</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>edb534491f92</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse_to_standalone/1.16.5+galaxy7</id>
+            <version>1.16.5+galaxy7</version>
+        </tool>
+    </section>
 </toolbox>
