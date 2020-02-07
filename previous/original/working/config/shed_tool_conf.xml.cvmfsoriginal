@@ -23525,4 +23525,54 @@
             <version>0.8.1+galaxy2</version>
         </tool>
     </section>
+    <section id="sam_bam" name="SAM/BAM" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/sam_to_bam/f7a0d41036c7/sam_to_bam/sam_to_bam.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/sam_to_bam/sam_to_bam/2.1.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sam_to_bam</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>f7a0d41036c7</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/sam_to_bam/sam_to_bam/2.1.1</id>
+            <version>2.1.1</version>
+        </tool>
+    </section>
+    <section id="sam_bam" name="SAM/BAM" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/sam2interval/75557c0908a9/sam2interval/sam2interval.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/sam2interval/sam2interval/1.0.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sam2interval</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>75557c0908a9</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/sam2interval/sam2interval/1.0.2</id>
+            <version>1.0.2</version>
+        </tool>
+    </section>
+    <section id="sam_bam" name="SAM/BAM" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/bamtools_split/9676127a1ed2/bamtools_split/bamtools_split.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/bamtools_split/bamtools_split/2.4.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bamtools_split</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>9676127a1ed2</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/bamtools_split/bamtools_split/2.4.0</id>
+            <version>2.4.0</version>
+        </tool>
+    </section>
+    <section id="sam_bam" name="SAM/BAM" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/bamtools/4d343c1f606b/bamtools/bamtools.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/bamtools/bamtools/2.4.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bamtools</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>4d343c1f606b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/bamtools/bamtools/2.4.0.0</id>
+            <version>2.4.0.0</version>
+        </tool>
+    </section>
+    <section id="annotation" name="Annotation" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/repeat_masker/ade773848c3d/repeat_masker/repeatmasker.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/repeat_masker/repeatmasker_wrapper/4.0.7+galaxy2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>repeat_masker</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>ade773848c3d</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/repeat_masker/repeatmasker_wrapper/4.0.7+galaxy2</id>
+            <version>4.0.7+galaxy2</version>
+        </tool>
+    </section>
 </toolbox>

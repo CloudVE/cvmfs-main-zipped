@@ -15380,4 +15380,14 @@
             <installed_changeset_revision>4d343c1f606b</installed_changeset_revision>
         </tool_shed_repository>
     </table>
+    <table allow_duplicate_entries="False" comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/transtermhp/012171ba9fce/all_fasta.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>transtermhp</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>012171ba9fce</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
 </tables>
