@@ -15390,4 +15390,14 @@
             <installed_changeset_revision>012171ba9fce</installed_changeset_revision>
         </tool_shed_repository>
     </table>
+    <table comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/circos/a64dc31ab7f2/all_fasta.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>circos</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>a64dc31ab7f2</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
 </tables>
