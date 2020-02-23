@@ -25163,4 +25163,94 @@
             <version>2.18.2.1</version>
         </tool>
     </section>
+    <section id="hyphy" name="HyPhy" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_absrel/f73435dc282b/hyphy_absrel/hyphy_absrel.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_absrel/hyphy_absrel/2.5.4+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>hyphy_absrel</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>f73435dc282b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/hyphy_absrel/hyphy_absrel/2.5.4+galaxy0</id>
+            <version>2.5.4+galaxy0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_bgm/823a5afee916/hyphy_bgm/hyphy_bgm.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_bgm/hyphy_bgm/2.5.4+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>hyphy_bgm</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>823a5afee916</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/hyphy_bgm/hyphy_bgm/2.5.4+galaxy0</id>
+            <version>2.5.4+galaxy0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_busted/f9a193154a55/hyphy_busted/hyphy_busted.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_busted/hyphy_busted/2.5.4+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>hyphy_busted</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>f9a193154a55</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/hyphy_busted/hyphy_busted/2.5.4+galaxy0</id>
+            <version>2.5.4+galaxy0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_fade/16b4a3869bd5/hyphy_fade/hyphy_fade.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_fade/hyphy_fade/2.5.4+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>hyphy_fade</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>16b4a3869bd5</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/hyphy_fade/hyphy_fade/2.5.4+galaxy0</id>
+            <version>2.5.4+galaxy0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_fel/4eba0baf0278/hyphy_fel/hyphy_fel.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_fel/hyphy_fel/2.5.4+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>hyphy_fel</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4eba0baf0278</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/hyphy_fel/hyphy_fel/2.5.4+galaxy0</id>
+            <version>2.5.4+galaxy0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_fubar/3285fd1f4bde/hyphy_fubar/hyphy_fubar.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_fubar/hyphy_fubar/2.5.4+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>hyphy_fubar</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>3285fd1f4bde</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/hyphy_fubar/hyphy_fubar/2.5.4+galaxy0</id>
+            <version>2.5.4+galaxy0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_gard/6283babe736e/hyphy_gard/hyphy_gard.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_gard/hyphy_gard/2.5.4+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>hyphy_gard</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>6283babe736e</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/hyphy_gard/hyphy_gard/2.5.4+galaxy0</id>
+            <version>2.5.4+galaxy0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_meme/4d5768ad6316/hyphy_meme/hyphy_meme.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_meme/hyphy_meme/2.5.4+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>hyphy_meme</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4d5768ad6316</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/hyphy_meme/hyphy_meme/2.5.4+galaxy0</id>
+            <version>2.5.4+galaxy0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_relax/7827dfb71693/hyphy_relax/hyphy_relax.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_relax/hyphy_relax/2.5.4+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>hyphy_relax</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>7827dfb71693</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/hyphy_relax/hyphy_relax/2.5.4+galaxy0</id>
+            <version>2.5.4+galaxy0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_slac/25782236e47e/hyphy_slac/hyphy_slac.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_slac/hyphy_slac/2.5.4+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>hyphy_slac</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>25782236e47e</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/hyphy_slac/hyphy_slac/2.5.4+galaxy0</id>
+            <version>2.5.4+galaxy0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_sm19/5f1830cb9135/hyphy_sm19/hyphy_sm19.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_sm19/hyphy_sm19/2.5.4+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>hyphy_sm19</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>5f1830cb9135</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/hyphy_sm19/hyphy_sm19/2.5.4+galaxy0</id>
+            <version>2.5.4+galaxy0</version>
+        </tool>
+    </section>
 </toolbox>
