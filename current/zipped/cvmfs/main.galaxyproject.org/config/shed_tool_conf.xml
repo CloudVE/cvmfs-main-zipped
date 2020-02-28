@@ -25253,4 +25253,22 @@
             <version>2.5.4+galaxy0</version>
         </tool>
     </section>
+    <section id="rna_seq" name="RNA-seq" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/stringtie/1ebd14235b92/stringtie/stringtie.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/stringtie/stringtie/2.1.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>stringtie</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>1ebd14235b92</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/stringtie/stringtie/2.1.1</id>
+            <version>2.1.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/stringtie/1ebd14235b92/stringtie/stringtie_merge.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/stringtie/stringtie_merge/2.1.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>stringtie</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>1ebd14235b92</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/stringtie/stringtie_merge/2.1.1</id>
+            <version>2.1.1</version>
+        </tool>
+    </section>
 </toolbox>
