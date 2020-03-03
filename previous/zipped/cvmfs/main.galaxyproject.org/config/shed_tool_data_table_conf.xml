@@ -16020,4 +16020,14 @@
             <installed_changeset_revision>fd1030bc93d9</installed_changeset_revision>
         </tool_shed_repository>
     </table>
+    <table comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/exonerate/a03dead1bede/all_fasta.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>exonerate</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>a03dead1bede</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
 </tables>

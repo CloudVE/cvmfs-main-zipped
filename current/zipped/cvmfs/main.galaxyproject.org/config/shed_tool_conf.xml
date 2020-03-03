@@ -26115,4 +26115,54 @@
             <version>2.11.40.6+galaxy1</version>
         </tool>
     </section>
+    <section id="convert_formats" name="Convert Formats" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/fasta_to_tabular/e7ed3c310b74/fasta_to_tabular/fasta_to_tabular.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/fasta_to_tabular/fasta2tab/1.1.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>fasta_to_tabular</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>e7ed3c310b74</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/fasta_to_tabular/fasta2tab/1.1.1</id>
+            <version>1.1.1</version>
+        </tool>
+    </section>
+    <section id="fasta_fastq" name="FASTA/FASTQ" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/fastq_trimmer_by_quality/8050e091e99b/fastq_trimmer_by_quality/fastq_trimmer_by_quality.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/fastq_trimmer_by_quality/fastq_quality_trimmer/1.1.5">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>fastq_trimmer_by_quality</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>8050e091e99b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/fastq_trimmer_by_quality/fastq_quality_trimmer/1.1.5</id>
+            <version>1.1.5</version>
+        </tool>
+    </section>
+    <section id="fasta_fastq" name="FASTA/FASTQ" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/fasta_filter_by_length/8cacfcf96a52/fasta_filter_by_length/fasta_filter_by_length.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/fasta_filter_by_length/fasta_filter_by_length/1.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>fasta_filter_by_length</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>8cacfcf96a52</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/fasta_filter_by_length/fasta_filter_by_length/1.2</id>
+            <version>1.2</version>
+        </tool>
+    </section>
+    <section id="fasta_fastq" name="FASTA/FASTQ" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/fasta_concatenate_by_species/25b8736c627a/fasta_concatenate_by_species/fasta_concatenate_by_species.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/fasta_concatenate_by_species/fasta_concatenate0/0.0.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>fasta_concatenate_by_species</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>25b8736c627a</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/fasta_concatenate_by_species/fasta_concatenate0/0.0.1</id>
+            <version>0.0.1</version>
+        </tool>
+    </section>
+    <section id="fasta_fastq" name="FASTA/FASTQ" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/fasta_compute_length/7d37cfda8e00/fasta_compute_length/fasta_compute_length.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/fasta_compute_length/fasta_compute_length/1.0.3">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>fasta_compute_length</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d37cfda8e00</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/devteam/fasta_compute_length/fasta_compute_length/1.0.3</id>
+            <version>1.0.3</version>
+        </tool>
+    </section>
 </toolbox>
