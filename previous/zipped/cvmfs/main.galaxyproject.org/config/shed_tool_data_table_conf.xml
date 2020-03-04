@@ -16030,4 +16030,14 @@
             <installed_changeset_revision>a03dead1bede</installed_changeset_revision>
         </tool_shed_repository>
     </table>
+    <table allow_duplicate_entries="False" comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/devteam/fasta_compute_length/7d37cfda8e00/all_fasta.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>fasta_compute_length</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>7d37cfda8e00</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
 </tables>
