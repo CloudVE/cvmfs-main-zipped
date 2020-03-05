@@ -16040,4 +16040,224 @@
             <installed_changeset_revision>7d37cfda8e00</installed_changeset_revision>
         </tool_shed_repository>
     </table>
+    <table comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/devteam/data_manager_twobit_builder/16c0c73b28ad/all_fasta.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>data_manager_twobit_builder</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>16c0c73b28ad</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/devteam/data_manager_twobit_builder/16c0c73b28ad/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>data_manager_twobit_builder</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>16c0c73b28ad</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="twobit">
+        <columns>value, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/devteam/data_manager_twobit_builder/16c0c73b28ad/twobit.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>data_manager_twobit_builder</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>16c0c73b28ad</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="alignseq_seq">
+        <columns>type, value, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/devteam/data_manager_twobit_builder/16c0c73b28ad/alignseq.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>data_manager_twobit_builder</repository_name>
+            <repository_owner>devteam</repository_owner>
+            <installed_changeset_revision>16c0c73b28ad</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_profile/c361b12d207a/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_plot_profile</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>c361b12d207a</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bam_coverage/bb1e4f63e0e6/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_bam_coverage</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>bb1e4f63e0e6</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_pca/69264da0ce77/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_plot_pca</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>69264da0ce77</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_heatmap/a4dfb122e52b/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_plot_heatmap</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>a4dfb122e52b</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_fingerprint/2da482e408b8/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_plot_fingerprint</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>2da482e408b8</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_enrichment/e65d16fb2724/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_plot_enrichment</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>e65d16fb2724</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_coverage/56bce3c82278/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_plot_coverage</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>56bce3c82278</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_correlation/32e451def88c/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_plot_correlation</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>32e451def88c</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_multi_bigwig_summary/3c9f0c486cca/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_multi_bigwig_summary</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>3c9f0c486cca</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_multi_bam_summary/78f405266706/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_multi_bam_summary</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>78f405266706</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_correct_gc_bias/2c37ce318bc3/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_correct_gc_bias</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>2c37ce318bc3</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_compute_matrix/514fa53b5efb/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_compute_matrix</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>514fa53b5efb</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_compute_gc_bias/2bc10a9ca58b/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_compute_gc_bias</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>2bc10a9ca58b</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bigwig_compare/26e7304d6737/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_bigwig_compare</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>26e7304d6737</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bam_pe_fragmentsize/62eb6d63f582/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_bam_pe_fragmentsize</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>62eb6d63f582</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="lastz_seqs">
+        <columns>value, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bam_compare/e821645ef8fc/lastz_seqs.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_bam_compare</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>e821645ef8fc</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="diamond_database">
+        <columns>value, name, db_path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/diamond/62c9df8382c2/diamond_database.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>diamond</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>62c9df8382c2</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="diamond_database">
+        <columns>value, name, db_path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/data_manager_diamond_database_builder/5a0d0bee4f8d/diamond_database.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>data_manager_diamond_database_builder</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>5a0d0bee4f8d</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
 </tables>

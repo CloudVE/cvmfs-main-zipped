@@ -26165,4 +26165,440 @@
             <version>1.0.3</version>
         </tool>
     </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_profile/c361b12d207a/deeptools_plot_profile/plotProfiler.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_profile/deeptools_plot_profile/3.3.2.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_plot_profile</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>c361b12d207a</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_profile/deeptools_plot_profile/3.3.2.0.0</id>
+            <version>3.3.2.0.0</version>
+        </tool>
+    </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bam_coverage/bb1e4f63e0e6/deeptools_bam_coverage/bamCoverage.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bam_coverage/deeptools_bam_coverage/3.3.2.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_bam_coverage</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>bb1e4f63e0e6</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bam_coverage/deeptools_bam_coverage/3.3.2.0.0</id>
+            <version>3.3.2.0.0</version>
+        </tool>
+    </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_pca/69264da0ce77/deeptools_plot_pca/plotPCA.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_pca/deeptools_plot_pca/3.3.2.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_plot_pca</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>69264da0ce77</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_pca/deeptools_plot_pca/3.3.2.0.0</id>
+            <version>3.3.2.0.0</version>
+        </tool>
+    </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_heatmap/a4dfb122e52b/deeptools_plot_heatmap/plotHeatmap.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_heatmap/deeptools_plot_heatmap/3.3.2.0.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_plot_heatmap</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>a4dfb122e52b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_heatmap/deeptools_plot_heatmap/3.3.2.0.1</id>
+            <version>3.3.2.0.1</version>
+        </tool>
+    </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_fingerprint/2da482e408b8/deeptools_plot_fingerprint/plotFingerprint.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_fingerprint/deeptools_plot_fingerprint/3.3.2.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_plot_fingerprint</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>2da482e408b8</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_fingerprint/deeptools_plot_fingerprint/3.3.2.0.0</id>
+            <version>3.3.2.0.0</version>
+        </tool>
+    </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_enrichment/e65d16fb2724/deeptools_plot_enrichment/plotEnrichment.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_enrichment/deeptools_plot_enrichment/3.3.2.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_plot_enrichment</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>e65d16fb2724</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_enrichment/deeptools_plot_enrichment/3.3.2.0.0</id>
+            <version>3.3.2.0.0</version>
+        </tool>
+    </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_coverage/56bce3c82278/deeptools_plot_coverage/plotCoverage.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_coverage/deeptools_plot_coverage/3.3.2.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_plot_coverage</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>56bce3c82278</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_coverage/deeptools_plot_coverage/3.3.2.0.0</id>
+            <version>3.3.2.0.0</version>
+        </tool>
+    </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_correlation/32e451def88c/deeptools_plot_correlation/plotCorrelation.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_correlation/deeptools_plot_correlation/3.3.2.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_plot_correlation</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>32e451def88c</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_plot_correlation/deeptools_plot_correlation/3.3.2.0.0</id>
+            <version>3.3.2.0.0</version>
+        </tool>
+    </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_multi_bigwig_summary/3c9f0c486cca/deeptools_multi_bigwig_summary/multiBigwigSummary.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_multi_bigwig_summary/deeptools_multi_bigwig_summary/3.3.2.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_multi_bigwig_summary</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>3c9f0c486cca</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_multi_bigwig_summary/deeptools_multi_bigwig_summary/3.3.2.0.0</id>
+            <version>3.3.2.0.0</version>
+        </tool>
+    </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_multi_bam_summary/78f405266706/deeptools_multi_bam_summary/multiBamSummary.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_multi_bam_summary/deeptools_multi_bam_summary/3.3.2.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_multi_bam_summary</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>78f405266706</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_multi_bam_summary/deeptools_multi_bam_summary/3.3.2.0.0</id>
+            <version>3.3.2.0.0</version>
+        </tool>
+    </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_correct_gc_bias/2c37ce318bc3/deeptools_correct_gc_bias/correctGCBias.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_correct_gc_bias/deeptools_correct_gc_bias/3.3.2.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_correct_gc_bias</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>2c37ce318bc3</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_correct_gc_bias/deeptools_correct_gc_bias/3.3.2.0.0</id>
+            <version>3.3.2.0.0</version>
+        </tool>
+    </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_compute_matrix/514fa53b5efb/deeptools_compute_matrix/computeMatrix.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_compute_matrix/deeptools_compute_matrix/3.3.2.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_compute_matrix</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>514fa53b5efb</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_compute_matrix/deeptools_compute_matrix/3.3.2.0.0</id>
+            <version>3.3.2.0.0</version>
+        </tool>
+    </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_compute_gc_bias/2bc10a9ca58b/deeptools_compute_gc_bias/computeGCBias.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_compute_gc_bias/deeptools_compute_gc_bias/3.3.2.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_compute_gc_bias</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>2bc10a9ca58b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_compute_gc_bias/deeptools_compute_gc_bias/3.3.2.0.0</id>
+            <version>3.3.2.0.0</version>
+        </tool>
+    </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bigwig_compare/26e7304d6737/deeptools_bigwig_compare/bigwigCompare.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bigwig_compare/deeptools_bigwig_compare/3.3.2.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_bigwig_compare</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>26e7304d6737</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bigwig_compare/deeptools_bigwig_compare/3.3.2.0.0</id>
+            <version>3.3.2.0.0</version>
+        </tool>
+    </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bam_pe_fragmentsize/62eb6d63f582/deeptools_bam_pe_fragmentsize/bamPEFragmentSize.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bam_pe_fragmentsize/deeptools_bam_pe_fragmentsize/3.3.2.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_bam_pe_fragmentsize</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>62eb6d63f582</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bam_pe_fragmentsize/deeptools_bam_pe_fragmentsize/3.3.2.0.0</id>
+            <version>3.3.2.0.0</version>
+        </tool>
+    </section>
+    <section id="deeptools" name="deepTools" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bam_compare/e821645ef8fc/deeptools_bam_compare/bamCompare.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bam_compare/deeptools_bam_compare/3.3.2.0.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>deeptools_bam_compare</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>e821645ef8fc</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bam_compare/deeptools_bam_compare/3.3.2.0.0</id>
+            <version>3.3.2.0.0</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/diamond/62c9df8382c2/diamond/diamond_view.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/diamond/bg_diamond_view/0.9.29">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>diamond</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>62c9df8382c2</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/diamond/bg_diamond_view/0.9.29</id>
+            <version>0.9.29</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/diamond/62c9df8382c2/diamond/diamond.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/diamond/bg_diamond/0.9.29.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>diamond</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>62c9df8382c2</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/diamond/bg_diamond/0.9.29.0</id>
+            <version>0.9.29.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/diamond/62c9df8382c2/diamond/diamond_makedb.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/diamond/bg_diamond_makedb/0.9.29">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>diamond</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>62c9df8382c2</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/diamond/bg_diamond_makedb/0.9.29</id>
+            <version>0.9.29</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/91c4e3331208/sklearn_generalized_linear/generalized_linear.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_generalized_linear</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>91c4e3331208</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_discriminant_classifier/d3e99d3df1ca/sklearn_discriminant_classifier/discriminant.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_discriminant_classifier/sklearn_discriminant_classifier/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_discriminant_classifier</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>d3e99d3df1ca</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_discriminant_classifier/sklearn_discriminant_classifier/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_regression_metrics/f04a2405f3fe/sklearn_regression_metrics/regression_metrics.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_regression_metrics/sklearn_regression_metrics/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_regression_metrics</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>f04a2405f3fe</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_regression_metrics/sklearn_regression_metrics/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_clf_metrics/e54382561bd4/sklearn_clf_metrics/clf_metrics.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_clf_metrics/sklearn_clf_metrics/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_clf_metrics</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>e54382561bd4</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_clf_metrics/sklearn_clf_metrics/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_data_preprocess/1b5cd2d16fb1/sklearn_data_preprocess/pre_process.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_data_preprocess/sklearn_data_preprocess/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_data_preprocess</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>1b5cd2d16fb1</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_data_preprocess/sklearn_data_preprocess/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_feature_selection/07b34d5284f6/sklearn_feature_selection/feature_selection.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_feature_selection/sklearn_feature_selection/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_feature_selection</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>07b34d5284f6</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_feature_selection/sklearn_feature_selection/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/1a53edc4b438/sklearn_ensemble/ensemble.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_ensemble</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>1a53edc4b438</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_numeric_clustering/1dd433d2c92c/sklearn_numeric_clustering/numeric_clustering.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_numeric_clustering/sklearn_numeric_clustering/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_numeric_clustering</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>1dd433d2c92c</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_numeric_clustering/sklearn_numeric_clustering/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_nn_classifier/aa83e7e3c398/sklearn_nn_classifier/nn_classifier.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_nn_classifier/sklearn_nn_classifier/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_nn_classifier</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>aa83e7e3c398</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_nn_classifier/sklearn_nn_classifier/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_pairwise_metrics/f24deab884d0/sklearn_pairwise_metrics/pairwise_metrics.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_pairwise_metrics/sklearn_pairwise_metrics/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_pairwise_metrics</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>f24deab884d0</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_pairwise_metrics/sklearn_pairwise_metrics/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_build_pipeline/840f29aad145/sklearn_build_pipeline/pipeline.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_build_pipeline/sklearn_build_pipeline/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_build_pipeline</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>840f29aad145</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_build_pipeline/sklearn_build_pipeline/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_searchcv/25ab6b4e376e/sklearn_searchcv/search_model_validation.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_searchcv/sklearn_searchcv/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_searchcv</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>25ab6b4e376e</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_searchcv/sklearn_searchcv/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_sample_generator/ab2c393080f9/sklearn_sample_generator/sample_generator.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_sample_generator/sklearn_sample_generator/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_sample_generator</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>ab2c393080f9</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_sample_generator/sklearn_sample_generator/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_svm_classifier/f9639b488779/sklearn_svm_classifier/svm.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_svm_classifier/sklearn_svm_classifier/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_svm_classifier</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>f9639b488779</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_svm_classifier/sklearn_svm_classifier/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_model_validation/805194c3cdfb/sklearn_model_validation/model_validation.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_model_validation/sklearn_model_validation/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_model_validation</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>805194c3cdfb</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_model_validation/sklearn_model_validation/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_estimator_attributes/89deaf399ff7/sklearn_estimator_attributes/estimator_attributes.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_estimator_attributes/sklearn_estimator_attributes/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_estimator_attributes</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>89deaf399ff7</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_estimator_attributes/sklearn_estimator_attributes/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_train_test_eval/bde62c243b7e/sklearn_train_test_eval/train_test_eval.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_train_test_eval/sklearn_train_test_eval/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_train_test_eval</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>bde62c243b7e</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_train_test_eval/sklearn_train_test_eval/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_stacking_ensemble_models/253b3aaf0d91/sklearn_stacking_ensemble_models/stacking_ensembles.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_stacking_ensemble_models/sklearn_stacking_ensemble_models/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_stacking_ensemble_models</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>253b3aaf0d91</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_stacking_ensemble_models/sklearn_stacking_ensemble_models/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/keras_batch_models/3814a92c1416/keras_batch_models/keras_batch_models.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/keras_batch_models/keras_batch_models/0.5.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>keras_batch_models</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>3814a92c1416</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/keras_batch_models/keras_batch_models/0.5.0</id>
+            <version>0.5.0</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/keras_model_builder/c51571d0a0b1/keras_model_builder/keras_model_builder.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/keras_model_builder/keras_model_builder/0.5.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>keras_model_builder</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>c51571d0a0b1</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/keras_model_builder/keras_model_builder/0.5.0</id>
+            <version>0.5.0</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/keras_model_config/94d91334c787/keras_model_config/keras_model_config.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/keras_model_config/keras_model_config/0.5.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>keras_model_config</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>94d91334c787</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/keras_model_config/keras_model_config/0.5.0</id>
+            <version>0.5.0</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/model_prediction/b237f27a8afc/model_prediction/model_prediction.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/model_prediction/model_prediction/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>model_prediction</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>b237f27a8afc</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/model_prediction/model_prediction/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_model_fit/fe4e36598917/sklearn_model_fit/simple_model_fit.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_model_fit/sklearn_model_fit/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_model_fit</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>fe4e36598917</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_model_fit/sklearn_model_fit/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_train_test_split/e8639f65c883/sklearn_train_test_split/train_test_split.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_train_test_split/sklearn_train_test_split/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_train_test_split</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>e8639f65c883</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_train_test_split/sklearn_train_test_split/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
+    <section id="statistics" name="Statistics" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_fitted_model_eval/4a1cd790e323/sklearn_fitted_model_eval/fitted_model_eval.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_fitted_model_eval/sklearn_fitted_model_eval/1.0.8.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sklearn_fitted_model_eval</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>4a1cd790e323</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_fitted_model_eval/sklearn_fitted_model_eval/1.0.8.1</id>
+            <version>1.0.8.1</version>
+        </tool>
+    </section>
 </toolbox>
