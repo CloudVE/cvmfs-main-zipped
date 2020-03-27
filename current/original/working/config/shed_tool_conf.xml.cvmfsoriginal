@@ -27247,4 +27247,34 @@
             <version>2.1.3.1+galaxy2</version>
         </tool>
     </section>
+    <section id="collection_operations" name="Collection Operations" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/830961c48e42/collapse_collections/merge.xml" guid="toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/4.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>collapse_collections</repository_name>
+            <repository_owner>nml</repository_owner>
+            <installed_changeset_revision>830961c48e42</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/4.2</id>
+            <version>4.2</version>
+        </tool>
+    </section>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/kc_align/04b13fc809ac/kc_align/kc-align.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/kc_align/kc-align/0.1.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>kc_align</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>04b13fc809ac</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/kc_align/kc-align/0.1.0</id>
+            <version>0.1.0</version>
+        </tool>
+    </section>
+    <section id="evolution" name="Evolution" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/tn93_readreduce/bdaadfd0c843/tn93_readreduce/readreduce.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/tn93_readreduce/tn93_readreduce/1.0.4">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>tn93_readreduce</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>bdaadfd0c843</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/tn93_readreduce/tn93_readreduce/1.0.4</id>
+            <version>1.0.4</version>
+        </tool>
+    </section>
 </toolbox>
