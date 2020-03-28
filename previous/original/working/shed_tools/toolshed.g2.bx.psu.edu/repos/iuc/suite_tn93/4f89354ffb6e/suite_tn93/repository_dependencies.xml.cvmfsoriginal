@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<repositories description="TN-93 – Transmission Analysis by Distance Clustering">
+    <repository changeset_revision="bdaadfd0c843" name="tn93_readreduce" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu"/>
+    <repository changeset_revision="ccebde0e2d61" name="tn93" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu"/>
+</repositories>
