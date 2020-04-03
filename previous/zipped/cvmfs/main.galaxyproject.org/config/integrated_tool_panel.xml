@@ -6047,4 +6047,6 @@
 
     <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_fimo/meme_fimo/5.0.5.0" />
 
+    <tool id="toolshed.g2.bx.psu.edu/repos/iuc/tn93/tn93/1.0.4" />
+
 </toolbox>
