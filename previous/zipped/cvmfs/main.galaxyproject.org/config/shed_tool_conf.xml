@@ -19844,7 +19844,7 @@
         </tool>
     </section>
     <section id="mapping" name="Mapping" version="">
-        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/bowtie_wrappers/b46e7d48076a/bowtie_wrappers/bowtie_wrapper.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/bowtie_wrappers/bowtie_wrapper/1.2.0">
+        <tool file="toolshed.g2.bx.psu.edu/repos/devteam/bowtie_wrappers/b46e7d48076a/bowtie_wrappers/bowtie_wrapper.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/bowtie_wrappers/bowtie_wrapper/1.2.0" hidden="true">
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>bowtie_wrappers</repository_name>
             <repository_owner>devteam</repository_owner>
@@ -27433,6 +27433,16 @@
             <installed_changeset_revision>0243407479f1</installed_changeset_revision>
             <id>toolshed.g2.bx.psu.edu/repos/iuc/kc_align/kc-align/0.1.4</id>
             <version>0.1.4</version>
+        </tool>
+    </section>
+    <section id="variant_calling" name="Variant Calling" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/nick/allele_counts/cf2af5c3118c/allele_counts/allele-counts.xml" guid="toolshed.g2.bx.psu.edu/repos/nick/allele_counts/allele_counts_1/1.3.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>allele_counts</repository_name>
+            <repository_owner>nick</repository_owner>
+            <installed_changeset_revision>cf2af5c3118c</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/nick/allele_counts/allele_counts_1/1.3.2</id>
+            <version>1.3.2</version>
         </tool>
     </section>
 </toolbox>
