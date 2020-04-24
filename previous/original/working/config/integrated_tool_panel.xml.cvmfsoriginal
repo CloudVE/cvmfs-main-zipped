@@ -3693,6 +3693,8 @@
 
     <section id="multiple_alignments" name="Multiple Alignments" version="">
 
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/kc_align/kc-align/0.1.6" />
+
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/kc_align/kc-align/0.1.5" />
 
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/kc_align/kc-align/0.1.4" />
@@ -3755,10 +3757,6 @@
 
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/tag_pileup_frequency/tag_pileup_frequency/1.0.2" />
 
-        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_psp_gen/meme_psp_gen/5.0.5.0" />
-
-        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_chip/meme_chip/4.11.2+galaxy1" />
-
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/repmatch_gff3/repmatch_gff3/1.0.2" />
 
         <tool id="toolshed.g2.bx.psu.edu/repos/bgruening/diffbind/diffbind/2.10.0" />
@@ -3766,8 +3764,6 @@
         <tool id="toolshed.g2.bx.psu.edu/repos/rnateam/chipseeker/chipseeker/1.18.0+galaxy1" />
 
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/cwpair2/cwpair2/1.1.1" />
-
-        <tool id="toolshed.g2.bx.psu.edu/repos/devteam/macs/peakcalling_macs/1.0.1" />
 
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/macs2/macs2_refinepeak/2.1.1.20160309.1" />
 
@@ -5781,28 +5777,6 @@
 
     <section id="motif_tools" name="Motif Tools" version="">
 
-        <tool id="toolshed.g2.bx.psu.edu/repos/devteam/weblogo3/rgweblogo3/0.4" />
-
-        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_meme/meme_meme/4.12.0.0" />
-
-        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_fimo/meme_fimo/4.12.0.0" />
-
-        <tool id="toolshed.g2.bx.psu.edu/repos/devteam/weblogo3/rgweblogo3/3.5.0" />
-
-        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_fimo/meme_fimo/4.11.1.0" />
-
-        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_meme/meme_meme/4.11.1.0" />
-
-        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_fimo/meme_fimo/4.11.0.3" />
-
-        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_meme/meme_meme/4.11.0.1" />
-
-        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_fimo/meme_fimo/4.11.0.2" />
-
-        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_fimo/meme_fimo/4.11.0.0" />
-
-        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_meme/meme_meme/4.11.0.0" />
-
     </section>
 
     <section id="ncbi_blast_" name="NCBI BLAST+" version="">
@@ -6075,8 +6049,38 @@
 
     </section>
 
-    <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_meme/meme_meme/5.0.5.0" />
+    <section id="motif" name="Motif" version="">
 
-    <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_fimo/meme_fimo/5.0.5.0" />
+        <tool id="toolshed.g2.bx.psu.edu/repos/devteam/weblogo3/rgweblogo3/0.4" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_meme/meme_meme/5.0.5.0" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_fimo/meme_fimo/5.0.5.0" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_psp_gen/meme_psp_gen/5.0.5.0" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_chip/meme_chip/4.11.2+galaxy1" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_meme/meme_meme/4.12.0.0" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_fimo/meme_fimo/4.12.0.0" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/devteam/weblogo3/rgweblogo3/3.5.0" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_fimo/meme_fimo/4.11.1.0" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_meme/meme_meme/4.11.1.0" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_fimo/meme_fimo/4.11.0.3" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_meme/meme_meme/4.11.0.1" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_fimo/meme_fimo/4.11.0.2" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_fimo/meme_fimo/4.11.0.0" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/meme_meme/meme_meme/4.11.0.0" />
+
+    </section>
 
 </toolbox>

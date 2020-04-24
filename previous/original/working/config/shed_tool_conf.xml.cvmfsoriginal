@@ -27457,4 +27457,14 @@
             <version>4.1.4.0+galaxy2</version>
         </tool>
     </section>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/kc_align/1e70671a90c6/kc_align/kc-align.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/kc_align/kc-align/0.1.6">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>kc_align</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>1e70671a90c6</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/kc_align/kc-align/0.1.6</id>
+            <version>0.1.6</version>
+        </tool>
+    </section>
 </toolbox>
