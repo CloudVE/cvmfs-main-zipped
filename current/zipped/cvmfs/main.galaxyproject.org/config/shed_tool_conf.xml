@@ -27743,4 +27743,60 @@
             <version>2.10.4+galaxy1</version>
         </tool>
     </section>
+    <section id="annotation" name="Annotation" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/abricate/b734db305578/abricate/abricate.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/abricate/abricate/1.0.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>abricate</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>b734db305578</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/abricate/abricate/1.0.1</id>
+            <version>1.0.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/abricate/b734db305578/abricate/abricate_list.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/abricate/abricate_list/1.0.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>abricate</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>b734db305578</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/abricate/abricate_list/1.0.1</id>
+            <version>1.0.1</version>
+        </tool>
+    </section>
+    <section id="fasta_fastq" name="FASTA/FASTQ" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/fastp/dbf9c561ef29/fastp/fastp.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/0.20.1+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>fastp</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>dbf9c561ef29</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/0.20.1+galaxy0</id>
+            <version>0.20.1+galaxy0</version>
+        </tool>
+    </section>
+    <section id="graph_display_data" name="Graph/Display Data" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/ggplot2_point/87908c76ca8d/ggplot2_point/ggplot_point.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/ggplot2_point/ggplot2_point/2.2.1+galaxy2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ggplot2_point</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>87908c76ca8d</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/ggplot2_point/ggplot2_point/2.2.1+galaxy2</id>
+            <version>2.2.1+galaxy2</version>
+        </tool>
+    </section>
+    <section id="graph_display_data" name="Graph/Display Data" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/fd5dbf0f732e/jbrowse/jbrowse.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.8+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>jbrowse</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>fd5dbf0f732e</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.8+galaxy1</id>
+            <version>1.16.8+galaxy1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/fd5dbf0f732e/jbrowse/jbrowse-fromdir.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse_to_standalone/1.16.8+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>jbrowse</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>fd5dbf0f732e</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse_to_standalone/1.16.8+galaxy1</id>
+            <version>1.16.8+galaxy1</version>
+        </tool>
+    </section>
 </toolbox>

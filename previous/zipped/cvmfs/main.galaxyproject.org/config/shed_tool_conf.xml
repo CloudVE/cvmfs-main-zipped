@@ -27717,4 +27717,30 @@
             <version>2.5.11+galaxy0</version>
         </tool>
     </section>
+    <section id="getext" name="Get Data" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/c441583adae5/sra_tools/fasterq_dump.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.4+galaxy2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sra_tools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>c441583adae5</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.4+galaxy2</id>
+            <version>2.10.4+galaxy2</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/c441583adae5/sra_tools/sam_dump.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/sam_dump/2.10.4+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sra_tools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>c441583adae5</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/sam_dump/2.10.4+galaxy1</id>
+            <version>2.10.4+galaxy1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/c441583adae5/sra_tools/fastq_dump.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fastq_dump/2.10.4+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sra_tools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>c441583adae5</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fastq_dump/2.10.4+galaxy1</id>
+            <version>2.10.4+galaxy1</version>
+        </tool>
+    </section>
 </toolbox>
