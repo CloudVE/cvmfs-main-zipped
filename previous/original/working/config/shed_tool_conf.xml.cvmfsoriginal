@@ -27919,4 +27919,24 @@
             <version>2.5.12+galaxy0</version>
         </tool>
     </section>
+    <section id="hyphy" name="HyPhy" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/sarscov2summary/4ad8b610ea41/sarscov2summary/sarscov2summary.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/sarscov2summary/sarscov2summary/0.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sarscov2summary</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4ad8b610ea41</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/sarscov2summary/sarscov2summary/0.1</id>
+            <version>0.1</version>
+        </tool>
+    </section>
+    <section id="hyphy" name="HyPhy" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/sarscov2formatter/1c664ff29354/sarscov2formatter/sarscov2formatter.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/sarscov2formatter/sarscov2formatter/0.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sarscov2formatter</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>1c664ff29354</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/sarscov2formatter/sarscov2formatter/0.1</id>
+            <version>0.1</version>
+        </tool>
+    </section>
 </toolbox>
