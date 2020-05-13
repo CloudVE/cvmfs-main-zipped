@@ -28059,4 +28059,14 @@
             <version>2.5.14+galaxy0</version>
         </tool>
     </section>
+    <section id="evolution" name="Evolution" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/rapidnj/9f4a66e22580/rapidnj/rapidnj.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/rapidnj/rapidnj/2.3.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>rapidnj</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>9f4a66e22580</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/rapidnj/rapidnj/2.3.2</id>
+            <version>2.3.2</version>
+        </tool>
+    </section>
 </toolbox>
