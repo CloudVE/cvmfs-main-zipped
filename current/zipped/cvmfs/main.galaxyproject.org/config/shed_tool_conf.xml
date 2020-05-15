@@ -28069,4 +28069,14 @@
             <version>2.3.2</version>
         </tool>
     </section>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/kc_align/8dc7708c3266/kc_align/kc-align.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/kc_align/kc-align/0.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>kc_align</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>8dc7708c3266</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/kc_align/kc-align/0.2</id>
+            <version>0.2</version>
+        </tool>
+    </section>
 </toolbox>
