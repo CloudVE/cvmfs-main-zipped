@@ -28079,4 +28079,54 @@
             <version>0.2</version>
         </tool>
     </section>
+    <section id="variant_calling" name="Variant Calling" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/lofreq_alnqual/e61c9ac190ad/lofreq_alnqual/lofreq_alnqual.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/lofreq_alnqual/lofreq_alnqual/2.1.4+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>lofreq_alnqual</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>e61c9ac190ad</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/lofreq_alnqual/lofreq_alnqual/2.1.4+galaxy0</id>
+            <version>2.1.4+galaxy0</version>
+        </tool>
+    </section>
+    <section id="variant_calling" name="Variant Calling" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/lofreq_call/074d44697036/lofreq_call/lofreq_call.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/lofreq_call/lofreq_call/2.1.4+galaxy2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>lofreq_call</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>074d44697036</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/lofreq_call/lofreq_call/2.1.4+galaxy2</id>
+            <version>2.1.4+galaxy2</version>
+        </tool>
+    </section>
+    <section id="variant_calling" name="Variant Calling" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/lofreq_filter/701d134358ad/lofreq_filter/lofreq_filter.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/lofreq_filter/lofreq_filter/2.1.4+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>lofreq_filter</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>701d134358ad</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/lofreq_filter/lofreq_filter/2.1.4+galaxy1</id>
+            <version>2.1.4+galaxy1</version>
+        </tool>
+    </section>
+    <section id="variant_calling" name="Variant Calling" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/lofreq_indelqual/c27549b9aa1f/lofreq_indelqual/lofreq_indelqual.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/lofreq_indelqual/lofreq_indelqual/2.1.4+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>lofreq_indelqual</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>c27549b9aa1f</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/lofreq_indelqual/lofreq_indelqual/2.1.4+galaxy0</id>
+            <version>2.1.4+galaxy0</version>
+        </tool>
+    </section>
+    <section id="variant_calling" name="Variant Calling" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/lofreq_viterbi/dbd9f2db9ed8/lofreq_viterbi/lofreq_viterbi.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/lofreq_viterbi/lofreq_viterbi/2.1.4+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>lofreq_viterbi</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>dbd9f2db9ed8</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/lofreq_viterbi/lofreq_viterbi/2.1.4+galaxy1</id>
+            <version>2.1.4+galaxy1</version>
+        </tool>
+    </section>
 </toolbox>
