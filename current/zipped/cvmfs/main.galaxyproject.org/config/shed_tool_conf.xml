@@ -28129,4 +28129,162 @@
             <version>2.1.4+galaxy1</version>
         </tool>
     </section>
+    <section id="annotation" name="Annotation" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bp_genbank2gff3/11c3eb512633/bp_genbank2gff3/bp_genbank2gff3.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bp_genbank2gff3/bp_genbank2gff3/1.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bp_genbank2gff3</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>11c3eb512633</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bp_genbank2gff3/bp_genbank2gff3/1.1</id>
+            <version>1.1</version>
+        </tool>
+    </section>
+    <section id="annotation" name="Annotation" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/mlst/ded48b36f3b7/mlst/mlst_list.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/mlst/mlst_list/2.19.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>mlst</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ded48b36f3b7</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/mlst/mlst_list/2.19.0</id>
+            <version>2.19.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/mlst/ded48b36f3b7/mlst/mlst.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/mlst/mlst/2.19.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>mlst</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ded48b36f3b7</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/mlst/mlst/2.19.0</id>
+            <version>2.19.0</version>
+        </tool>
+    </section>
+    <section id="fastq_quality_control" name="FASTQ Quality Control" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/bf675f34b056/multiqc/multiqc.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>multiqc</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>bf675f34b056</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy0</id>
+            <version>1.8+galaxy0</version>
+        </tool>
+    </section>
+    <section id="get_data" name="Get Data" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/7068f48d0ef9/sra_tools/sam_dump.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/sam_dump/2.10.7+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sra_tools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>7068f48d0ef9</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/sam_dump/2.10.7+galaxy0</id>
+            <version>2.10.7+galaxy0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/7068f48d0ef9/sra_tools/fastq_dump.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fastq_dump/2.10.7+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sra_tools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>7068f48d0ef9</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fastq_dump/2.10.7+galaxy0</id>
+            <version>2.10.7+galaxy0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/7068f48d0ef9/sra_tools/fasterq_dump.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.7+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>sra_tools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>7068f48d0ef9</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.7+galaxy0</id>
+            <version>2.10.7+galaxy0</version>
+        </tool>
+    </section>
+    <section id="graph_display_data" name="Graph/Display Data" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/circos/4b519282a05b/circos/tiles-from-interval.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_interval_to_tile/0.69.8+galaxy6">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>circos</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4b519282a05b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_interval_to_tile/0.69.8+galaxy6</id>
+            <version>0.69.8+galaxy6</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/circos/4b519282a05b/circos/text-from-interval.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_interval_to_text/0.69.8+galaxy6">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>circos</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4b519282a05b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_interval_to_text/0.69.8+galaxy6</id>
+            <version>0.69.8+galaxy6</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/circos/4b519282a05b/circos/gc_skew.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_gc_skew/0.69.8+galaxy6">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>circos</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4b519282a05b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_gc_skew/0.69.8+galaxy6</id>
+            <version>0.69.8+galaxy6</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/circos/4b519282a05b/circos/alignments-to-links.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_aln_to_links/0.69.8+galaxy6">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>circos</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4b519282a05b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_aln_to_links/0.69.8+galaxy6</id>
+            <version>0.69.8+galaxy6</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/circos/4b519282a05b/circos/binlinks.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_binlinks/0.69.8+galaxy6">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>circos</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4b519282a05b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_binlinks/0.69.8+galaxy6</id>
+            <version>0.69.8+galaxy6</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/circos/4b519282a05b/circos/scatter-from-wiggle.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_wiggle_to_scatter/0.69.8+galaxy6">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>circos</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4b519282a05b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_wiggle_to_scatter/0.69.8+galaxy6</id>
+            <version>0.69.8+galaxy6</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/circos/4b519282a05b/circos/tableviewer.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_tableviewer/0.69.8+galaxy6">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>circos</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4b519282a05b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_tableviewer/0.69.8+galaxy6</id>
+            <version>0.69.8+galaxy6</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/circos/4b519282a05b/circos/resample.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_resample/0.69.8+galaxy6">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>circos</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4b519282a05b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_resample/0.69.8+galaxy6</id>
+            <version>0.69.8+galaxy6</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/circos/4b519282a05b/circos/bundlelinks.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_bundlelinks/0.69.8+galaxy6">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>circos</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4b519282a05b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/circos/circos_bundlelinks/0.69.8+galaxy6</id>
+            <version>0.69.8+galaxy6</version>
+        </tool>
+    </section>
+    <section id="presto" name="pRESTO" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/prestor_abseq3/097b44ff88db/prestor_abseq3/prestor_abseq3.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/prestor_abseq3/prestor_abseq3/0.5.4+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>prestor_abseq3</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>097b44ff88db</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/prestor_abseq3/prestor_abseq3/0.5.4+galaxy1</id>
+            <version>0.5.4+galaxy1</version>
+        </tool>
+    </section>
+    <section id="variant_calling" name="Variant Calling" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/gatk4_mutect2/287c4af133e6/gatk4_mutect2/gatk4_Mutect2.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/gatk4_mutect2/gatk4_mutect2/4.1.7.0+galaxy02">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>gatk4_mutect2</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>287c4af133e6</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/gatk4_mutect2/gatk4_mutect2/4.1.7.0+galaxy02</id>
+            <version>4.1.7.0+galaxy02</version>
+        </tool>
+    </section>
 </toolbox>
