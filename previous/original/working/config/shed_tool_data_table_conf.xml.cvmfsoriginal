@@ -16560,4 +16560,34 @@
             <installed_changeset_revision>dbd9f2db9ed8</installed_changeset_revision>
         </tool_shed_repository>
     </table>
+    <table comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/circos/4b519282a05b/all_fasta.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>circos</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4b519282a05b</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table allow_duplicate_entries="False" comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/minimap2/8c6cd2650d1f/all_fasta.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>minimap2</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>8c6cd2650d1f</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="all_fasta">
+        <columns>value, dbkey, name, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/gatk4_mutect2/287c4af133e6/all_fasta.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>gatk4_mutect2</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>287c4af133e6</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
 </tables>
