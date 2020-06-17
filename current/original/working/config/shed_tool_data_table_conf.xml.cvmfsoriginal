@@ -16590,4 +16590,64 @@
             <installed_changeset_revision>287c4af133e6</installed_changeset_revision>
         </tool_shed_repository>
     </table>
+    <table comment_char="#" name="primer_scheme_bedfiles">
+        <columns>value, description, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/ivar_consensus/7f781286b55f/primer_scheme_bedfiles.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ivar_consensus</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>7f781286b55f</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="primer_scheme_bedfiles">
+        <columns>value, description, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/ivar_filtervariants/2c47c138176e/primer_scheme_bedfiles.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ivar_filtervariants</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>2c47c138176e</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="primer_scheme_bedfiles">
+        <columns>value, description, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/ivar_getmasked/2cf4a1cafc16/primer_scheme_bedfiles.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ivar_getmasked</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>2cf4a1cafc16</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="primer_scheme_bedfiles">
+        <columns>value, description, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/ivar_removereads/3d18f8c3c0f6/primer_scheme_bedfiles.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ivar_removereads</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>3d18f8c3c0f6</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="primer_scheme_bedfiles">
+        <columns>value, description, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/5d6ed46cc101/primer_scheme_bedfiles.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ivar_trim</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>5d6ed46cc101</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="primer_scheme_bedfiles">
+        <columns>value, description, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/ivar_variants/aa9de8f20668/primer_scheme_bedfiles.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ivar_variants</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>aa9de8f20668</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
 </tables>
