@@ -5841,6 +5841,12 @@
 
     <section id="get_data" name="Get Data" version="">
 
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fastq_dump/2.10.7+galaxy2" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.7+galaxy2" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/sam_dump/2.10.7+galaxy2" />
+
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/sam_dump/2.10.7+galaxy1" />
 
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fastq_dump/2.10.7+galaxy1" />
@@ -6112,6 +6118,8 @@
     </section>
 
     <section id="hyphy" name="HyPhy" version="">
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_fel/hyphy_fel/2.5.15+galaxy0" />
 
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_sm19/hyphy_sm19/2.5.15+galaxy0" />
 

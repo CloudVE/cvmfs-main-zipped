@@ -28845,4 +28845,14 @@
             <version>2.10.7+galaxy2</version>
         </tool>
     </section>
+    <section id="hyphy" name="HyPhy" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_fel/9862c57d02a6/hyphy_fel/hyphy_fel.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_fel/hyphy_fel/2.5.15+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>hyphy_fel</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>9862c57d02a6</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/hyphy_fel/hyphy_fel/2.5.15+galaxy0</id>
+            <version>2.5.15+galaxy0</version>
+        </tool>
+    </section>
 </toolbox>
