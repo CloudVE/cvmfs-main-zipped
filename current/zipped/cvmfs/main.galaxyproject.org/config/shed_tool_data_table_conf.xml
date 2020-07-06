@@ -16750,4 +16750,34 @@
             <installed_changeset_revision>af7e416d8176</installed_changeset_revision>
         </tool_shed_repository>
     </table>
+    <table allow_duplicate_entries="False" comment_char="#" name="salmon_indexes_versioned">
+        <columns>value, dbkey, name, path, version</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/bgruening/salmon/e3d32471da11/salmon_indexes_versioned.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>salmon</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>e3d32471da11</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="primer_scheme_bedfiles">
+        <columns>value, description, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/ivar_removereads/ee2beb764a7b/primer_scheme_bedfiles.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ivar_removereads</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ee2beb764a7b</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table comment_char="#" name="primer_scheme_bedfiles">
+        <columns>value, description, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/db536ad45f28/primer_scheme_bedfiles.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ivar_trim</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>db536ad45f28</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
 </tables>
