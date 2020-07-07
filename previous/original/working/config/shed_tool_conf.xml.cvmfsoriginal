@@ -28855,4 +28855,72 @@
             <version>2.5.15+galaxy0</version>
         </tool>
     </section>
+    <section id="annotation" name="Annotation" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/progressivemauve/97a43bcbf44d/progressivemauve/xmfa2gff3.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/progressivemauve/xmfa2gff3/2015_02_13.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>progressivemauve</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>97a43bcbf44d</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/progressivemauve/xmfa2gff3/2015_02_13.1</id>
+            <version>2015_02_13.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/progressivemauve/97a43bcbf44d/progressivemauve/progressivemauve.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/progressivemauve/progressivemauve/2015_02_13.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>progressivemauve</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>97a43bcbf44d</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/progressivemauve/progressivemauve/2015_02_13.0</id>
+            <version>2015_02_13.0</version>
+        </tool>
+    </section>
+    <section id="annotation" name="Annotation" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/roary/15ac71df11a0/roary/roary.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/roary/roary/3.13.0+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>roary</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>15ac71df11a0</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/roary/roary/3.13.0+galaxy0</id>
+            <version>3.13.0+galaxy0</version>
+        </tool>
+    </section>
+    <section id="assembly" name="Assembly" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/shovill/8d1af5db538d/shovill/shovill.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>shovill</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>8d1af5db538d</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4+galaxy1</id>
+            <version>1.0.4+galaxy1</version>
+        </tool>
+    </section>
+    <section id="rna_seq" name="RNA-seq" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/salmon/e3d32471da11/salmon/salmonquant.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>salmon</repository_name>
+            <repository_owner>bgruening</repository_owner>
+            <installed_changeset_revision>e3d32471da11</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2+galaxy1</id>
+            <version>0.14.1.2+galaxy1</version>
+        </tool>
+    </section>
+    <section id="virology" name="Virology" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/ivar_removereads/ee2beb764a7b/ivar_removereads/ivar_removereads.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/ivar_removereads/ivar_removereads/1.2.2+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ivar_removereads</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ee2beb764a7b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/ivar_removereads/ivar_removereads/1.2.2+galaxy1</id>
+            <version>1.2.2+galaxy1</version>
+        </tool>
+    </section>
+    <section id="virology" name="Virology" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/db536ad45f28/ivar_trim/ivar_trim.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/ivar_trim/1.2.2+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ivar_trim</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>db536ad45f28</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/ivar_trim/1.2.2+galaxy1</id>
+            <version>1.2.2+galaxy1</version>
+        </tool>
+    </section>
 </toolbox>
