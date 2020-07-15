@@ -28923,4 +28923,86 @@
             <version>1.2.2+galaxy1</version>
         </tool>
     </section>
+    <section id="single_cell" name="Single-cell">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/7647e5cd1b8b/scanpy_plot/plot.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.4.4.post1+galaxy3">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>scanpy_plot</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>7647e5cd1b8b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.4.4.post1+galaxy3</id>
+            <version>1.4.4.post1+galaxy3</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/scanpy_normalize/a407e7f8bdc1/scanpy_normalize/normalize.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/scanpy_normalize/scanpy_normalize/1.4.4.post1+galaxy3">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>scanpy_normalize</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>a407e7f8bdc1</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/scanpy_normalize/scanpy_normalize/1.4.4.post1+galaxy3</id>
+            <version>1.4.4.post1+galaxy3</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/anndata_export/379014a57491/anndata_export/export.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/anndata_export/anndata_export/0.6.22.post1+galaxy3">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>anndata_export</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>379014a57491</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/anndata_export/anndata_export/0.6.22.post1+galaxy3</id>
+            <version>0.6.22.post1+galaxy3</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/anndata_import/32e547223c9e/anndata_import/import.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/anndata_import/anndata_import/0.6.22.post1+galaxy3">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>anndata_import</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>32e547223c9e</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/anndata_import/anndata_import/0.6.22.post1+galaxy3</id>
+            <version>0.6.22.post1+galaxy3</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/b9fac48532eb/anndata_inspect/inspect.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.6.22.post1+galaxy3">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>anndata_inspect</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>b9fac48532eb</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.6.22.post1+galaxy3</id>
+            <version>0.6.22.post1+galaxy3</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/modify_loom/9210c3553cdd/modify_loom/modify_loom.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/modify_loom/modify_loom/0.6.22.post1+galaxy3">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>modify_loom</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>9210c3553cdd</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/modify_loom/modify_loom/0.6.22.post1+galaxy3</id>
+            <version>0.6.22.post1+galaxy3</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/raceid_clustering/7e014059a88d/raceid_clustering/raceid_clustering.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/raceid_clustering/raceid_clustering/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>raceid_clustering</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>7e014059a88d</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/raceid_clustering/raceid_clustering/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/raceid_inspectclusters/37a47c4fd84d/raceid_inspectclusters/raceid_inspectclusters.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/raceid_inspectclusters/raceid_inspectclusters/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>raceid_inspectclusters</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>37a47c4fd84d</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/raceid_inspectclusters/raceid_inspectclusters/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/raceid_inspecttrajectory/69018f285aa3/raceid_inspecttrajectory/raceid_inspecttrajectories.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/raceid_inspecttrajectory/raceid_inspecttrajectory/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>raceid_inspecttrajectory</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>69018f285aa3</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/raceid_inspecttrajectory/raceid_inspecttrajectory/3.1</id>
+            <version>3.1</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/raceid_trajectory/44b935f2271b/raceid_trajectory/raceid_trajectory.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/raceid_trajectory/raceid_trajectory/3.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>raceid_trajectory</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>44b935f2271b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/raceid_trajectory/raceid_trajectory/3.1</id>
+            <version>3.1</version>
+        </tool>
+    </section>
 </toolbox>

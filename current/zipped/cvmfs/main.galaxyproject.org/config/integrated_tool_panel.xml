@@ -1367,6 +1367,8 @@
 
     <section id="rna_seq" name="RNA-seq" version="">
 
+        <tool id="toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2+galaxy1" />
+
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/deseq2/deseq2/2.11.40.6+galaxy1" />
 
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/trinity_filter_low_expr_transcripts/trinity_filter_low_expr_transcripts/2.9.1" />
@@ -5563,6 +5565,8 @@
 
     <section id="assembly" name="Assembly" version="">
 
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4+galaxy1" />
+
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/quast/quast/5.0.2+galaxy1" />
 
         <tool id="toolshed.g2.bx.psu.edu/repos/devteam/velvet/velvetg/1.2.10.1" />
@@ -5630,6 +5634,10 @@
     </section>
 
     <section id="annotation" name="Annotation" version="">
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/roary/roary/3.13.0+galaxy0" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/progressivemauve/xmfa2gff3/2015_02_13.1" />
 
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/mlst/mlst_list/2.19.0" />
 
@@ -6371,6 +6379,10 @@
 
     <section id="virology" name="Virology" version="">
 
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/ivar_trim/1.2.2+galaxy1" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/ivar_removereads/ivar_removereads/1.2.2+galaxy1" />
+
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/snpeff_sars_cov_2/snpeff_sars_cov_2/4.5covid19" />
 
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/ivar_consensus/ivar_consensus/1.2.2+galaxy0" />
@@ -6386,5 +6398,31 @@
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/ivar_variants/ivar_variants/1.2.2+galaxy0" />
 
     </section>
+
+    <section id="single_cell" name="Single-cell" version="">
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.4.4.post1+galaxy3" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/scanpy_normalize/scanpy_normalize/1.4.4.post1+galaxy3" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/anndata_export/anndata_export/0.6.22.post1+galaxy3" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/anndata_import/anndata_import/0.6.22.post1+galaxy3" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.6.22.post1+galaxy3" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/modify_loom/modify_loom/0.6.22.post1+galaxy3" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/raceid_clustering/raceid_clustering/3.1" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/raceid_inspectclusters/raceid_inspectclusters/3.1" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/raceid_inspecttrajectory/raceid_inspecttrajectory/3.1" />
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/raceid_trajectory/raceid_trajectory/3.1" />
+
+    </section>
+
+    <tool id="toolshed.g2.bx.psu.edu/repos/iuc/dropletutils/dropletutils/1.2.1+galaxy6" />
 
 </toolbox>
