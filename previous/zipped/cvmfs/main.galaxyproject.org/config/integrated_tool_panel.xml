@@ -3819,8 +3819,6 @@
 
     <section id="multiple_alignments" name="Multiple Alignments" version="">
 
-        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/interval2maf/Interval2Maf1/1.0.1" />
-
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/kc_align/kc-align/0.2" />
 
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/kc_align/kc-align/0.1.7" />
@@ -6423,10 +6421,8 @@
 
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/raceid_trajectory/raceid_trajectory/3.1" />
 
-        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/dropletutils/dropletutils/1.2.1+galaxy6" />
-
     </section>
 
-    <tool id="toolshed.g2.bx.psu.edu/repos/iuc/raceid_filtnormconf/raceid_filtnormconf/3.1" />
+    <tool id="toolshed.g2.bx.psu.edu/repos/iuc/dropletutils/dropletutils/1.2.1+galaxy6" />
 
 </toolbox>
