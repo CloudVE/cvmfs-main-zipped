@@ -29087,4 +29087,14 @@
             <version>2.10.8+galaxy0</version>
         </tool>
     </section>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/genebed_maf_to_fasta/f24a9ff28d3c/genebed_maf_to_fasta/genebed_maf_to_fasta.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/genebed_maf_to_fasta/GeneBed_Maf_Fasta2/1.0.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>genebed_maf_to_fasta</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>f24a9ff28d3c</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/genebed_maf_to_fasta/GeneBed_Maf_Fasta2/1.0.1</id>
+            <version>1.0.1</version>
+        </tool>
+    </section>
 </toolbox>
