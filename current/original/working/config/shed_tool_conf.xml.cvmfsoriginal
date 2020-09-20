@@ -29611,4 +29611,14 @@
             <version>4.1.7.0+galaxy0</version>
         </tool>
     </section>
+    <section id="hyphy" name="HyPhy" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_absrel/4cc4dbca2f02/hyphy_absrel/hyphy_absrel.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_absrel/hyphy_absrel/2.5.17+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>hyphy_absrel</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>4cc4dbca2f02</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/hyphy_absrel/hyphy_absrel/2.5.17+galaxy1</id>
+            <version>2.5.17+galaxy1</version>
+        </tool>
+    </section>
 </toolbox>
