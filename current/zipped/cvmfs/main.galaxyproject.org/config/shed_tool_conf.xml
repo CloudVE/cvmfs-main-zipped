@@ -29621,4 +29621,44 @@
             <version>2.5.17+galaxy1</version>
         </tool>
     </section>
+    <section id="nanopore" name="Nanopore" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/medaka_variant/e86fcef8ed91/medaka_variant/variant.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/medaka_variant/medaka_variant/1.0.3+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>medaka_variant</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>e86fcef8ed91</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/medaka_variant/medaka_variant/1.0.3+galaxy1</id>
+            <version>1.0.3+galaxy1</version>
+        </tool>
+    </section>
+    <section id="nanopore" name="Nanopore" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/medaka_consensus/84dcccebad3d/medaka_consensus/consensus.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/medaka_consensus/medaka_consensus/1.0.3+galaxy2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>medaka_consensus</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>84dcccebad3d</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/medaka_consensus/medaka_consensus/1.0.3+galaxy2</id>
+            <version>1.0.3+galaxy2</version>
+        </tool>
+    </section>
+    <section id="nanopore" name="Nanopore" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/medaka_variant_pipeline/148f32860445/medaka_variant_pipeline/medaka_variant.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/medaka_variant_pipeline/medaka_variant_pipeline/1.0.3+galaxy1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>medaka_variant_pipeline</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>148f32860445</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/medaka_variant_pipeline/medaka_variant_pipeline/1.0.3+galaxy1</id>
+            <version>1.0.3+galaxy1</version>
+        </tool>
+    </section>
+    <section id="nanopore" name="Nanopore" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/medaka_consensus_pipeline/35666d44fe7a/medaka_consensus_pipeline/medaka_consensus.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/medaka_consensus_pipeline/medaka_consensus_pipeline/1.0.3+galaxy2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>medaka_consensus_pipeline</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>35666d44fe7a</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/medaka_consensus_pipeline/medaka_consensus_pipeline/1.0.3+galaxy2</id>
+            <version>1.0.3+galaxy2</version>
+        </tool>
+    </section>
 </toolbox>
