@@ -29661,4 +29661,30 @@
             <version>1.0.3+galaxy2</version>
         </tool>
     </section>
+    <section id="fasta_fastq" name="FASTA/FASTQ" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/rnateam/splitfasta/733ca84b21ee/splitfasta/splitFasta.xml" guid="toolshed.g2.bx.psu.edu/repos/rnateam/splitfasta/rbc_splitfasta/0.4.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>splitfasta</repository_name>
+            <repository_owner>rnateam</repository_owner>
+            <installed_changeset_revision>733ca84b21ee</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/rnateam/splitfasta/rbc_splitfasta/0.4.0</id>
+            <version>0.4.0</version>
+        </tool>
+    </section>
+    <tool file="toolshed.g2.bx.psu.edu/repos/guerler/hhsuite/cec2aa4d6c0d/hhsuite/hhsearch.xml" guid="toolshed.g2.bx.psu.edu/repos/guerler/hhsuite/hhsearch/0.1.0">
+        <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+        <repository_name>hhsuite</repository_name>
+        <repository_owner>guerler</repository_owner>
+        <installed_changeset_revision>cec2aa4d6c0d</installed_changeset_revision>
+        <id>toolshed.g2.bx.psu.edu/repos/guerler/hhsuite/hhsearch/0.1.0</id>
+        <version>0.1.0</version>
+    </tool>
+    <tool file="toolshed.g2.bx.psu.edu/repos/guerler/springsuite/4a4888bf0338/springsuite/spring_minz.xml" guid="toolshed.g2.bx.psu.edu/repos/guerler/springsuite/spring_minz/0.1.1">
+        <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+        <repository_name>springsuite</repository_name>
+        <repository_owner>guerler</repository_owner>
+        <installed_changeset_revision>4a4888bf0338</installed_changeset_revision>
+        <id>toolshed.g2.bx.psu.edu/repos/guerler/springsuite/spring_minz/0.1.1</id>
+        <version>0.1.1</version>
+    </tool>
 </toolbox>
