@@ -22498,6 +22498,16 @@
         </tool>
     </section>
     <section id="mapping" name="Mapping" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/minimap2/8c6cd2650d1f/minimap2/minimap2.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.17+galaxy2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>minimap2</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>8c6cd2650d1f</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.17+galaxy2</id>
+            <version>2.17+galaxy2</version>
+        </tool>
+    </section>
+    <section id="mapping" name="Mapping" version="">
         <tool file="toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/178bdbdb6d24/rna_starsolo/rg_rnaStarSolo.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/rna_starsolo/2.7.2b1">
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>rna_starsolo</repository_name>
@@ -30179,6 +30189,16 @@
             <installed_changeset_revision>5e33b465d8d5</installed_changeset_revision>
             <id>toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1</id>
             <version>1.8+galaxy1</version>
+        </tool>
+    </section>
+    <section id="fasta_fastq" name="FASTA/FASTQ" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/dff7df6fcab5/filter_by_fasta_ids/filter_by_fasta_ids.xml" guid="toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.3">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>filter_by_fasta_ids</repository_name>
+            <repository_owner>galaxyp</repository_owner>
+            <installed_changeset_revision>dff7df6fcab5</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.3</id>
+            <version>2.3</version>
         </tool>
     </section>
 </toolbox>
