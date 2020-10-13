@@ -3003,6 +3003,8 @@
 
     <section id="mapping" name="Mapping" version="">
 
+        <tool id="toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.17+galaxy2" />
+
         <tool id="toolshed.g2.bx.psu.edu/repos/devteam/megablast_xml_parser/megablast_xml_parser/1.0.1" />
 
         <tool id="toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/rna_starsolo/2.7.5b" />
@@ -3680,6 +3682,8 @@
     </section>
 
     <section id="fasta_fastq" name="FASTA/FASTQ" version="">
+
+        <tool id="toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.3" />
 
         <tool id="toolshed.g2.bx.psu.edu/repos/rnateam/splitfasta/rbc_splitfasta/0.4.0" />
 

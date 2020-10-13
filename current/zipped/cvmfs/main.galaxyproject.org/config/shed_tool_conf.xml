@@ -30201,4 +30201,44 @@
             <version>2.3</version>
         </tool>
     </section>
+    <section id="annotation" name="Annotation" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/crs4/prokka/111884f0d912/prokka/prokka.xml" guid="toolshed.g2.bx.psu.edu/repos/crs4/prokka/prokka/1.14.5+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>prokka</repository_name>
+            <repository_owner>crs4</repository_owner>
+            <installed_changeset_revision>111884f0d912</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/crs4/prokka/prokka/1.14.5+galaxy0</id>
+            <version>1.14.5+galaxy0</version>
+        </tool>
+    </section>
+    <section id="collection_operations" name="Collection Operations" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/90981f86000f/collapse_collections/merge.xml" guid="toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>collapse_collections</repository_name>
+            <repository_owner>nml</repository_owner>
+            <installed_changeset_revision>90981f86000f</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0</id>
+            <version>5.1.0</version>
+        </tool>
+    </section>
+    <section id="metagenomic_analysis" name="Metagenomic Analysis" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/crs4/taxonomy_krona_chart/1334cb4c6b68/taxonomy_krona_chart/taxonomy_krona_chart.xml" guid="toolshed.g2.bx.psu.edu/repos/crs4/taxonomy_krona_chart/taxonomy_krona_chart/2.7.1">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>taxonomy_krona_chart</repository_name>
+            <repository_owner>crs4</repository_owner>
+            <installed_changeset_revision>1334cb4c6b68</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/crs4/taxonomy_krona_chart/taxonomy_krona_chart/2.7.1</id>
+            <version>2.7.1</version>
+        </tool>
+    </section>
+    <section id="text_manipulation" name="Text Manipulation" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/mvdbeek/add_input_name_as_column/3284b72eef56/add_input_name_as_column/add_input_name_as_column.xml" guid="toolshed.g2.bx.psu.edu/repos/mvdbeek/add_input_name_as_column/addName/0.2.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>add_input_name_as_column</repository_name>
+            <repository_owner>mvdbeek</repository_owner>
+            <installed_changeset_revision>3284b72eef56</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/mvdbeek/add_input_name_as_column/addName/0.2.0</id>
+            <version>0.2.0</version>
+        </tool>
+    </section>
 </toolbox>
