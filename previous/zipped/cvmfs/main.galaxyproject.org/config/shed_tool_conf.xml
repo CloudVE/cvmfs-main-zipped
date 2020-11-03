@@ -30283,4 +30283,12 @@
             <version>2.6</version>
         </tool>
     </section>
+    <tool file="toolshed.g2.bx.psu.edu/repos/guerler/springsuite/75d1aedc9b3f/springsuite/spring_minz.xml" guid="toolshed.g2.bx.psu.edu/repos/guerler/springsuite/spring_minz/0.1.2">
+        <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+        <repository_name>springsuite</repository_name>
+        <repository_owner>guerler</repository_owner>
+        <installed_changeset_revision>75d1aedc9b3f</installed_changeset_revision>
+        <id>toolshed.g2.bx.psu.edu/repos/guerler/springsuite/spring_minz/0.1.2</id>
+        <version>0.1.2</version>
+    </tool>
 </toolbox>
