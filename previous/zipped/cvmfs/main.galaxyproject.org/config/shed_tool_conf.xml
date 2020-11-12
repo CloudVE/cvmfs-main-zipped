@@ -30291,4 +30291,34 @@
         <id>toolshed.g2.bx.psu.edu/repos/guerler/springsuite/spring_minz/0.1.2</id>
         <version>0.1.2</version>
     </tool>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/genebed_maf_to_fasta/020c78e91cc5/genebed_maf_to_fasta/genebed_maf_to_fasta.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/genebed_maf_to_fasta/GeneBed_Maf_Fasta2/1.0.1+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>genebed_maf_to_fasta</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>020c78e91cc5</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/genebed_maf_to_fasta/GeneBed_Maf_Fasta2/1.0.1+galaxy0</id>
+            <version>1.0.1+galaxy0</version>
+        </tool>
+    </section>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/maf_stats/0c84cce7b030/maf_stats/maf_stats.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/maf_stats/maf_stats1/1.0.1+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>maf_stats</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>0c84cce7b030</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/maf_stats/maf_stats1/1.0.1+galaxy0</id>
+            <version>1.0.1+galaxy0</version>
+        </tool>
+    </section>
+    <section id="multiple_alignments" name="Multiple Alignments" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/interval2maf/b79f6002b176/interval2maf/interval2maf.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/interval2maf/Interval2Maf1/1.0.1+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>interval2maf</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>b79f6002b176</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/interval2maf/Interval2Maf1/1.0.1+galaxy0</id>
+            <version>1.0.1+galaxy0</version>
+        </tool>
+    </section>
 </toolbox>

@@ -17360,4 +17360,34 @@
             <installed_changeset_revision>19f3b583a9b3</installed_changeset_revision>
         </tool_shed_repository>
     </table>
+    <table name="maf_indexes">
+        <columns>name, value, indexed_for, exists_in_maf, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/genebed_maf_to_fasta/020c78e91cc5/maf_indexes.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>genebed_maf_to_fasta</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>020c78e91cc5</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table name="maf_indexes">
+        <columns>name, value, indexed_for, exists_in_maf, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/maf_stats/0c84cce7b030/maf_indexes.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>maf_stats</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>0c84cce7b030</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
+    <table name="maf_indexes">
+        <columns>name, value, indexed_for, exists_in_maf, path</columns>
+        <file path="/tmp/tool-data/toolshed.g2.bx.psu.edu/repos/iuc/interval2maf/b79f6002b176/maf_indexes.loc"/>
+        <tool_shed_repository>
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>interval2maf</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>b79f6002b176</installed_changeset_revision>
+        </tool_shed_repository>
+    </table>
 </tables>
