@@ -1,0 +1,327 @@
+<tool id="search_gui" name="Search GUI" version="@SEARCHGUI_VERSION@+galaxy@SEARCHGUI_VERSION_SUFFIX@">
+    <description>
+        Perform protein identification using various search engines and prepare results for input to Peptide Shaker
+    </description>
+    <macros>
+        <import>macros_basic.xml</import>
+    </macros>
+    <requirements>
+        <requirement type="package" version="@SEARCHGUI_VERSION@">searchgui</requirement>
+        <requirement type="package" version="3.0">zip</requirement>
+    </requirements>
+    <expand macro="stdio" />
+    <command use_shared_home="false">
+<![CDATA[
+        #from datetime import datetime
+        #import json
+        #import os
+        #set $exp_str = "Galaxy_Experiment_%s" % datetime.now().strftime("%Y%m%d%H%M%s")
+        #set $samp_str = "Sample_%s" % datetime.now().strftime("%Y%m%d%H%M%s")
+        #set $temp_stderr = "searchgui_stderr"
+        #set $bin_dir = "bin"
+
+        mkdir output;
+        mkdir output_reports;
+        mkdir temp_folder;
+        mkdir log_folder;
+        cwd=`pwd`;
+        export HOME=\$cwd;
+
+        echo "" > $temp_stderr &&
+
+        ## echo the search engines to run (single quotes important because X!Tandem)
+        echo '$search_engines_options.engines';
+        echo 'DB: ${input_fasta_file.element_identifier} sequences: ${input_fasta_file.metadata.sequences}';
+
+        ##Create a searchgui.properties file for the version, which will be added to the searchgui_results if not already present
+        echo 'searchgui.version=@SEARCHGUI_VERSION@' >> searchgui.properties;
+
+        #for $peak_list_file in $peak_lists_files:
+            #set $input_name = ""
+            #if $peak_list_file.is_of_type("mgf"):
+                #set $input_name = $peak_list_file.element_identifier.split('/')[-1].replace(".mgf", "") + ".mgf"
+            #else if $peak_list_file.is_of_type("mzml"):
+                #set $input_name = $peak_list_file.element_identifier.split('/')[-1].replace(".mzml", "") + ".mzml"
+            #end if
+            ln -s -f '${peak_list_file}' '${input_name}';
+            #set $encoded_id = $__app__.security.encode_id($peak_list_file.id)
+            echo 'Spectrums:${peak_list_file.element_identifier}(API:${encoded_id})';
+        #end for
+
+        ## copy the input .par file to the working folder
+        cp '${input_parameters_file}' './SEARCHGUI_IdentificationParameters.par';
+
+        ## copy the input .fasta file to the working folder
+        cp '${input_fasta_file}' './input_fasta_file.fasta';
+
+
+        ################
+        ## Search CLI ##
+        ################
+        echo 'running search gui' &&
+        (searchgui -Djava.awt.headless=true eu.isas.searchgui.cmd.SearchCLI
+            --exec_dir="\$cwd/${bin_dir}"
+            -spectrum_files \$cwd
+            -fasta_file "\$cwd/input_fasta_file.fasta"
+            -output_folder \$cwd/output
+            -id_params ./SEARCHGUI_IdentificationParameters.par
+            -temp_folder \$cwd/temp_folder
+            -log \$cwd/log_folder
+            -threads "\${GALAXY_SLOTS:-12}"
+
+            #if $searchgui_advanced.searchgui_advanced_selector == 'advanced'
+                -correct_titles "${searchgui_advanced.correct_titles}"
+                $searchgui_advanced.missing_titles
+                -mgf_splitting "${searchgui_advanced.mgf_splitting}"
+                -mgf_spectrum_count "${searchgui_advanced.mgf_spectrum_count}"
+                -output_gzip "${searchgui_advanced.output_gzip}"
+            #end if
+
+            #set $engines_list = str($search_engines_options.engines).split(',')
+            #if 'X!Tandem' in $engines_list:
+                -xtandem 1
+            #else
+                -xtandem 0
+            #end if
+
+            #if 'MyriMatch' in $engines_list:
+                -myrimatch 1
+            #else
+                -myrimatch 0
+            #end if
+
+            #if 'MSGF' in $engines_list:
+                -msgf 1
+            #else
+                -msgf 0
+            #end if
+
+            #if 'OMSSA' in $engines_list:
+                -omssa 1
+            #else
+                -omssa 0
+            #end if
+
+            #if 'Comet' in $engines_list:
+                -comet 1
+            #else
+                -comet 0
+            #end if
+
+            #if 'Tide' in $engines_list:
+                -tide 1
+            #else
+                -tide 0
+            #end if
+
+            #if 'MS_Amanda' in $engines_list:
+                -ms_amanda 1
+            #else
+                -ms_amanda 0
+            #end if
+
+            #if 'Andromeda' in $engines_list:
+                -andromeda 1
+            #else
+                -andromeda 0
+            #end if
+
+            #if 'MetaMorpheus' in $engines_list:
+                -meta_morpheus 1
+            #else
+                -meta_morpheus 0
+            #end if
+
+            #if 'Novor' in $engines_list:
+                -novor 1
+            #else
+                -novor 0
+            #end if
+
+            #if 'DirecTag' in $engines_list:
+                -directag 1
+            #else
+                -directag 0
+            #end if
+
+            ## single zip file
+            -output_option 0
+
+            ## mgf and database in output
+            -output_data 1
+
+        2>> $temp_stderr)
+
+        &&
+
+        (mv output/searchgui_out.zip searchgui_out.zip 2>> $temp_stderr)
+
+        &&
+
+        (zip -u searchgui_out.zip searchgui.properties 2>> $temp_stderr);
+
+        cat $temp_stderr 2>&1;
+]]>
+    </command>
+    <inputs>
+        <param format="json" name="input_parameters_file" type="data" label="Identification Parameters file"/>
+
+        <param format="fasta" name="input_fasta_file" type="data" label="Fasta file"/>
+
+        <param name="peak_lists_files" format="mgf,mzml" type="data" multiple="true" label="Input Peak Lists"
+            help="Select appropriate MGF/MZML dataset(s) from history" />
+
+        <!-- Search Engine Selection -->
+        <section name="search_engines_options" expanded="true" title="Search Engine Options">
+            <param name="engines" type="select" display="checkboxes" multiple="True" label="DB-Search Engines">
+                <help>Comet and Tide shouldn't both be selected since they use a similar algoritm. OMSSA may not work into isolated environments like containers.</help>
+                <option value="X!Tandem" selected="True">X!Tandem</option>
+                <option value="MSGF" selected="True">MS-GF+</option>
+                <option value="OMSSA">OMSSA</option>
+                <option value="Comet">Comet</option>
+                <option value="Tide">Tide</option>
+                <option value="MyriMatch">MyriMatch</option>
+                <option value="MS_Amanda">MS_Amanda</option>
+                <!-- TODO: MetaMorpheus Waiting for support for dotnet in bioconda package -->
+                <!-- <option value="MetaMorpheus">MetaMorpheus</option> -->
+                <!-- Windows only
+                <option value="Andromeda">Andromeda</option>
+                -->
+                <!-- New with version 3.0
+                -->
+                <!--working in tests
+                -->
+                <option value="DirecTag">DirecTag</option>
+                <option value="Novor">Novor (Select for non-commercial use only)</option>
+                <validator type="no_options" message="Please select at least one output file" />
+            </param>
+        </section>
+
+        <conditional name="searchgui_advanced">
+            <param name="searchgui_advanced_selector" type="select" label="SearchGUI Options">
+                <option value="basic" selected="True">Default</option>
+                <option value="advanced">Advanced</option>
+            </param>
+            <when value="basic" />
+            <when value="advanced">
+                <param name="correct_titles" type="select" label="How should PeptideShaker deal with duplicate spectra?"
+                    help="Unless you suspect some input files to be genuine duplicates then rename spectra is the safest option">
+                    <option value="0">no correction</option>
+                    <option value="1" selected="True">rename spectra</option>
+                    <option value="2">delete spectra</option>
+                </param>
+                <param name="missing_titles" type="boolean" checked="false" truevalue="-missing_titles 1" falsevalue="-missing_titles 0"
+                    label="Add missing spectrum titles" help="(-missing_titles)"/>
+                <param name="mgf_splitting" type="integer" value="1000" label="The maximum mgf file size in MB before splitting the mgf"
+                    help="Choose a smaller value if you are running on a machine with limited memory"/>
+                <param name="mgf_spectrum_count" type="integer" value="25000" label="The maximum number of spectra per mgf file when splitting"
+                    help="Choose a smaller value if you are running on a machine with limited memory"/>
+                <param name="output_gzip" type="boolean" checked="true" truevalue="1" falsevalue="0"
+                    label="Gzip result files"/>
+            </when>
+        </conditional>
+
+    </inputs>
+    <outputs>
+        <data name="searchgui_results" format="searchgui_archive" from_work_dir="searchgui_out.zip" label="${tool.name} on ${on_string}" />
+    </outputs>
+    <tests>
+
+        <!-- Test that specifying non-default search engines with default parameters works -->
+        <test>
+            <param name="peak_lists_files" value="searchgui_tinyspectra1.mgf"/>
+            <param name="input_parameters_file" value="Identification_Parameters_default.par"/>
+            <param name="input_fasta_file" value="fastacli_searchgui_tinydb1_concatenated_target_decoy.fasta" ftype="fasta" />
+            <param name="engines" value="X!Tandem,MSGF,MyriMatch,Comet"/>
+            <output name="searchgui_results" file="searchgui_tiny_result_default_4engines.zip" ftype="searchgui_archive" compare="sim_size" delta="30000" />
+        </test>
+
+        <!-- Test that search works with MSAmanda with default parameters works-->
+        <test>
+            <param name="peak_lists_files" value="searchgui_smallspectra.mgf"/>
+            <param name="input_parameters_file" value="Identification_Parameters_default.par"/>
+            <param name="input_fasta_file" value="fastacli_searchgui_tinydb1_concatenated_target_decoy.fasta" ftype="fasta" />
+            <param name="engines" value="MS_Amanda"/>
+            <output name="searchgui_results" ftype="searchgui_archive">
+                <assert_contents>
+                    <has_size value="635138" delta="5000"/>
+                </assert_contents>
+            </output>
+        </test>
+
+		    <!-- Test that specifying non-default search engines with non-default parameters works -->
+        <test>
+           <param name="peak_lists_files" value="searchgui_tinyspectra1.mgf"/>
+           <param name="input_parameters_file" value="Identification_Parameters_specific.par"/>
+           <param name="input_fasta_file" value="fastacli_searchgui_tinydb1_concatenated_target_decoy.fasta" ftype="fasta" />
+           <param name="engines" value="X!Tandem,MSGF,MyriMatch,Comet"/>
+           <output name="searchgui_results" ftype="searchgui_archive">
+               <assert_contents>
+                   <has_size value="159330" delta="20000"/>
+               </assert_contents>
+           </output>
+        </test>
+
+        <!--
+            NOTE: Identification_Parameters_specific.par is equivalent to the default .par plus these parameters:
+            <param name="precursor_ion_tol" value="100"/>
+            <param name="min_charge" value="1"/>
+            <param name="max_charge" value="3"/>
+            <param name="xtandem|xtandem_advanced" value="yes"/>
+            <param name="xtandem|xtandem_advanced|xtandem_refine_selector" value="yes"/>
+        -->
+
+        <!-- Test that specifying MsAmanda as search engine with non-default parameters works -->
+        <test>
+            <param name="peak_lists_files" value="searchgui_smallspectra.mgf"/>
+            <param name="input_parameters_file" value="Identification_Parameters_specific.par"/>
+            <param name="input_fasta_file" value="fastacli_searchgui_tinydb1_concatenated_target_decoy.fasta" ftype="fasta" />
+            <param name="engines" value="MS_Amanda"/>
+            <output name="searchgui_results" ftype="searchgui_archive">
+                <assert_contents>
+                    <has_size value="635158" delta="5000"/>
+                </assert_contents>
+            </output>
+        </test>
+
+        <!-- Test that specifying non-default search engines with default parameters works using modifications -->
+        <test>
+            <param name="peak_lists_files" value="searchgui_tinyspectra1.mgf"/>
+            <param name="input_parameters_file" value="Identification_Parameters_default_modifications.par"/>
+            <param name="input_fasta_file" value="fastacli_searchgui_tinydb1_concatenated_target_decoy.fasta" ftype="fasta" />
+            <param name="engines" value="X!Tandem,MSGF,MyriMatch,Comet"/>
+            <output name="searchgui_results" file="searchgui_tiny_result_default_4engines_modifications.zip" ftype="searchgui_archive" compare="sim_size" delta="30000" />
+        </test>
+
+        <!--
+            NOTE: Identification_Parameters_default_modifications.par adds:
+            - "Carbamidomethylation of C" as fixed modification
+            - "Oxidation of M" as variable modification
+          -->
+
+        <!-- Test that search works with MSAmanda with default default parameters - with modifications -->
+        <test>
+            <param name="peak_lists_files" value="searchgui_tinyspectra1.mgf"/>
+            <param name="input_parameters_file" value="Identification_Parameters_default_modifications.par"/>
+            <param name="input_fasta_file" value="fastacli_searchgui_tinydb1_concatenated_target_decoy.fasta" ftype="fasta" />
+            <param name="engines" value="MS_Amanda"/>
+            <output name="searchgui_results" ftype="searchgui_archive">
+                <assert_contents>
+                    <has_size value="118136" delta="30000"/>
+                </assert_contents>
+            </output>
+        </test>
+
+    </tests>
+    <help>
+**What it does**
+
+Runs multiple search engines on any number of MGF peak lists using SearchGUI.
+
+Default:     X! Tandem and MS-GF+ are executed.
+
+Optional:     MyriMatch, MS-Amanda, OMSSA (it may not work into isolated environments like containers), Comet, Tide, DirecTag and Novor can be executed.
+
+    </help>
+    <expand macro="citations" />
+</tool>

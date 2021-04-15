@@ -1,0 +1,168 @@
+<tool id="gmx_em" name="GROMACS energy minimization" version="@TOOL_VERSION@+galaxy@GALAXY_VERSION@">
+    <description>of the system prior to equilibration and production MD</description>
+    <macros>
+        <import>macros.xml</import>
+        <token name="@GALAXY_VERSION@">0</token>
+    </macros>
+
+    <expand macro="requirements" />
+
+    <command detect_errors="exit_code"><![CDATA[
+
+        #if $mdp.mdpfile == 'custom':
+            ln -s '$mdp.mdp_input' ./minim.mdp &&
+        #else:
+            ln -s '$minim' ./minim.mdp &&
+        #end if
+
+        ln -s '$gro_input' ./solv_ions.gro &&
+        ln -s '$top_input' ./top_input.top &&
+  
+        gmx grompp -f ./minim.mdp -c ./solv_ions.gro -r ./solv_ions.gro -p ./top_input.top -o em.tpr &>> verbose.txt &&
+        gmx mdrun -nt "\${GALAXY_SLOTS:-4}" -deffnm em &>> verbose.txt
+        
+    ]]></command>
+        <configfiles>
+            <!-- .mdp files for the gromacs simulation -->
+            <configfile name="minim">
+                #if $mdp.mdpfile == 'default':
+                    ; minim.mdp - used as input into grompp to generate em.tpr
+                    integrator  = $mdp.integrator    ; Algorithm (steep = steepest descent minimization)
+                    emtol    = $mdp.emtol     ; Stop minimization when the maximum force is less than this value
+                    emstep      = $mdp.emstep      ; Energy step size
+                    nsteps    = $mdp.md_steps      ; Maximum number of (minimization) steps to perform
+
+                    ; Parameters describing how to find the neighbors of each atom and how to calculate the interactions
+                    nstlist        = 1        ; Frequency to update the neighbor list and long range forces
+                    cutoff-scheme   = $mdp.cutoffscheme
+                    ns_type        = grid    ; Method to determine neighbor list (simple, grid)
+                    coulombtype      = $mdp.coulombtype    ; Treatment of long range electrostatic interactions
+                    rcoulomb      = $mdp.rcoulomb    ; Short-range electrostatic cut-off
+                    rlist       = $mdp.rlist ; Cut-off distance for the short-range neighbor list.
+                    rvdw        = $mdp.rvdw    ; Short-range Van der Waals cut-off
+                    pbc            = xyz     ; Periodic Boundary Conditions (yes/no)
+                #end if
+            </configfile>
+        </configfiles>
+
+    <inputs>
+        <param argument="gro_input" type="data" format='gro' label="GRO structure file."/>
+        <param argument="top_input" type="data" format='top' label="Topology (TOP) file."/>
+        <conditional name="mdp">
+            <param name="mdpfile" type="select" label="Parameter input">
+                <option value="custom">Upload own MDP file</option>
+                <option value="default">Use default (partially customisable) setting</option>
+            </param>
+            <when value="custom">
+                <param argument="mdp_input" type="data" format='mdp' label="MD parameters (MDP) file (optional; default settings if not set)."/>
+            </when>
+
+            <when value="default">
+                <param argument="integrator" type="select" label="Choice of integrator.">
+                    <option value="steep">Steepest descent algorithm.</option>
+                    <option value="cg">Conjugate gradient algorithm.</option>
+                    <option value="l-bfgs">Quasi-Newtonian algorithm.</option>
+                </param>
+                <param argument="cutoffscheme" type="select" label="Neighbor searching.">
+                    <option value="Verlet">Generate a pair list with buffering.</option>
+                    <option value="group">Generate a pair list for groups of atoms.</option>
+                </param>
+                <param argument="coulombtype" type="select" label="Electrostatics.">
+                    <option value="PME">Fast smooth Particle-Mesh Ewald (SPME) electrostatics.</option>
+                    <option value="P3M-AD">Particle-Particle Particle-Mesh algorithm with analytical derivative.</option>
+                    <option value="Reaction-Field-zero">Reaction field electrostatics.</option>
+                </param>
+                <param argument="rcoulomb" value="1.0" type="float" label="Distance for the Coulomb cut-off."/>
+                <param argument="rlist" value="1.0" type="float" label="Cut-off distance for the short-range neighbor list. Ignored if the Verlet cutoff scheme is set."/>
+                <param argument="rvdw" value="1.0" type="float" label="Short range van der Waals cutoff."/>
+                <param argument="md_steps" type="integer" label="Number of steps for the MD simulation" value="0" min="0" max="1000000" help="MD steps" />
+                <param argument="emtol" type="float" label="EM tolerance" value="0" min="0" max="10000" help="The minimization is converged when the maximum force is smaller than this value" />
+                <param argument="emstep" type="float" label="Maximum step size /nm" value="0.01" min="0.0001" max="1.0" help="Initial step size in nm." />
+            </when>
+        </conditional>
+        <expand macro="log" />
+    </inputs>
+    <outputs>
+        <data name="output1" format="gro" from_work_dir="em.gro"/>
+        <data name="output2" format="edr" from_work_dir="em.edr"/>
+        <expand macro="log_outputs" />
+    </outputs>
+    <tests>
+        <test>
+            <param name="gro_input" value="str_ions.gro" />
+            <param name="top_input" value="topol_solv.top" />
+            <param name="mdpfile" value="default" />
+            <param name="integrator" value="steep" />
+            <param name="cutoffscheme" value="Verlet" />
+            <param name="coulombtype" value="PME" />
+            <param name="rcoulomb" value="1.0" />
+            <param name="rlist" value="1.0" />
+            <param name="md_steps" value="50000" />
+            <param name="emtol" value="1000.0" />
+            <param name="emstep" value="0.01" />
+            <output name="output1" ftype="gro" >
+                <assert_contents>
+                    <has_size value="4281" />
+                </assert_contents>
+            </output>
+            <output name="output2" ftype="edr" >
+                <assert_contents>
+                    <!-- this binary can vary in size a lot unfortunately -->
+                    <has_size value="5000" delta="1000" />
+                </assert_contents>
+            </output>
+        </test>
+        <test>
+            <param name="gro_input" value="str_ions.gro" />
+            <param name="top_input" value="topol_solv.top" />
+            <param name="mdpfile" value="custom" />
+            <param name="mdp_input" value="minim.mdp" />
+            <output name="output1" ftype="gro" >
+                <assert_contents>
+                    <has_size value="4281" />
+                </assert_contents>
+            </output>
+            <output name="output2" ftype="edr" >
+                <assert_contents>
+                    <!-- this binary can vary in size a lot unfortunately -->
+                    <has_size value="5000" delta="1000" />
+                </assert_contents>
+            </output>
+        </test>
+
+    </tests>
+    <help><![CDATA[
+
+.. class:: infomark
+
+**What it does**
+
+This tool performs energy minimization of a system prior to a GROMACS simulation.
+
+_____
+
+.. class:: infomark
+
+**Input**
+
+       - GRO structure file.
+       - Topology (TOP) file.
+       - MDP parameter file (optional)
+
+To take advantage of all GROMACS features, upload an MDP file with simulation parameters. Otherwise, choose parameters through the Galaxy interface. See the `manual`_ for more information on the options.
+
+.. _`manual`: http://manual.gromacs.org/documentation/2018/user-guide/mdp-options.html
+
+_____
+
+        
+.. class:: infomark
+
+**Output**
+
+       - GRO structure file.
+
+    ]]></help>
+
+    <expand macro="citations" />
+</tool>

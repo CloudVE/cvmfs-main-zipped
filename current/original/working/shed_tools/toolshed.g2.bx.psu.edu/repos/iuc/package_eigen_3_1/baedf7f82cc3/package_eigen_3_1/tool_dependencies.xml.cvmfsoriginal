@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="cmake" version="3.2.3">
+        <repository changeset_revision="1aea698a1c63" name="package_cmake_3_2_3" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+    </package>
+    <package name="eigen3" version="3.1.3">
+        <install version="1.0">
+            <actions>
+                <action target_filename="eigen-eigen-2249f9c22fe8.tgz" type="download_by_url">http://bitbucket.org/eigen/eigen/get/3.1.3.tar.gz</action>
+
+                <action type="set_environment_for_install">
+                    <repository changeset_revision="1aea698a1c63" name="package_cmake_3_2_3" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
+                        <package name="cmake" version="3.2.3" />
+                    </repository>
+                </action>
+
+                <action type="make_directory">$INSTALL_DIR/unpacked_source</action>
+                <action type="shell_command">cp -r * $INSTALL_DIR/unpacked_source</action>
+                <action type="make_directory">build</action>
+                <action type="change_directory">build</action>
+
+                <action type="shell_command">cmake .. -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR/eigen3/</action>
+                <action type="make_install" />
+
+                <action type="set_environment">
+                    <environment_variable action="set_to" name="EIGEN3_SOURCE_PATH">$INSTALL_DIR/unpacked_source</environment_variable>
+                    <environment_variable action="set_to" name="EIGEN3_INCLUDE_PATH">$INSTALL_DIR/eigen3/include</environment_variable>
+                    <environment_variable action="set_to" name="EIGEN3_LIB_PATH">$INSTALL_DIR/eigen3/lib</environment_variable>
+                    <environment_variable action="prepend_to" name="LD_LIBRARY_PATH">$INSTALL_DIR/eigen3/lib</environment_variable>
+                    <environment_variable action="prepend_to" name="C_INCLUDE_PATH">$INSTALL_DIR/eigen3/include</environment_variable>
+                    <environment_variable action="prepend_to" name="CPLUS_INCLUDE_PATH">$INSTALL_DIR/eigen3/include</environment_variable>
+                </action>
+            </actions>
+        </install>
+        <readme>Downloading  and compiling the eigen3 library and unpacking it to the EIGEN3_SOURCE_PATH. EIGEN3_INCLUDE_PATH and EIGEN3_LIB_PATH will be available.</readme>
+    </package>
+</tool_dependency>

@@ -1,0 +1,140 @@
+<tool id="gmx_solvate" name="GROMACS solvation and adding ions" version="@TOOL_VERSION@+galaxy@GALAXY_VERSION@">
+    <description>to structure and topology files</description>
+    <macros>
+        <import>macros.xml</import>
+        <token name="@GALAXY_VERSION@">0</token>
+    </macros>
+
+    <expand macro="requirements" />
+
+    <command detect_errors="exit_code"><![CDATA[
+
+        ln -s '$ions' ./ions.mdp &&
+        ln -s '$gro_input' ./gro_input.gro &&
+        ln -s '$top_input' ./top_input.top &&
+
+        gmx solvate -cp ./gro_input.gro -cs ${water_model}.gro -o solv.gro -p ./top_input.top &>> verbose.txt
+
+        #if $neutralise == "true":
+            &&
+            gmx grompp -f ./ions.mdp -c solv.gro -p ./top_input.top -o ions.tpr &>> verbose.txt &&
+            echo 'SOL' | gmx genion -s ions.tpr -o solv_ions.gro -p ./top_input.top -pname NA -nname CL -neutral -conc $conc &>> verbose.txt &&
+            mv solv_ions.gro solv.gro
+        #end if
+
+
+    ]]></command>
+        <configfiles>
+            <!-- .mdp file for the gromacs simulation -->
+            <configfile name="ions">
+
+; Parameters are not so important here as no simulation is run
+integrator  = steep
+emtol    = 1000.0
+emstep      = 0.01 
+nsteps    = 1
+nstlist        = 1
+cutoff-scheme   = Verlet
+ns_type        = grid
+coulombtype      = cutoff
+rcoulomb      = 1.0
+rvdw        = 1.0
+pbc            = xyz
+            </configfile>
+        </configfiles>
+    <inputs>
+        <param argument="gro_input" type="data" format='gro' label="GRO structure file"/>
+        <param argument="top_input" type="data" format='top' label="Topology (TOP) file"/>
+        <param name="water_model" type="select"  label="Water model for solvation" help="Note SPC is a generic equilibrated 3-point solvent model and can be used as the solvent configuration for any of SPC, SPC/E, or TIP3P water.">
+            <option value="spc216" selected="true">SPC (generic three-point model)</option>
+            <option value="tip4p">TIP4P (four-point model)</option>
+            <option value="tip5p">TIP5P (five-point model)</option>
+        </param>
+        <param name="neutralise" label="Add ions to neutralise system?" type="select" help="If system is charged, replace an appropriate number of randomly selected solvent molecules with sodium or chloride ions to neutralise it.">
+            <option value="true">Yes, add ions</option>
+            <option value="false">No</option>
+        </param>
+
+        <param argument="conc" type="float" value="0" min="0" max="6" label="Specify salt concentration (sodium chloride) to add, in mol/liter" help="Note existing ions in the system are not taken into account - including those added if the neutralise option is selected. Ions are added by randomly replacing water molecules." />
+
+        <expand macro="log" />
+
+    </inputs>
+    <outputs>
+        <data name="output1" format="gro" from_work_dir="solv.gro"/>
+        <data name="output2" format="top" from_work_dir="./top_input.top"/>
+        <expand macro="log_outputs" />
+    </outputs>
+    <tests>
+        <test>
+            <param name="gro_input" value="newbox.gro" />
+            <param name="neutralise" value="true" />
+            <param name="top_input" value="topol.top" />
+            <param name="water_model" value="spc216" />
+            <param name="conc" value="1" />
+            <output name="output1" ftype="gro">
+                <!-- replacement of water with ions is random, thus we cannot compare the whole file -->
+                <assert_contents>
+                    <has_text text="1.671   1.591   3.533"/>
+                    <has_text text="2.032   2.417   1.345"/>
+                    <has_text text="3.438   1.662   0.307"/>
+                    <has_text text="2218CL"/>
+                    <has_text text="2147NA"/>
+                </assert_contents>
+            </output>
+            <output name="output2" file="topol_solv.top" ftype="top" lines_diff="4">
+                <assert_contents>
+                    <has_line line="SOL         2130" />
+                    <has_line line="NA               41" />
+                    <has_line line="CL               43" />
+                </assert_contents>
+            </output>
+        </test>
+        <test>
+            <param name="gro_input" value="newbox.gro" />
+            <param name="neutralise" value="false" />
+            <param name="top_input" value="topol.top"/>
+            <param name="water_model" value="spc216" />
+            <param name="conc" value="0" />
+            <output name="output1" ftype="gro">
+                <assert_contents>
+                    <has_text text="1.671   1.591   3.533"/>
+                    <has_text text="2.032   2.417   1.345"/>
+                    <has_text text="3.438   1.662   0.307"/>
+                    <not_has_text text="2218CL"/>
+                </assert_contents>
+            </output>
+        </test>
+    </tests>
+    <help><![CDATA[
+
+.. class:: infomark
+
+**What it does**
+
+This tool solvates a system prior to a GROMACS simulation. In addition, sodium or chloride ions can be added if necessary to ensure the system is charge-neutral.
+
+_____
+
+.. class:: infomark
+
+**Input**
+
+       - GRO structure file.
+       - Topology (TOP) file.
+
+In addition, a water model must be selected - this should be consistent with the one selected previously in the system setup.
+
+_____
+
+        
+.. class:: infomark
+
+**Output**
+
+       - GRO structure file.
+
+    ]]></help>
+
+    <expand macro="citations" />
+</tool>

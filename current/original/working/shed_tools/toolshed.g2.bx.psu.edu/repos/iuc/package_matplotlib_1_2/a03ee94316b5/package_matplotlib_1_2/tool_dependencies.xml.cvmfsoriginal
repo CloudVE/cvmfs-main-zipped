@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <tool_dependency>
     <package name="numpy" version="1.7.1">
-       <repository changeset_revision="c7ae57300a77" name="package_numpy_1_7" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+       <repository changeset_revision="300877695495" name="package_numpy_1_7" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
     </package>
     <package name="freetype" version="2.4.11">
-        <repository changeset_revision="022adf7d6195" name="package_freetype_2_4" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+        <repository changeset_revision="b32452aa80dc" name="package_freetype_2_4" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
     </package>
     <package name="libpng" version="1.6.7">
-        <repository changeset_revision="db14a391648d" name="package_libpng_1_6_7" owner="devteam" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+        <repository changeset_revision="7da8c5e453cc" name="package_libpng_1_6_7" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
     </package>
     <package name="tiff" version="4.0.3">
-        <repository changeset_revision="e35a4a8b7e33" name="package_tiff_4_0_3" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
+        <repository changeset_revision="1720cc7e1949" name="package_tiff_4_0_3" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
     </package>
     <package name="zlib" version="1.2.8">
         <repository changeset_revision="63a4a902cda2" name="package_zlib_1_2_8" owner="iuc" prior_installation_required="True" toolshed="https://toolshed.g2.bx.psu.edu" />
@@ -21,24 +21,24 @@
     <package name="matplotlib" version="1.2.1">
         <install version="1.0">
             <actions>
-                <!-- first action is always downloading -->
-                <action type="download_by_url">http://downloads.sourceforge.net/project/matplotlib/matplotlib/matplotlib-1.2.1/matplotlib-1.2.1.tar.gz</action>
-
-                <!-- populate the environment variables from the dependent repos -->
+                <action sha256sum="52e18972aed85f30b05cef41778ec77685df6012f0598cd216e996de9b9ea29b" type="download_by_url">
+                    https://depot.galaxyproject.org/software/matplotlib/matplotlib_1.2.1_src_all.tar.gz
+                </action>
+                <!-- populate the environment variables from the dependend repos -->
                 <action type="set_environment_for_install">
                    <repository changeset_revision="63a4a902cda2" name="package_zlib_1_2_8" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
                         <package name="zlib" version="1.2.8" />
                     </repository>
-                    <repository changeset_revision="c7ae57300a77" name="package_numpy_1_7" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
+                    <repository changeset_revision="300877695495" name="package_numpy_1_7" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
                         <package name="numpy" version="1.7.1" />
                     </repository>
-                    <repository changeset_revision="022adf7d6195" name="package_freetype_2_4" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
+                    <repository changeset_revision="b32452aa80dc" name="package_freetype_2_4" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
                         <package name="freetype" version="2.4.11" />
                     </repository>
-                    <repository changeset_revision="db14a391648d" name="package_libpng_1_6_7" owner="devteam" toolshed="https://toolshed.g2.bx.psu.edu">
+                    <repository changeset_revision="7da8c5e453cc" name="package_libpng_1_6_7" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
                         <package name="libpng" version="1.6.7" />
                     </repository>
-                    <repository changeset_revision="e35a4a8b7e33" name="package_tiff_4_0_3" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
+                    <repository changeset_revision="1720cc7e1949" name="package_tiff_4_0_3" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
                         <package name="tiff" version="4.0.3" />
                     </repository>
                     <repository changeset_revision="d5f2627f4cfd" name="package_imaging_1_1_7" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu">
@@ -59,6 +59,7 @@
                     <environment_variable action="prepend_to" name="PATH">$ENV[PATH_NUMPY]</environment_variable>
                     <environment_variable action="prepend_to" name="LD_LIBRARY_PATH">$ENV[LIBPNG_ROOT]/lib</environment_variable>
                     <environment_variable action="set_to" name="MATPLOTLIB_LIB_PATH">$ENV[LIBPNG_ROOT]/lib</environment_variable>
+                    <environment_variable action="prepend_to" name="LD_LIBRARY_PATH">$ENV[FREETYPE_LIB_DIR]</environment_variable>
                     <environment_variable action="set_to" name="PYTHONPATH_MATPLOTLIB">$INSTALL_DIR/lib/python</environment_variable>
                 </action>
             </actions>

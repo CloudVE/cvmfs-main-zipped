@@ -1,0 +1,199 @@
+<tool id="seq_filter_by_id" name="Filter sequences by ID" version="0.2.7">
+    <description>from a tabular file</description>
+    <requirements>
+        <requirement type="package" version="1.67">biopython</requirement>
+    </requirements>
+    <version_command>
+python $__tool_directory__/seq_filter_by_id.py --version
+    </version_command>
+    <command detect_errors="aggressive">
+python $__tool_directory__/seq_filter_by_id.py -i '$input_file' -f '$input_file.ext'
+#if str($output_choice_cond.output_choice)=="both"
+ -p '$output_pos' -n '$output_neg'
+#elif str($output_choice_cond.output_choice)=="pos"
+ -p '$output_pos'
+#elif str($output_choice_cond.output_choice)=="neg"
+ -n '$output_neg'
+#end if
+#if str($adv_opts.adv_opts_selector)=="advanced" and $adv_opts.strip_suffix
+ -s
+#end if
+#if str($id_opts.id_opts_selector)=="tabular":
+## TODO - Decide on best way to expose multiple ID files via the XML wrapper.
+## Single tabular file, can call the Python script with either UNION or INTERSECTION
+-l UNION '$id_opts.input_tabular' '$id_opts.columns'
+#else
+-t '$id_opts.id_list'
+#end if
+    </command>
+    <inputs>
+        <param name="input_file" type="data" format="fasta,fastq,sff" label="Sequence file to be filtered" help="FASTA, FASTQ, or SFF format." />
+        <conditional name="id_opts">
+            <param name="id_opts_selector" type="select" label="Filter using the ID list from">
+                <option value="tabular" selected="True">tabular file</option>
+                <option value="list">provided list</option>
+                <!-- add UNION or INTERSECTION of multiple tabular files here? -->
+            </param>
+            <when value="tabular">
+                <param name="input_tabular" type="data" format="tabular" label="Tabular file containing sequence identifiers"/>
+                <param name="columns" type="data_column" data_ref="input_tabular" multiple="True" numerical="False"
+                       label="Column(s) containing sequence identifiers"
+                       help="Multi-select list - hold the appropriate key while clicking to select multiple columns">
+                    <validator type="no_options" message="Pick at least one column"/>
+                </param>
+            </when>
+            <when value="list">
+                <param name="id_list" type="text" size="20x80" area="True" format="tabular"
+                       label="List of sequence identifiers (white space separated)"
+                       help="You can use both spaces and new lines to separate your identifiers.">
+                    <sanitizer>
+                        <valid>
+                            <!-- default includes underscore, hyphen, etc -->
+                            <add value="%"/>
+                            <add value="|"/>
+                        </valid>
+                    </sanitizer>
+                </param>
+            </when>
+        </conditional>
+        <conditional name="output_choice_cond">
+            <param name="output_choice" type="select" label="Output positive matches, negative matches, or both?">
+                <option value="both">Both positive matches (ID on list) and negative matches (ID not on list), as two files</option>
+                <option value="pos">Just positive matches (ID on list), as a single file</option>
+                <option value="neg">Just negative matches (ID not on list), as a single file</option>
+            </param>
+            <!-- Seems need these dummy entries here, compare this to indels/indel_sam2interval.xml -->
+            <when value="both" />
+            <when value="pos" />
+            <when value="neg" />
+        </conditional>
+        <conditional name="adv_opts">
+            <param name="adv_opts_selector" type="select" label="Advanced Options">
+              <option value="basic" selected="True">Hide Advanced Options</option>
+              <option value="advanced">Show Advanced Options</option>
+            </param>
+            <when value="basic" />
+            <when value="advanced">
+                <param name="strip_suffix" type="boolean" value="false" label="Remove typical pair read name suffices when matching identifiers?" help="Will remove suffices including Illumina /1 and /2, Roche 454 .f and .r, and assorted Sanger names like .p* and .q*" />
+            </when>
+        </conditional>
+    </inputs>
+    <outputs>
+        <data name="output_pos" format_source="input_file" metadata_source="input_file" label="$input_file.name with matched ID">
+            <filter>output_choice_cond["output_choice"] != "neg"</filter>
+        </data>
+        <data name="output_neg" format_source="input_file" metadata_source="input_file" label="$input_file.name without matched ID">
+            <filter>output_choice_cond["output_choice"] != "pos"</filter>
+        </data>
+    </outputs>
+    <tests>
+        <test>
+            <param name="input_file" value="k12_ten_proteins.fasta" ftype="fasta" />
+            <param name="input_tabular" value="k12_hypothetical.tabular" ftype="tabular" />
+            <param name="columns" value="1" />
+            <param name="output_choice" value="pos" />
+            <output name="output_pos" file="k12_hypothetical.fasta" ftype="fasta" />
+        </test>
+        <test>
+            <param name="input_file" value="k12_ten_proteins.fasta" ftype="fasta" />
+            <param name="input_tabular" value="k12_hypothetical_alt.tabular" ftype="tabular" />
+            <param name="columns" value="1" />
+            <param name="output_choice" value="pos" />
+            <param name="adv_opts_selector" value="advanced" />
+            <param name="strip_suffix" value="true" />
+            <output name="output_pos" file="k12_hypothetical.fasta" ftype="fasta" />
+        </test>
+        <test>
+            <param name="input_file" value="k12_ten_proteins.fasta" ftype="fasta" />
+            <param name="id_opts_selector" value="list" />
+            <param name="id_list" value="gi|16127999|ref|NP_414546.1|" />
+            <param name="output_choice" value="pos" />
+            <output name="output_pos" file="k12_hypothetical.fasta" ftype="fasta" />
+        </test>
+        <test>
+            <param name="input_file" value="sanger-pairs-mixed.fastq" ftype="fastq" />
+            <param name="id_opts_selector" value="list" />
+            <param name="id_list" value="WTSI_1055_1a05 WTSI_1055_1g02" />
+            <param name="output_choice" value="pos" />
+            <param name="adv_opts_selector" value="advanced" />
+            <param name="strip_suffix" value="true" />
+            <output name="output_pos" file="sanger-sample.fastq" ftype="fastq" />
+        </test>
+        <test>
+            <param name="input_file" value="sanger-pairs-mixed.fastq" ftype="fastq" />
+            <param name="id_opts_selector" value="tabular" />
+            <param name="input_tabular" value="sanger-pairs-names.tabular" ftype="tabular" />
+            <param name="columns" value="1" />
+            <param name="output_choice" value="both" />
+            <param name="adv_opts_selector" value="advanced" />
+            <param name="strip_suffix" value="true" />
+            <output name="output_pos" file="sanger-pairs-mixed.fastq" ftype="fastq" />
+	    <output name="output_neg" file="empty_file.dat" ftype="fastq" />
+        </test>
+        <test>
+            <param name="input_file" value="sanger-pairs-mixed.fastq" ftype="fastq" />
+            <param name="input_tabular" value="sanger-pairs-names.tabular" ftype="tabular" />
+            <param name="columns" value="1" />
+            <param name="output_choice" value="both" />
+            <param name="adv_opts_selector" value="advanced" />
+            <param name="strip_suffix" value="false" />
+            <output name="output_pos" file="empty_file.dat" ftype="fastq" />
+            <output name="output_neg" file="sanger-pairs-mixed.fastq" ftype="fastq" />
+        </test>
+    </tests>
+    <help>
+**What it does**
+
+By default it divides a FASTA, FASTQ or Standard Flowgram Format (SFF) file in
+two, those sequences with or without an ID present in the tabular file column(s)
+specified. You can opt to have a single output file of just the matching records,
+or just the non-matching ones.
+
+Instead of providing the identifiers in a tabular file, you can alternatively
+provide them as a parameter (type or paste them into the text box). This is a
+useful shortcut for extracting a few sequences of interest without first having
+to prepare a tabular file.
+
+Note that the order of sequences in the original sequence file is preserved, as
+is any Roche XML Manifest in an SFF file. Also, if any sequences share an
+identifier (which would be very unusual in SFF files), duplicates are not removed.
+
+**Example Usage**
+
+You may have performed some kind of contamination search, for example running
+BLASTN against a database of cloning vectors or bacteria, giving you a tabular
+file containing read identifiers. You could use this tool to extract only the
+reads without BLAST matches (i.e. those which do not match your contaminant
+database).
+
+You may have a file of FASTA sequences which has been used with some analysis
+tool giving tabular output, which has then been filtered on some criteria.
+You can then use this tool to divide the original FASTA file into those entries
+matching or not matching your criteria (those with or without their identifier
+in the filtered tabular file).
+
+**References**
+
+If you use this Galaxy tool in work leading to a scientific publication please
+cite the following papers:
+
+Peter J.A. Cock, Björn A. Grüning, Konrad Paszkiewicz and Leighton Pritchard (2013).
+Galaxy tools and workflows for sequence analysis with applications
+in molecular plant pathology. PeerJ 1:e167
+http://dx.doi.org/10.7717/peerj.167
+
+This tool uses Biopython to read and write SFF files, so you may also wish to
+cite the Biopython application note (and Galaxy too of course):
+
+Cock et al (2009). Biopython: freely available Python tools for computational
+molecular biology and bioinformatics. Bioinformatics 25(11) 1422-3.
+http://dx.doi.org/10.1093/bioinformatics/btp163 pmid:19304878.
+
+This tool is available to install into other Galaxy Instances via the Galaxy
+Tool Shed at http://toolshed.g2.bx.psu.edu/view/peterjc/seq_filter_by_id
+    </help>
+    <citations>
+        <citation type="doi">10.7717/peerj.167</citation>
+        <citation type="doi">10.1093/bioinformatics/btp163</citation>
+    </citations>
+</tool>
