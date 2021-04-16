@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="openbabel" version="2.3.2">
+        <repository changeset_revision="99a10425de93" name="package_openbabel_2_3" owner="iuc" toolshed="http://toolshed.g2.bx.psu.edu" />
+    </package>
+</tool_dependency>

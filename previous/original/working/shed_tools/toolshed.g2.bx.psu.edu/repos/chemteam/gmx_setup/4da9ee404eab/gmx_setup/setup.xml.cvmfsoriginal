@@ -1,0 +1,102 @@
+<tool id="gmx_setup" name="GROMACS initial setup" version="@TOOL_VERSION@+galaxy@GALAXY_VERSION@">
+    <description>of topology and GRO structure file</description>
+    <macros>
+        <import>macros.xml</import>
+        <token name="@GALAXY_VERSION@">0</token>
+    </macros>
+
+    <expand macro="requirements" />
+
+    <command detect_errors="exit_code"><![CDATA[
+
+        ln -s '$pdb_input' ./pdb_input.pdb &&
+        gmx pdb2gmx -f ./pdb_input.pdb -o processed.gro -p topol.top -i posres.itp -water $water -ff $ff -${ignore_h}ignh -merge all &>> verbose.txt
+
+    ]]></command>
+
+    <inputs>
+        <param argument="pdb_input" type="data" format='pdb' label="PDB input file" help="Input structure"/>
+        <param argument="water" type="select" label="Water model" help="Model for simulating water molecules in the solvent">
+            <option value="tip3p" selected="true">TIP3P</option>
+            <option value="tip4p">TIP4P</option>
+            <option value="tips3p">TIPS3P</option>
+            <option value="tip5p">TIP5P</option>
+            <option value="spc">SPC</option>
+            <option value="spce">SPC/E</option>
+            <option value="none">None</option>
+        </param>
+
+        <param argument="ff" type="select" label="Force field" help="Specify a molecular force field">
+            <option value="oplsaa" selected="true">OPLS/AA</option>
+            <option value="gromos43a1">GROMOS43A1</option>
+            <option value="amber96">AMBER96</option>
+            <option value="gromos53a6">GROMOS53A6</option>
+            <option value="amber99sb-ildn">AMBER99SB-ILDN</option>
+            <option value="amber99sb">AMBER99SB</option>
+            <option value="gromos53a5">GROMOS53A5</option>
+            <option value="gromos43a2">GROMOS43A2</option>
+            <option value="amberGS">AMBERGS</option>
+            <option value="charmm27">CHARMM27</option>
+            <option value="amber03">AMBER03</option>
+            <option value="gromos54a7">GROMOS54A7</option>
+            <option value="gromos45a3">GROMOS45A3</option>
+            <option value="amber99">AMBER99</option>
+            <option value="amber94">AMBER94</option>
+        </param>
+
+        <param argument="ignore_h" type="boolean" label="Ignore hydrogens" truevalue="" falsevalue="no" help="Ignore hydrogen atoms that are in the coordinate file." />
+
+        <expand macro="log" />
+
+    </inputs>
+    <outputs>
+        <data name="output1" format="top" from_work_dir="topol.top"/>
+        <data name="output2" format="gro" from_work_dir="processed.gro"/>
+        <data name="output3" format="itp" from_work_dir="posres.itp"/>
+        <expand macro="log_outputs" />
+    </outputs>
+    <tests>
+        <test>
+            <param name="pdb_input" value="init.pdb" />
+            <param name="water" value="spce" />
+            <param name="ff" value="oplsaa" />
+            <param name="ignore_h" value="no" />
+            <output name="output1" file="topol.top" ftype="top" compare="diff" lines_diff="20"/>
+            <output name="output2" file="processed.gro" ftype="gro"/>
+            <output name="output3" file="posres.itp" ftype="itp"/>
+        </test>
+    </tests>
+    <help><![CDATA[
+
+.. class:: infomark
+
+**What it does**
+
+This tool performs the initial setup prior to a GROMACS simulation. This entails producing a topology from an input structure using the pdb2gmx command.
+
+Please note that the tool will only successfully generate a topology for residues it recognizes (i.e. standard amino acids). If the structure contains other components such as ligands, these should be separately parameterized with the AmberTools or ACPYPE tools. In this case, make sure to also use an AMBER forcefield for this tool to ensure compatability with the ligand topology. 
+
+_____
+
+.. class:: infomark
+
+**Input**
+
+       - PDB file.
+       - Water model and forcefield must be specified.
+     
+_____
+
+        
+.. class:: infomark
+
+**Output**
+
+       - GROMACS topology (TOP) file.
+       - Position restraint (itp) file, which may be useful for system equilibration.
+       - GRO structure file.
+
+    ]]></help>
+
+    <expand macro="citations" />
+</tool>
