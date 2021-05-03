@@ -34237,4 +34237,302 @@
             <version>2.5.31+galaxy1</version>
         </tool>
     </section>
+    <section id="bed" name="BED" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/makeWindowsBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_makewindowsbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_makewindowsbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/maskFastaBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_maskfastabed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_maskfastabed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/overlapBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_overlapbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_overlapbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/flankBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_flankbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_flankbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/expandBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_expandbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_expandbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/genomeCoverageBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_genomecoveragebed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_genomecoveragebed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/randomBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_randombed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_randombed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/slopBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_slopbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_slopbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/bedToBam.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_bedtobam/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_bedtobam/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/bedpeToBam.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_bedpetobam/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_bedpetobam/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/nucBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_nucbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_nucbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/multiCov.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_multicovtbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_multicovtbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/fisherBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_fisher/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_fisher/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/tagBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_tagbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_tagbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/mapBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_map/2.30.0.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_map/2.30.0.2</id>
+            <version>2.30.0.2</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/bed12ToBed6.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_bed12tobed6/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_bed12tobed6/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/clusterBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_clusterbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_clusterbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/multiIntersectBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_multiintersectbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_multiintersectbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/reldist.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_reldistbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_reldistbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/windowBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_windowbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_windowbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/linksBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_links/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_links/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/mergeBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_mergebed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_mergebed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/intersectBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_intersectbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_intersectbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/complementBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_complementbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_complementbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/shuffleBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_shufflebed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_shufflebed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/getfastaBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_getfastabed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_getfastabed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/bamToBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_bamtobed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_bamtobed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/jaccardBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_jaccard/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_jaccard/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/groupbyBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_groupbybed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_groupbybed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/closestBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_closestbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_closestbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/spacingBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_spacingbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_spacingbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/subtractBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_subtractbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_subtractbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/sortBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_sortbed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_sortbed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/coverageBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_coveragebed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_coveragebed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/annotateBed.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_annotatebed/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_annotatebed/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/bedToIgv.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_bedtoigv/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_bedtoigv/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/ce3c7f062223/bedtools/unionBedGraphs.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_unionbedgraph/2.30.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bedtools</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>ce3c7f062223</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_unionbedgraph/2.30.0</id>
+            <version>2.30.0</version>
+        </tool>
+    </section>
 </toolbox>
