@@ -19690,7 +19690,7 @@
         </tool>
     </section>
     <section id="get_data" name="Get Data" version="">
-        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/f5ea3ce9b9b0/sra_tools/sra_pileup.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/sra_pileup/2.10.3">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/f5ea3ce9b9b0/sra_tools/sra_pileup.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/sra_pileup/2.10.3" hidden="true">
             <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
             <repository_name>sra_tools</repository_name>
             <repository_owner>iuc</repository_owner>
