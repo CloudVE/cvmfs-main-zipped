@@ -34543,4 +34543,24 @@
             <version>2.30.0</version>
         </tool>
     </section>
+    <section id="mapping" name="Mapping" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bioext_bealign/f9b72a376ec9/bioext_bealign/bealign.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bioext_bealign/bioext_bealign/0.19.7.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bioext_bealign</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>f9b72a376ec9</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bioext_bealign/bioext_bealign/0.19.7.0</id>
+            <version>0.19.7.0</version>
+        </tool>
+    </section>
+    <section id="convert_formats" name="Convert Formats" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/bioext_bam2msa/f5792425ea50/bioext_bam2msa/bam2msa.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/bioext_bam2msa/bioext_bam2msa/0.19.7.0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>bioext_bam2msa</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>f5792425ea50</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/bioext_bam2msa/bioext_bam2msa/0.19.7.0</id>
+            <version>0.19.7.0</version>
+        </tool>
+    </section>
 </toolbox>

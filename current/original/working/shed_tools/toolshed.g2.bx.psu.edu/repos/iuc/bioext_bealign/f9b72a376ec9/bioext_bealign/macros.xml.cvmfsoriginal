@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<macros>
+    <token name="@VERSION@">0.19.7</token>
+    <xml name="requirements">
+        <requirements>
+            <requirement type="package" version="@VERSION@">python-bioext</requirement>
+            <yield />
+        </requirements>
+    </xml>
+    <xml name="citations">
+        <citations>
+            <citation type="bibtex">
+                @UNPUBLISHED{spond,
+                    author = "Sergei Kosakovsky Pond",
+                    title = "HyPhy: Hypothesis Testing using Phylogenies",
+                    year = "2000",
+                    note = "http://hyphy.org/",
+                    url = "http://hyphy.org/"}
+            </citation>
+        </citations>
+    </xml>
+</macros>
