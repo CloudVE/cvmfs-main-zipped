@@ -34563,4 +34563,14 @@
             <version>0.19.7.0</version>
         </tool>
     </section>
+    <section id="hyphy" name="HyPhy" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_bgm/d1c977aee228/hyphy_bgm/hyphy_bgm.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/hyphy_bgm/hyphy_bgm/2.5.31+galaxy2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>hyphy_bgm</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>d1c977aee228</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/hyphy_bgm/hyphy_bgm/2.5.31+galaxy2</id>
+            <version>2.5.31+galaxy2</version>
+        </tool>
+    </section>
 </toolbox>
