@@ -34573,4 +34573,54 @@
             <version>2.5.31+galaxy2</version>
         </tool>
     </section>
+    <section id="virology" name="Virology" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/ivar_consensus/5e668dc9f379/ivar_consensus/ivar_consensus.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/ivar_consensus/ivar_consensus/1.3.1+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ivar_consensus</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>5e668dc9f379</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/ivar_consensus/ivar_consensus/1.3.1+galaxy0</id>
+            <version>1.3.1+galaxy0</version>
+        </tool>
+    </section>
+    <section id="virology" name="Virology" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/ivar_filtervariants/51afc8a64951/ivar_filtervariants/ivar_filtervariants.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/ivar_filtervariants/ivar_filtervariants/1.3.1+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ivar_filtervariants</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>51afc8a64951</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/ivar_filtervariants/ivar_filtervariants/1.3.1+galaxy0</id>
+            <version>1.3.1+galaxy0</version>
+        </tool>
+    </section>
+    <section id="virology" name="Virology" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/ivar_removereads/75c279fa403a/ivar_removereads/ivar_removereads.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/ivar_removereads/ivar_removereads/1.3.1+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ivar_removereads</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>75c279fa403a</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/ivar_removereads/ivar_removereads/1.3.1+galaxy0</id>
+            <version>1.3.1+galaxy0</version>
+        </tool>
+    </section>
+    <section id="virology" name="Virology" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/cf65217ad61c/ivar_trim/ivar_trim.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/ivar_trim/1.3.1+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ivar_trim</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>cf65217ad61c</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/ivar_trim/1.3.1+galaxy0</id>
+            <version>1.3.1+galaxy0</version>
+        </tool>
+    </section>
+    <section id="virology" name="Virology" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/iuc/ivar_variants/49236b03e4fd/ivar_variants/ivar_variants.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/ivar_variants/ivar_variants/1.3.1+galaxy0">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>ivar_variants</repository_name>
+            <repository_owner>iuc</repository_owner>
+            <installed_changeset_revision>49236b03e4fd</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/iuc/ivar_variants/ivar_variants/1.3.1+galaxy0</id>
+            <version>1.3.1+galaxy0</version>
+        </tool>
+    </section>
 </toolbox>
